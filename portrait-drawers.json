@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "pools": {
+    "normal": {
+      "name": "普通",
+      "icon": "常",
+      "order": 10,
+      "sourceKey": "charPortraits"
+    },
+    "female": {
+      "name": "性转",
+      "icon": "♀",
+      "order": 20,
+      "sourceKey": "charPortraitsFemale"
+    },
+    "special": {
+      "name": "心动",
+      "icon": "💖",
+      "order": 30,
+      "sourceKey": "specialPortraits"
+    }
+  },
+  "aliases": {}
+}
