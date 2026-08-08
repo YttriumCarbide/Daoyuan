@@ -21,7 +21,7 @@
     },
     "wedding": {
       "name": "婚纱",
-      "icon": "👰‍♀️",
+      "icon": "👰",
       "order": 40,
       "sourceKey": "weddingPortraits"
     }
