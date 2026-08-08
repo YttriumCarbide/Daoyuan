@@ -18,6 +18,12 @@
       "icon": "💖",
       "order": 30,
       "sourceKey": "specialPortraits"
+    },
+    "wedding": {
+      "name": "婚纱",
+      "icon": "👰‍♀️",
+      "order": 40,
+      "sourceKey": "weddingPortraits"
     }
   },
   "aliases": {}
