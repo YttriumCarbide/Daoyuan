@@ -9,7 +9,7 @@
     },
     "female": {
       "name": "性转",
-      "icon": "♀",
+      "icon": "♀️",
       "order": 20,
       "sourceKey": "charPortraitsFemale"
     },
