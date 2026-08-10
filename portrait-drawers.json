@@ -24,6 +24,12 @@
       "icon": "👰",
       "order": 40,
       "sourceKey": "weddingPortraits"
+    },
+    "Tarot": {
+      "name": "塔罗",
+      "icon": "🔮",
+      "order": 50,
+      "sourceKey": "TarotPortraits"
     }
   },
   "aliases": {}
