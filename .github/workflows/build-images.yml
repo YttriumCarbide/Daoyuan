@@ -1,0 +1,91 @@
+name: build-images
+
+on:
+  push:
+    branches: [main, v2]
+    paths:
+      - 'data/character/**'
+      - 'data/sect/**'
+      - 'data/themes/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - 'notice.json'
+      - '.github/workflows/build-images.yml'
+  pull_request:
+    paths:
+      - 'data/character/**'
+      - 'data/sect/**'
+      - 'data/themes/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - 'notice.json'
+      - '.github/workflows/build-images.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: build-images-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v9
+        with:
+          uv-version: "0.11.21"
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Check generated artifacts
+        if: github.event_name == 'pull_request'
+        run: uv run python scripts/build_images.py --check
+
+      - name: Build generated artifacts
+        if: github.event_name != 'pull_request'
+        run: uv run python scripts/build_images.py
+
+      - name: Test
+        run: uv run python -m unittest discover -s tests -v
+
+      - name: Sync generated artifacts and notice.json to v2 and main (push / workflow_dispatch)
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          ARTIFACTS=(images.json images.schema.json portraits.json sect-maps.json notice.json schema/character.schema.json schema/sect.schema.json schema/theme.schema.json)
+          ARTIFACT_ARCHIVE="$(mktemp)"
+          tar -cf "$ARTIFACT_ARCHIVE" "${ARTIFACTS[@]}"
+          # 若触发分支在构建期间已前进（并发 push），本次产物来自旧提交：
+          # 跳过整轮同步，避免把过期产物推到新 tip，由新触发的 run 接手
+          git fetch origin "${{ github.ref_name }}"
+          if [ "$(git rev-parse FETCH_HEAD)" != "${{ github.sha }}" ]; then
+            echo "::warning::${{ github.ref_name }} 在构建期间已更新，跳过本次同步，由新触发的 run 负责"
+            exit 0
+          fi
+          for BRANCH in v2 main; do
+            git fetch origin "$BRANCH"
+            SYNC_DIR="$(mktemp -d)"
+            git worktree add --detach "$SYNC_DIR" "origin/$BRANCH"
+            tar -xf "$ARTIFACT_ARCHIVE" -C "$SYNC_DIR"
+            git -C "$SYNC_DIR" add "${ARTIFACTS[@]}"
+            if git -C "$SYNC_DIR" diff --cached --quiet; then
+              echo "[$BRANCH] 构建产物与 notice.json 与 v2 一致，无需提交"
+            elif git -C "$SYNC_DIR" commit -m "chore: sync generated artifacts and notice.json" && \
+                 git -C "$SYNC_DIR" push origin "HEAD:$BRANCH"; then
+              echo "[$BRANCH] 已提交并推送 ${ARTIFACTS[*]}"
+            else
+              echo "::warning::[$BRANCH] 推送失败（远端可能被并发修改），将在下次触发时重试"
+            fi
+            git worktree remove "$SYNC_DIR"
+          done
