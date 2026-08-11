@@ -43,6 +43,12 @@ tags = ["event", "portrait"]
 - `comment` 和 `tags` 都可以省略；
 - tags 中的值必须是非空字符串，同一张图片不能有重复标签。
 
+### 完整参考示例
+
+[`data/character/白薇.toml`](data/character/白薇.toml) 是人物图片配置的示例，可作为新增或整理人物数据时的参考。它展示了 schema 声明、TOML 注释、同一分类下的多张图片，以及 `comment`、`tags` 等可选字段的写法。
+
+白薇文件中的字段用于展示不同配置方式，目前版本没有限制 tags 类型，后续再考虑是否强制词条类型验证。
+
 ## 新增人物
 
 创建 `data/character/<人物名>.toml`。文件名就是人物名：
