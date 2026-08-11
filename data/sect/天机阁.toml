@@ -1,5 +1,6 @@
 #:schema ../../schema/sect.schema.json
+
 [images]
 map = [
-    { url = "https://cdn.myfollo.xyz/2026/08/09/6a788ac5117a6.png" },
+  { url = "https://cdn.myfollo.xyz/2026/08/09/6a788ac5117a6.png" },
 ]

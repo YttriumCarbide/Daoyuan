@@ -1,5 +1,6 @@
 #:schema ../../schema/sect.schema.json
+
 [images]
 map = [
-    { url = "https://i.postimg.cc/QdtbhrcK/Chat-GPT-Image-202689-11-38-02.png" },
+  { url = "https://i.postimg.cc/QdtbhrcK/Chat-GPT-Image-202689-11-38-02.png" },
 ]

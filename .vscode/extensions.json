@@ -1,6 +1,6 @@
 {
     "recommendations": [
         "kisstkondoros.vscode-gutter-preview",
-        "tamasfe.even-better-toml"
+        "tombi-toml.tombi"
     ]
 }

@@ -1,6 +1,7 @@
 #:schema ../../schema/character.schema.json
+
 [images]
 default = [
-    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E6%A2%A6.image.181b6ee669.webp" },
-    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E6%A2%A6.image.3d3f7cf154.webp" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E6%A2%A6.image.181b6ee669.webp" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E6%A2%A6.image.3d3f7cf154.webp" },
 ]

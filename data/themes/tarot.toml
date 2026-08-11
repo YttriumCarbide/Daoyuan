@@ -1,5 +1,6 @@
 #:schema ../../schema/theme.schema.json
 # 塔罗主题立绘：一个主题文件可包含多个人物的多张立绘
+
 description = "塔罗主题立绘"
 
 [characters."叶焚渊"]

@@ -1,10 +1,11 @@
 #:schema ../../schema/character.schema.json
+
 [images]
 default = [
-    { url = "https://cdn.myfollo.xyz/2026/08/10/6a797ddf836d7.png" },
-    { url = "https://cdn.myfollo.xyz/2026/08/10/6a797ddf7c83c.png" },
-    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E6%82%A6.image.e032714e4b.webp" },
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a797ddf836d7.png" },
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a797ddf7c83c.png" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E6%82%A6.image.e032714e4b.webp" },
 ]
 special = [
-    { url = "https://cdn.myfollo.xyz/2026/08/10/6a797ddf81664.png" },
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a797ddf81664.png" },
 ]

@@ -12,6 +12,8 @@ on:
       - 'pyproject.toml'
       - 'uv.lock'
       - 'notice.json'
+      - 'tombi.toml'
+      - '.pre-commit-config.yaml'
       - '.github/workflows/build-images.yml'
   pull_request:
     paths:
@@ -23,6 +25,8 @@ on:
       - 'pyproject.toml'
       - 'uv.lock'
       - 'notice.json'
+      - 'tombi.toml'
+      - '.pre-commit-config.yaml'
       - '.github/workflows/build-images.yml'
   workflow_dispatch:
 
@@ -46,6 +50,9 @@ jobs:
 
       - name: Install dependencies
         run: uv sync --frozen
+
+      - name: Check TOML formatting
+        run: uv run tombi format --check --offline
 
       - name: Check generated artifacts
         if: github.event_name == 'pull_request'

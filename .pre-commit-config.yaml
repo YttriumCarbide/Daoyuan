@@ -1,0 +1,11 @@
+minimum_pre_commit_version: "4.3.0"
+
+repos:
+  - repo: local
+    hooks:
+      - id: format-toml
+        name: Format TOML
+        entry: uv run tombi format --offline --quiet
+        language: system
+        files: ^data/(character|sect|themes)/.*\.toml$
+        types: [toml]

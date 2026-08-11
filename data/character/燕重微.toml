@@ -1,7 +1,8 @@
 #:schema ../../schema/character.schema.json
+
 [images]
 default = [
-    { url = "https://cdn.myfollo.xyz/2026/08/07/6a7599586658c.png" },
-    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%87%95%E9%87%8D%E5%BE%AE.image.562c7b5247.webp" },
-    { url = "https://img.myfollo.xyz/i/2026/07/30/6a6a2fac7121b.png" },
+  { url = "https://cdn.myfollo.xyz/2026/08/07/6a7599586658c.png" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%87%95%E9%87%8D%E5%BE%AE.image.562c7b5247.webp" },
+  { url = "https://img.myfollo.xyz/i/2026/07/30/6a6a2fac7121b.png" },
 ]

@@ -1,0 +1,5 @@
+toml-version = "v1.0.0"
+
+[files]
+include = ["data/**/*.toml"]
+respect-ignore-files = true

@@ -16,8 +16,11 @@
 
 ```bash
 uv sync --frozen
+uv run pre-commit install
 uv run python scripts/build_images.py
 ```
+
+`pre-commit` 只需安装一次。之后提交 `data/` 下的 TOML 时，Tombi 会先自动格式化；如果文件被修改，请重新 `git add` 后再次提交。
 
 修改 TOML 后，请同时提交重新生成的 JSON 文件。
 
@@ -57,9 +60,15 @@ tags = ["event", "portrait"]
 #:schema ../../schema/character.schema.json
 
 [images]
-default = [{ url = "https://example.com/default.png" }]
-female = [{ url = "https://example.com/female.png" }]
-special = [{ url = "https://example.com/special.png", comment = "心动立绘" }]
+default = [
+  { url = "https://example.com/default.png" },
+]
+female = [
+  { url = "https://example.com/female.png" },
+]
+special = [
+  { url = "https://example.com/special.png", comment = "心动立绘" },
+]
 ```
 
 人物支持三个固定分类：
@@ -78,7 +87,9 @@ special = [{ url = "https://example.com/special.png", comment = "心动立绘" }
 #:schema ../../schema/sect.schema.json
 
 [images]
-map = [{ url = "https://example.com/map.png" }]
+map = [
+  { url = "https://example.com/map.png" },
+]
 ```
 
 宗门目前只支持 `map`。没有地图的宗门不需要创建文件。
@@ -101,7 +112,9 @@ images = [
 ]
 
 [characters."叶焚渊"]
-images = [{ url = "https://example.com/tarot-3.png" }]
+images = [
+  { url = "https://example.com/tarot-3.png" },
+]
 ```
 
 注意：
@@ -165,6 +178,12 @@ LEGACY_PORTRAIT_SECTIONS = (
 ## 构建与检查
 
 ```bash
+# 格式化所有 TOML 数据源
+uv run tombi format --offline
+
+# 只检查 TOML 格式，不修改文件
+uv run tombi format --check --offline
+
 # 校验 TOML 并生成所有 JSON 文件
 uv run python scripts/build_images.py
 
@@ -181,13 +200,14 @@ uv run python -m unittest discover -s tests -v
 
 GitHub Actions 会在 push 或 pull request 时安装依赖并运行构建检查：
 
+- TOML 未按统一格式提交时，检查会失败；
 - pull request 中的 JSON 没有及时更新时，检查会失败；
 - push 到 `v2` 或 `main` 后，脚本会把生成文件和 `notice.json` 同步到两个分支；
 - 没有文件变化时不会创建提交。
 
 ## 编辑器支持
 
-仓库已为 `data/character/`、`data/sect/` 和 `data/themes/` 配置 TOML schema。VS Code 推荐安装 **Even Better TOML**，即可在编辑时看到字段提示和格式错误。
+仓库已为 `data/character/`、`data/sect/` 和 `data/themes/` 配置 TOML schema。VS Code 推荐安装 **Tombi**，仓库设置会在保存时自动格式化，并提供字段提示和格式错误诊断。
 
 ## 目录结构
 
@@ -208,6 +228,8 @@ GitHub Actions 会在 push 或 pull request 时安装依赖并运行构建检查
 │       ├── catalog.py      # TOML 读取与跨文件聚合
 │       └── artifacts.py    # 产物与 schema 生成
 ├── tests/                  # 构建脚本测试
+├── tombi.toml              # TOML 格式化范围与规则
+├── .pre-commit-config.yaml # 提交前自动格式化
 ├── images.json             # 图片数据
 ├── images.schema.json      # images.json 校验规则
 ├── portraits.json          # 人物兼容文件

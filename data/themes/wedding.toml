@@ -1,5 +1,6 @@
 #:schema ../../schema/theme.schema.json
 # 婚纱立绘：一个主题文件可包含多个人物的多张立绘
+
 description = "婚纱立绘"
 
 [characters."许千寻"]
