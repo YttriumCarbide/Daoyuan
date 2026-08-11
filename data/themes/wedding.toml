@@ -43,10 +43,10 @@ url = "https://i.imgs.ovh/2026/08/05/3f1e3fec64a61efeddab920c72e245b9.jpg"
 
 [characters."绯月"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795aa2b69a7.png" },
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795aa2b69a7.png", tags = [] },
 ]
 
 [characters."百铃"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795aa2c2134.png" },
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795aa2c2134.png", tags = [] },
 ]

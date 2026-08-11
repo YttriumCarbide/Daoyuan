@@ -126,7 +126,7 @@ images = [
 - 主题名不能使用 `default`、`female` 或 `special`；
 - 中文人物名需要加引号，例如 `[characters."瑶汐"]`；
 - `description` 是可选的维护说明；
-- 根级 `comment` 和 `tags` 是全局默认：主题内每张图片缺省使用该 `comment`，`tags` 与图片级 `tags` 取并集（根级在前）。上例中 `tarot-1.png` 输出 `comment = "塔罗牌"`、`tags = ["tarot"]`，`tarot-2.png` 输出 `comment = "魔术师"`、`tags = ["tarot", "card"]`；
+- 根级 `comment` 和 `tags` 是全局默认：主题内每张图片缺省使用该 `comment`；图片未声明 `tags` 时使用根级 `tags`，显式声明 `tags = []` 则不使用根级 `tags`，声明非空 `tags` 时与根级取并集（根级在前）。上例中 `tarot-1.png` 输出 `comment = "塔罗牌"`、`tags = ["tarot"]`，`tarot-2.png` 输出 `comment = "魔术师"`、`tags = ["tarot", "card"]`；
 - 一个主题文件可以包含多个人物，一个人物也可以出现在多个主题中。
 
 主题会自动写入 `images.json`。如果 `portraits.json` 也需要这个主题，请在 `scripts/build_images.py` 中补充对应分区：
