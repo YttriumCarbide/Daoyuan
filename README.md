@@ -106,11 +106,13 @@ map = [
 #:schema ../../schema/theme.schema.json
 
 description = "塔罗主题立绘"
+comment = "塔罗牌"
+tags = ["tarot"]
 
 [characters."瑶汐"]
 images = [
   { url = "https://example.com/tarot-1.png" },
-  { url = "https://example.com/tarot-2.png", comment = "塔罗牌·魔术师", tags = ["card"] },
+  { url = "https://example.com/tarot-2.png", comment = "魔术师", tags = ["card"] },
 ]
 
 [characters."叶焚渊"]
@@ -124,6 +126,7 @@ images = [
 - 主题名不能使用 `default`、`female` 或 `special`；
 - 中文人物名需要加引号，例如 `[characters."瑶汐"]`；
 - `description` 是可选的维护说明；
+- 根级 `comment` 和 `tags` 是全局默认：主题内每张图片缺省使用该 `comment`，`tags` 与图片级 `tags` 取并集（根级在前）。上例中 `tarot-1.png` 输出 `comment = "塔罗牌"`、`tags = ["tarot"]`，`tarot-2.png` 输出 `comment = "魔术师"`、`tags = ["tarot", "card"]`；
 - 一个主题文件可以包含多个人物，一个人物也可以出现在多个主题中。
 
 主题会自动写入 `images.json`。如果 `portraits.json` 也需要这个主题，请在 `scripts/build_images.py` 中补充对应分区：
