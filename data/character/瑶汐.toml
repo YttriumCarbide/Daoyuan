@@ -1,7 +1,8 @@
 #:schema ../../schema/character.schema.json
 [images]
 default = [
-    { url = "https://free-img.400040.xyz/4/2026/04/25/69ebbf6726ea3.png" },    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%91%B6%E6%B1%90.image.88773e1925.webp" },
+    { url = "https://free-img.400040.xyz/4/2026/04/25/69ebbf6726ea3.png" },
+    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%91%B6%E6%B1%90.image.88773e1925.webp" },
 ]
 special = [
     { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%91%B6%E6%B1%90.image.2cd76409d6.webp" },
