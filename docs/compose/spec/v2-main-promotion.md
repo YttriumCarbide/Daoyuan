@@ -1,14 +1,22 @@
 ---
 feature: v2-main-promotion
-status: in-progress
+status: delivered
 updated: 2026-08-11
 branch: v2
-commits:
+commits: f8d063c..38b4e6c
 ---
 
 # V2 Main Promotion
 
 ## Report
+
+**What was built** — `v2` 现在是唯一维护分支：push 后 CI 自动格式化 TOML、生成全部 JSON 产物并运行测试；若需要整理，机器人先把限定范围内的变化提交到 `v2`，随后在陈旧提交与祖先关系检查通过后，用一次 atomic fast-forward 将同一个最终提交晋级到 `v2` 和 `main`。`main` 更新即发布，不再构建或反向同步，也不创建 GitHub Release。
+
+旧客户端依赖的 `portrait-drawers.json` 已按原路径恢复，误命名的 `portraits-drawer.json` 已移除。README 已改为只需维护并 push `v2` 的日常流程；当前 `origin/main` 历史已合入 `v2`，建立首次安全晋级所需的共同基线。
+
+**Verification** — `uv sync --frozen` PASS；`uv run tombi format --offline` PASS（205 个文件无需修改）；`uv run python scripts/build_images.py` PASS（7 份产物、203 个实体）；`uv run python scripts/build_images.py --check` PASS；`uv run python -m unittest discover -s tests -v` PASS（12 tests）；`actionlint -shellcheck shellcheck .github/workflows/build-images.yml` PASS；`git diff --check` PASS；抽屉 JSON/文件名检查 PASS；`origin/main` 祖先检查 PASS；atomic push dry-run PASS。独立审查对规格符合性、正确性和代码库一致性均 PASS，无关键发现。
+
+**Journey log** — 1. 原先双向复制产物会让两个分支同时成为写入者，最终收敛为 `v2 → main` 单向晋级；2. 合并后再由机器人补产物会产生中间态，改为同一最终提交同时更新两个分支；3. 当前 `main` 与 `v2` 已有分叉历史，首次启用前通过一次合并建立祖先关系，后续只允许 fast-forward；4. 恢复兼容文件时发现新提交使用了 `portraits-drawer.json`，最终纠正为客户端原路径 `portrait-drawers.json`；5. `main` 保护规则是外部运行前提，应禁止人工更新并允许 GitHub Actions 写入，否则晋级会安全失败。
 
 ## [S1] Problem
 
@@ -56,6 +64,6 @@ commits:
 
 ## Tasks
 
-- [ ] T1: 重构构建工作流为 `v2` 单向晋级 `main` — acceptance: 仅 `v2` push/dispatch 触发；自动格式化、构建和测试通过后，带陈旧提交与祖先检查的 atomic fast-forward 同步同一 SHA；失败路径不更新 `main` (covers: S2)
-- [ ] T2: 恢复准确命名的抽屉兼容文件并更新维护文档 — acceptance: 仓库只保留 `portrait-drawers.json`，README 描述 `v2` 单向维护、自动生成和 `main` 发布语义 (covers: S2)
-- [ ] T3: 建立首次晋级基线并验证完整流程 — acceptance: `v2` 包含当前 `origin/main` 历史；TOML 格式、构建检查、单元测试、工作流静态检查与合并祖先关系全部通过 (covers: S2; depends: T1, T2)
+- [x] T1: 重构构建工作流为 `v2` 单向晋级 `main` — acceptance: 仅 `v2` push/dispatch 触发；自动格式化、构建和测试通过后，带陈旧提交与祖先检查的 atomic fast-forward 同步同一 SHA；失败路径不更新 `main` (covers: S2)
+- [x] T2: 恢复准确命名的抽屉兼容文件并更新维护文档 — acceptance: 仓库只保留 `portrait-drawers.json`，README 描述 `v2` 单向维护、自动生成和 `main` 发布语义 (covers: S2)
+- [x] T3: 建立首次晋级基线并验证完整流程 — acceptance: `v2` 包含当前 `origin/main` 历史；TOML 格式、构建检查、单元测试、工作流静态检查与合并祖先关系全部通过 (covers: S2; depends: T1, T2)
