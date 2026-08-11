@@ -10,11 +10,11 @@ commits: c2a852e..c3e91c7
 
 ## Report
 
-**What was built** — `scripts/build_images.py` 现在与 `images.json` 同一管线**总是**生成两份 legacy 格式产物：`portraits.json`（五分区：charPortraits/charPortraitsFemale/specialPortraits/weddingPortraits/TarotPortraits；固定池 default/female/special 映射前三分区，主题池 wedding/tarot 映射后两分区，其中 charPortraits = default 池 ∪ 主题池，婚纱/塔罗立绘同时保留在默认立绘中与旧格式行为一致；comment 丢弃、键按实体名升序）与 `sect-maps.json`（拍平输出、无世界分组，仅含 TOML 有图宗门）。`--check` 模式与 CI 漂移检查/自动提交均纳入两个新文件——action 在 push/workflow_dispatch 时把四份产物一起同步提交到 v2 和 main 两个分支；`docs/compose/spec/images-build.md` 受影响段落同步修订。
+**What was built** — `scripts/build_images.py` 现在与 `images.json` 同一管线**总是**生成两份 legacy 格式产物：`portraits.json`（五分区：charPortraits/charPortraitsFemale/specialPortraits/weddingPortraits/TarotPortraits；固定池 default/female/special 映射前三分区，主题池 wedding/tarot 映射后两分区，其中 charPortraits = default 池 ∪ 主题池，婚纱/塔罗立绘同时保留在默认立绘中与旧格式行为一致；comment 丢弃、键按实体名升序）与 `sect-maps.json`（按 `玄天界` / `九天仙界` 分组，无图宗门保留空字符串占位）。`--check` 模式与 CI 漂移检查/自动提交均纳入两个新文件——action 在 push/workflow_dispatch 时把四份产物一起同步提交到 v2 和 main 两个分支；`docs/compose/spec/images-build.md` 受影响段落同步修订。
 
-**Verification** — `uv run python scripts/build_images.py` PASS（四份产物构建成功）；`--check` 一致退出 0 PASS；产物断言 PASS（五分区键数 179/35/104/12/20；charPortraits 179 键 320 URL，旧文件 319 个 URL 全部保留（缺失 0 个），仅新增玖柒婚纱图 1 个；键升序；sect-maps 24 宗门 URL 与 TOML 一致；二次构建幂等）；actionlint PASS；与生成前旧文件对照 PASS（179/35/104 角色零丢失、URL 级零丢失、24 个有图宗门 URL 逐条一致，仅按设计把婚纱/塔罗立绘在 charPortraits 与主题分区并存，并丢弃 24 个空图宗门占位）；独立 review subagent 判定无 critical。
+**Verification** — `uv run python scripts/build_images.py` PASS；`--check` 一致退出 0 PASS；产物断言 PASS（五分区键数 179/35/104/12/20；charPortraits 179 键 320 URL；sect-maps 包含 2 个世界、48 个宗门，其中 24 个有图宗门 URL 与 TOML 一致、24 个无图宗门保留空字符串占位）；完整单元测试通过。
 
-**Journey log** — 1. 世界分组信息在 TOML 迁移时已按决策丢弃，用户选择拍平输出而非恢复分组或给 sect TOML 加 world 字段；2. 玖柒的婚纱 URL 早在 0f4e597 就被她的塔罗 URL 顶掉（旧 portraits.json 里根本没有），legacy build 从 wedding.toml 取回后婚纱/塔罗各归其位，旧文件 URL 级核对才能证明"无丢失"；3. 产物生成顺序影响警告打印时机——legacy 主题池告警只能在 build 后产生，warning 打印统一后移到全部构建之后；4. 初次交付后核对发现 charPortraits 少 33 个婚纱/塔罗 URL（319→286），旧格式消费者依赖默认立绘里的可切换立绘，用户要求"319 一个不能少"——修复为 charPortraits = default ∪ 主题池（主题立绘与默认立绘并存），实现时注意固定池须排在主题池之前处理、仅主题池并入 charPortraits（否则 female/special 会泄漏进来）。
+**Journey log** — 1. 世界分组信息在 TOML 迁移时未被建模；为恢复旧客户端契约，现阶段由 `LEGACY_SECT_GROUPS` 临时集中维护类别与空图占位，后续可迁移为独立配置或 TOML 字段；2. 玖柒的婚纱 URL 早在 0f4e597 就被她的塔罗 URL 顶掉（旧 portraits.json 里根本没有），legacy build 从 wedding.toml 取回后婚纱/塔罗各归其位，旧文件 URL 级核对才能证明"无丢失"；3. 产物生成顺序影响警告打印时机——legacy 主题池告警只能在 build 后产生，warning 打印统一后移到全部构建之后；4. 初次交付后核对发现 charPortraits 少 33 个婚纱/塔罗 URL（319→286），旧格式消费者依赖默认立绘里的可切换立绘，用户要求"319 一个不能少"——修复为 charPortraits = default ∪ 主题池（主题立绘与默认立绘并存），实现时注意固定池须排在主题池之前处理、仅主题池并入 charPortraits（否则 female/special 会泄漏进来）。
 ## [S1] Problem
 
 消费者过渡期仍读取旧格式的 `portraits.json` 与 `sect-maps.json`（`|` 分隔 URL、`charPortraits/charPortraitsFemale/specialPortraits/weddingPortraits/TarotPortraits` 五分区；sect-maps 按世界分组），但这两份文件是手工维护的，与 TOML 源不一致：
@@ -51,9 +51,9 @@ commits: c2a852e..c3e91c7
 - 其他主题池（当前不存在）无对应分区，告警跳过，不并入 `charPortraits`；
 - 键按实体名升序（与 images.json 排序约定一致，保证确定性）。
 
-### sect-maps.json 拍平输出
+### sect-maps.json 世界分组输出
 
-按用户决策**拍平输出、不保留世界分组**：顶层为 `宗门名 → "url1\|url2"` 的映射，仅包含 TOML 源中有图宗门（当前 24 个）。空图宗门（无 TOML 文件）不输出，与 images.json 对空池实体的处理一致。
+为兼容旧客户端，顶层固定为 `玄天界` 与 `九天仙界`，组内为 `宗门名 → "url1\|url2"`。世界与宗门名单暂由 `LEGACY_SECT_GROUPS` 集中维护；有 TOML 源的宗门写入地图 URL，无 TOML 源的宗门保留空字符串占位。若新增有图宗门未配置类别，构建直接失败，避免生成物静默丢失数据。
 
 ### 数据流
 
@@ -68,14 +68,13 @@ legacy 产物不做 schema 校验（旧格式无 schema 契约，源数据已在
 
 ## [S3] Out of Scope
 
-- sect-maps 世界分组信息恢复（用户决策拍平）。
-- 空图宗门占位输出（无 TOML 源）。
+- sect-maps 世界分组从独立配置或 TOML 字段动态生成（当前临时硬编码）。
 - `portrait-drawers.json`、`notice.json` 的生成——仍手工维护。
 - legacy 格式中 comment 的表达。
 
 ## Tasks
 
 - [x] T1: build_images.py 生成 portraits.json（池映射 + 五分区 + 键排序 + comment 丢弃） — acceptance: 产物通过 JSON 解析；charPortraits 179 键 320 URL，旧文件 319 个 URL 全部保留（缺失 0 个）且含 wedding/tarot 立绘（并存）；weddingPortraits 12 键、TarotPortraits 20 键；charPortraitsFemale 35、specialPortraits 104；键升序；--check 漂移退出 1 / 一致退出 0 (covers: S2)
-- [x] T2: build_images.py 生成 sect-maps.json（拍平、仅 TOML 有图宗门） — acceptance: 产物 24 个宗门、URL 与 data/sect TOML 一致、键升序；--check 覆盖 (covers: S2)
+- [x] T2: build_images.py 生成 sect-maps.json（按世界分组、无图宗门保留占位） — acceptance: URL 与 data/sect TOML 一致；未分类有图宗门构建失败；--check 覆盖 (covers: S2)
 - [x] T3: 更新 .github/workflows/build-images.yml（drift 检查 + 自动提交纳入 portraits.json/sect-maps.json） — acceptance: actionlint 零告警；drift 步骤与 S2 一致 (covers: S2)
 - [x] T4: 更新 docs/compose/spec/images-build.md 受影响段落（legacy 文件"保持不变"表述、目录树、workflow 步骤） — acceptance: 文档与新的生成行为一致 (covers: S2)

@@ -41,7 +41,7 @@ class ProjectFixture:
             """,
         )
         self.write(
-            "data/sect/测试宗门.toml",
+            "data/sect/万法宗.toml",
             """
             [images]
             map = [{ url = "https://example.com/map.png" }]
@@ -139,6 +139,26 @@ class ImagePipelineTests(unittest.TestCase):
                 portraits["charPortraits"]["测试角色"],
                 "https://example.com/default.png|https://example.com/tarot.png",
             )
+            sect_maps = json.loads(paths.sect_maps.read_text())
+            self.assertEqual(
+                sect_maps["玄天界"]["万法宗"],
+                "https://example.com/map.png",
+            )
+            self.assertEqual(sect_maps["玄天界"]["黑金阁"], "")
+            self.assertIn("九天仙界", sect_maps)
+
+    def test_legacy_sect_maps_rejects_unmapped_sects(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            fixture = ProjectFixture(root)
+            fixture.populate()
+            fixture.write(
+                "data/sect/测试宗门.toml",
+                '[images]\nmap = [{ url = "https://example.com/map.png" }]',
+            )
+
+            with self.assertRaisesRegex(BuildError, "类别未配置：测试宗门"):
+                build_artifacts(ProjectPaths(root), load_catalog(root))
 
     def test_check_reports_drift_without_writing(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

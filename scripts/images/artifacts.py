@@ -9,7 +9,7 @@ from typing import Any
 
 from pydantic import BaseModel
 
-from .catalog import Catalog
+from .catalog import BuildError, Catalog
 from .models import (
     CHARACTER_POOLS,
     SCHEMA_DIALECT,
@@ -29,6 +29,60 @@ LEGACY_SECTIONS = {
     "tarot": "TarotPortraits",
 }
 LEGACY_THEME_ORDER = ("wedding", "tarot")
+LEGACY_SECT_GROUPS: dict[str, tuple[str, ...]] = {
+    "玄天界": (
+        "大周仙朝",
+        "南梁古国",
+        "蜀山剑门",
+        "昆仑道门",
+        "桃花宗",
+        "万法宗",
+        "合欢宗",
+        "天机阁",
+        "星道宗",
+        "湮丹宗",
+        "灵墟宗",
+        "青玉宗",
+        "符韵门",
+        "阵天宗",
+        "广寒宫",
+        "蛟龙一族",
+        "太阳神宫",
+        "尸魔宗",
+        "黑金阁",
+        "万魂殿",
+        "神猿族",
+        "九尾天狐族",
+        "五色孔雀族",
+        "柳蛇族",
+        "大雷音寺",
+        "冥煞玄蛇",
+        "嗜血鬼藤",
+        "残缺剑傀",
+        "霜骨冰蛟",
+        "亚种虚空兽",
+        "蜃灵皇残魂",
+        "怨念尸魔",
+        "渡魂诡灵",
+        "天道灾兽化身",
+        "血神宫",
+    ),
+    "九天仙界": (
+        "天庭",
+        "云上瑶池",
+        "阴煞宗",
+        "散仙秘境",
+        "地府入口",
+        "太古王族",
+        "极乐宗",
+        "玉灵宫",
+        "万妖古界",
+        "先天仙灵域",
+        "剑修联盟",
+        "真灵世家",
+        "天庭前线",
+    ),
+}
 
 
 @dataclass(frozen=True)
@@ -163,11 +217,29 @@ def build_legacy_portraits(
     return portraits, warnings
 
 
-def build_legacy_sect_maps(catalog: Catalog) -> dict[str, str]:
-    return {
-        name: "|".join(image.url for image in entity.pools["map"])
-        for name, entity in sorted(catalog.entities.items())
+def build_legacy_sect_maps(catalog: Catalog) -> dict[str, dict[str, str]]:
+    sects = {
+        name: entity
+        for name, entity in catalog.entities.items()
         if entity.kind == "sect"
+    }
+    grouped_names = {
+        name for names in LEGACY_SECT_GROUPS.values() for name in names
+    }
+    if unmapped := sorted(sects.keys() - grouped_names):
+        names = "、".join(unmapped)
+        raise BuildError(f"legacy sect-maps 类别未配置：{names}")
+
+    return {
+        group: {
+            name: (
+                "|".join(image.url for image in sects[name].pools["map"])
+                if name in sects
+                else ""
+            )
+            for name in names
+        }
+        for group, names in LEGACY_SECT_GROUPS.items()
     }
 
 
