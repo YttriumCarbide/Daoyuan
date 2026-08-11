@@ -1,0 +1,7 @@
+{
+  "evenBetterToml.schema.associations": {
+    "data/character/*.toml": "./schema/character.schema.json",
+    "data/sect/*.toml": "./schema/sect.schema.json",
+    "data/themes/*.toml": "./schema/theme.schema.json"
+  }
+}
