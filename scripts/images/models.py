@@ -45,16 +45,20 @@ Tag = Annotated[
     str,
     Field(min_length=1, max_length=100, pattern=TEXT_PATTERN),
 ]
+OptionalTags = Annotated[
+    list[Tag],
+    Field(json_schema_extra={"uniqueItems": True}),
+] | SkipJsonSchema[None]
 
 
 class Model(BaseModel):
     model_config = STRICT
 
 
-def validate_unique_tags(tags: list[str]) -> list[str]:
-    if len(tags) != len(set(tags)):
-        raise ValueError("tags 不能包含重复值")
-    return tags
+def validate_unique_tags(tags: list[str] | None) -> list[str] | None:
+    if tags is None or len(tags) == len(set(tags)):
+        return tags
+    raise ValueError("tags 不能包含重复值")
 
 
 class SourceImage(Model):
@@ -65,10 +69,7 @@ class SourceImage(Model):
         description="必须以 https:// 开头，且不能包含空白或 |。",
     )
     comment: OptionalText = None
-    tags: list[Tag] = Field(
-        default_factory=list,
-        json_schema_extra={"uniqueItems": True},
-    )
+    tags: OptionalTags = None
     _validate_tags = field_validator("tags")(validate_unique_tags)
 
     def resolve(
@@ -77,8 +78,14 @@ class SourceImage(Model):
         comment: str | None = None,
         tags: Sequence[Tag] = (),
     ) -> SourceImage:
-        """应用主题根级默认值：comment 缺省回退，tags 取并集去重（根级在前）。"""
-        merged_tags = list(dict.fromkeys((*tags, *self.tags)))
+        """应用主题根级默认值：comment 缺省回退；tags 未声明时回退根级，
+        显式空列表则不使用根级，非空与根级取并集去重（根级在前）。"""
+        if self.tags is None:
+            merged_tags = list(tags)
+        elif self.tags:
+            merged_tags = list(dict.fromkeys((*tags, *self.tags)))
+        else:
+            merged_tags = []
         return SourceImage(
             url=self.url,
             comment=self.comment if self.comment is not None else comment,
@@ -134,10 +141,7 @@ class ThemeSource(Model):
 
     description: OptionalText = None
     comment: OptionalText = None
-    tags: list[Tag] = Field(
-        default_factory=list,
-        json_schema_extra={"uniqueItems": True},
-    )
+    tags: OptionalTags = None
     _validate_tags = field_validator("tags")(validate_unique_tags)
     characters: (
         Annotated[
@@ -174,7 +178,7 @@ class Image(Model):
         return cls(
             url=source.url,
             theme=theme,
-            tags=list(source.tags),
+            tags=list(source.tags or ()),
             comment=source.comment,
         )
 

@@ -28,7 +28,7 @@ wedding 主题的每张图片都重复写 `comment = "婚纱"` 和 `tags = ["WIK
 对主题内每张图片：
 
 - `comment`：图片有 comment 时保留图片值；否则回退到根级 comment。
-- `tags`：根级 tags 与图片 tags 取并集去重，根级 tags 在前。
+- `tags`：图片未声明 tags 时使用根级 tags；显式声明 `tags = []` 则不使用根级 tags（退出全局）；声明非空 tags 时与根级取并集去重，根级在前。
 
 合并在构建时完成，源 TOML 保持原样；去重发生在校验之前，跨层重复不报错。
 
@@ -41,8 +41,8 @@ wedding 主题的每张图片都重复写 `comment = "婚纱"` 和 `tags = ["WIK
 
 ### 数据迁移与文档
 
-- `data/themes/wedding.toml` 迁移：根级 `comment = "婚纱"`、`tags = ["WIKI-2026-W32"]`，删除每张图片的重复字段。
-- 重新生成 `images.json`：wedding 图片输出应与迁移前（逐图声明版）完全一致，即 `comment = "婚纱"`、`tags = ["WIKI-2026-W32"]`。
+- `data/themes/wedding.toml` 迁移：根级 `comment = "婚纱"`、`tags = ["WIKI-2026-W32"]`，删除每张图片的重复字段；绯月、百铃保留显式 `tags = []` 以不使用全局 tags。
+- 重新生成 `images.json`：其余 12 张 wedding 图片输出 `comment = "婚纱"`、`tags = ["WIKI-2026-W32"]`，绯月、百铃输出 `comment = "婚纱"`、无 tags。
 - README「新增主题」补充根级字段用法。
 
 ## [S3] Out of Scope
@@ -54,5 +54,5 @@ wedding 主题的每张图片都重复写 `comment = "婚纱"` 和 `tags = ["WIK
 ## Tasks
 
 - [ ] T1: `ThemeSource` 增加根级 `tags` 字段，`require_content` 计入 tags — acceptance: 生成的 theme.schema.json 出现根级 tags；仅含 tags 无 characters 的主题校验失败 (covers: S2)
-- [ ] T2: `SourceImage.resolve` 实现 comment 回退与 tags 并集去重，catalog 主题循环应用 — acceptance: 单测覆盖图片 comment 覆盖根级、tags 并集去重、根级 tags 在前三种行为 (covers: S2; depends: T1)
-- [ ] T3: wedding.toml 迁移 + README 更新 + 重新生成产物 — acceptance: 13 张 wedding 图片全部获得根级 comment/tags；与迁移前逐图声明版相比，仅此前遗漏 tags 的绯月、百铃两张新增 tags，其余不变；`--check` 通过 (covers: S2; depends: T2)
+- [ ] T2: `SourceImage.resolve` 实现 comment 回退与 tags 合并（未声明回退根级、显式空列表退出、非空并集去重根级在前），catalog 主题循环应用 — acceptance: 单测覆盖图片 comment 覆盖根级、tags 并集去重、根级 tags 在前、显式 `tags = []` 不使用根级四种行为 (covers: S2; depends: T1)
+- [ ] T3: wedding.toml 迁移 + README 更新 + 重新生成产物 — acceptance: 14 张 wedding 图片全部获得根级 comment；除绯月、百铃（显式 `tags = []`，输出无 tags）外 12 张含 `["WIKI-2026-W32"]`；`--check` 通过 (covers: S2; depends: T2)

@@ -22,6 +22,7 @@
           "type": "string"
         },
         "tags": {
+          "default": null,
           "items": {
             "maxLength": 100,
             "minLength": 1,

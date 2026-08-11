@@ -152,7 +152,7 @@ def load_catalog(root: Path) -> Catalog:
             continue
         for name, character in source.characters.items():
             images = [
-                image.resolve(comment=source.comment, tags=source.tags)
+                image.resolve(comment=source.comment, tags=source.tags or ())
                 for image in character["images"]
             ]
             catalog.add(

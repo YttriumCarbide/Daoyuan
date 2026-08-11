@@ -135,6 +135,7 @@ class ImagePipelineTests(unittest.TestCase):
                 images = [
                   { url = "https://example.com/wedding-1.png" },
                   { url = "https://example.com/wedding-2.png", comment = "特写", tags = ["WIKI-2026-W32", "event"] },
+                  { url = "https://example.com/wedding-3.png", tags = [] },
                 ]
                 """,
             )
@@ -150,6 +151,8 @@ class ImagePipelineTests(unittest.TestCase):
             self.assertEqual(wedding[0].tags, ["WIKI-2026-W32"])
             self.assertEqual(wedding[1].comment, "特写")
             self.assertEqual(wedding[1].tags, ["WIKI-2026-W32", "event"])
+            self.assertEqual(wedding[2].comment, "婚纱")
+            self.assertEqual(wedding[2].tags, [])
 
     def test_theme_root_tags_are_validated(self) -> None:
         with self.assertRaises(ValidationError) as ctx:
