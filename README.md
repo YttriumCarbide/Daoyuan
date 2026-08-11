@@ -12,7 +12,9 @@
 
 ## 快速开始
 
-项目使用 [uv](https://docs.astral.sh/uv/) 管理 Python 环境：
+项目使用 [uv](https://docs.astral.sh/uv/) 管理 Python 环境。
+
+开发环境要求 uv `>=0.11.21`，CI 固定使用 uv `0.12.3`；Python 固定为 `3.13.14`。
 
 ```bash
 uv sync --frozen

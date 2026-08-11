@@ -10,6 +10,7 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - 'pyproject.toml'
+      - '.python-version'
       - 'uv.lock'
       - 'notice.json'
       - 'tombi.toml'
@@ -23,6 +24,7 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - 'pyproject.toml'
+      - '.python-version'
       - 'uv.lock'
       - 'notice.json'
       - 'tombi.toml'
@@ -46,7 +48,7 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v9.0.0
         with:
-          uv-version: "0.11.21"
+          version: "0.12.3"
 
       - name: Install dependencies
         run: uv sync --frozen
