@@ -1,0 +1,103 @@
+#:schema ../../schema/theme.schema.json
+# 塔罗主题立绘：一个主题文件可包含多个人物的多张立绘
+description = "塔罗主题立绘"
+
+[characters."叶焚渊"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795387e01ee.png", comment = "塔罗牌·魔术师" },
+]
+
+[characters."白疏影"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795379b2672.png", comment = "塔罗牌·女祭司" },
+]
+
+[characters."红莲"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953565eac0.png", comment = "塔罗牌·女皇" },
+]
+
+[characters."苏千媚"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79538666d7f.png", comment = "塔罗牌·皇帝" },
+]
+
+[characters."桃夭诺"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79538f9ec2d.png", comment = "塔罗牌·教皇" },
+]
+
+[characters."嫣雨烟"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953a518b36.png", comment = "塔罗牌·恋人" },
+]
+
+[characters."顾清清"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79535ee6c0b.png", comment = "塔罗牌·战车" },
+]
+
+[characters."紫澪"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79539fdc317.png", comment = "塔罗牌·力量" },
+]
+
+[characters."灵玥"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795387d00e5.png", comment = "塔罗牌·命运" },
+]
+
+[characters."姜梦"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79537acb2db.png", comment = "塔罗牌·正义" },
+]
+
+[characters."李溯"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79539370914.png", comment = "塔罗牌·倒吊人" },
+]
+
+[characters."百铃"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953562a568.png", comment = "塔罗牌·死神" },
+]
+
+[characters."公孙清"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79539d1f1da.png", comment = "塔罗牌·节制" },
+]
+
+[characters."长孙镜华"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953546df71.png", comment = "塔罗牌·恶魔" },
+]
+
+[characters."李铭"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795392d1d99.png", comment = "塔罗牌·塔" },
+]
+
+[characters."海伊"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953602ac86.png", comment = "塔罗牌·星星" },
+]
+
+[characters."樊月汐"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953a5332a2.png", comment = "塔罗牌·月亮" },
+]
+
+[characters."朱离"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795398befc8.png", comment = "塔罗牌·太阳" },
+]
+
+[characters."玄曦"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79539cf3e6c.png", comment = "塔罗牌·审判" },
+]
+
+[characters."玖柒"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79537abe17c.png", comment = "塔罗牌·世界" },
+]

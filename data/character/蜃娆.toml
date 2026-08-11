@@ -1,0 +1,5 @@
+#:schema ../../schema/character.schema.json
+[images]
+default = [
+    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%9C%83%E5%A8%86.image.d618849b81.webp" },
+]

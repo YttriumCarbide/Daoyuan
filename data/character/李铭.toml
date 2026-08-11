@@ -1,0 +1,8 @@
+#:schema ../../schema/character.schema.json
+[images]
+default = [
+    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E9%93%AD.image.d6ab896b73.webp" },    { url = "https://cdn.myfollo.xyz/2026/08/07/6a75c98de2563.png" },    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E9%93%AD.image.296ef3b720.webp" },    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E9%93%AD.image.00cbd051f1.webp" },    { url = "https://img.myfollo.xyz/i/2026/07/30/6a6a31716cb10.png" },    { url = "https://img.myfollo.xyz/i/2026/07/30/6a6a317185342.png" },    { url = "https://img.myfollo.xyz/i/2026/07/30/6a6a317692720.png" },
+]
+special = [
+    { url = "https://cdn.myfollo.xyz/2026/08/07/6a75c98e3918f.png" },
+]

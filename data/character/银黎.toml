@@ -1,0 +1,5 @@
+#:schema ../../schema/character.schema.json
+[images]
+default = [
+    { url = "https://free-img.400040.xyz/4/2026/05/13/6a041a258d8b3.png" },
+]

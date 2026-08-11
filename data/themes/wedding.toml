@@ -1,0 +1,65 @@
+#:schema ../../schema/theme.schema.json
+# 婚纱立绘：一个主题文件可包含多个人物的多张立绘
+description = "婚纱立绘"
+
+[characters."许千寻"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/07/6a759aa573511.png", comment = "婚纱" },
+]
+
+[characters."阴丽华"]
+images = [
+  { url = "https://img.myfollo.xyz/i/2026/08/06/6a735f2767475.png", comment = "婚纱" },
+]
+
+[characters."苏灿灿"]
+images = [
+  { url = "https://img.myfollo.xyz/i/2026/08/06/6a735f2a1c5af.png", comment = "婚纱" },
+  { url = "https://img.myfollo.xyz/i/2026/08/08/6a76c696116fa.png", comment = "婚纱" },
+]
+
+[characters."姜梦"]
+images = [
+  { url = "https://img.myfollo.xyz/i/2026/08/06/6a735f27e9f0f.png", comment = "婚纱" },
+  { url = "https://cdn.myfollo.xyz/2026/08/07/6a759aa6ce5e4.png", comment = "婚纱" },
+]
+
+[characters."曦和"]
+images = [
+  { url = "https://img.myfollo.xyz/i/2026/08/06/6a736190316d8.png", comment = "婚纱" },
+]
+
+[characters."玖柒"]
+images = [
+  { url = "https://i.imgs.ovh/2026/08/05/94a815c2cc067feb574105a5f2cc0bb5.png", comment = "婚纱" },
+]
+
+[characters."姬紫月"]
+images = [
+  { url = "https://i.imgs.ovh/2026/08/05/e4c0efef1e55b4f8ddb7f86c4a7dd614.png", comment = "婚纱" },
+]
+
+[characters."燕重微"]
+images = [
+  { url = "https://i.imgs.ovh/2026/08/05/d0d2b59d47ea045b230dcdeae5413cb9.png", comment = "婚纱" },
+]
+
+[characters."白薇"]
+images = [
+  { url = "https://i.imgs.ovh/2026/08/05/02209110a2f0623a2b352f42183dbd46.png", comment = "婚纱" },
+]
+
+[characters."大衍"]
+images = [
+  { url = "https://i.imgs.ovh/2026/08/05/3f1e3fec64a61efeddab920c72e245b9.jpg", comment = "婚纱" },
+]
+
+[characters."绯月"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795aa2b69a7.png", comment = "婚纱" },
+]
+
+[characters."百铃"]
+images = [
+  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795aa2c2134.png", comment = "婚纱" },
+]

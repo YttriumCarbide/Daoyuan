@@ -1,0 +1,8 @@
+#:schema ../../schema/character.schema.json
+[images]
+default = [
+    { url = "https://free-img.400040.xyz/4/2026/05/13/6a041cb836926.png" },
+]
+female = [
+    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BE%99%E5%82%B2%E9%A3%9E.image.d1ef5049a8.webp" },
+]

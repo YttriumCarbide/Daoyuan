@@ -1,0 +1,8 @@
+#:schema ../../schema/character.schema.json
+[images]
+default = [
+    { url = "https://i.postimg.cc/qB3BJSZ8/Chat-GPT-Image-2026727-07-21-54.png" },
+]
+female = [
+    { url = "https://img.myfollo.xyz/i/2026/08/02/6a6e31886548b.png" },
+]

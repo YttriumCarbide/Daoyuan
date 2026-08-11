@@ -1,0 +1,24 @@
+#:schema ../../schema/character.schema.json
+# 白薇 —— TOML 写法示例
+# 本文件展示 TOML 的注释和表数组写法，
+# 图片地址与顺序保持不变，示例中的说明和标签会写入 images.json。
+
+[images]  # 表（table）：人物的立绘池
+
+# 表数组（[[表名]]）：每张图片一个表，可填写 url、comment 和 tags
+[[images.default]]
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E8%96%87.image.a48ff0219e.webp"
+tags = ["v52"]
+
+[[images.default]]
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E8%96%87.image.739e03b72e.webp"
+tags = ["legacy", "v51", "v50", "v49"]
+
+[[images.default]]
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E8%96%87.image.5c248fb303.webp"
+tags = ["v53"]
+
+# 只有一张图时也使用同样的表数组写法
+[[images.special]]
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E8%96%87.image.adc3cdb71b.webp"
+comment = "心动立绘"

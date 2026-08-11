@@ -1,0 +1,8 @@
+#:schema ../../schema/character.schema.json
+[images]
+default = [
+    { url = "https://free-img.400040.xyz/4/2026/05/20/6a0d3ac968bf1.png" },    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.9e0a4e7375.webp" },    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.2e31ef35a4.webp" },    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.80576041c5.webp" },    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.6388a524fa.webp" },
+]
+special = [
+    { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.b42aed438a.webp" },
+]
