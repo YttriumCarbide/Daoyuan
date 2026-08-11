@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "pools": {
+    "normal": {
+      "name": "普通",
+      "icon": "常",
+      "order": 10,
+      "sourceKey": "charPortraits"
+    },
+    "female": {
+      "name": "性转",
+      "icon": "♀️",
+      "order": 20,
+      "sourceKey": "charPortraitsFemale"
+    },
+    "special": {
+      "name": "心动",
+      "icon": "💖",
+      "order": 30,
+      "sourceKey": "specialPortraits"
+    },
+    "wedding": {
+      "name": "婚纱",
+      "icon": "👰",
+      "order": 40,
+      "sourceKey": "weddingPortraits"
+    },
+    "Tarot": {
+      "name": "塔罗",
+      "icon": "🔮",
+      "order": 50,
+      "sourceKey": "TarotPortraits"
+    }
+  },
+  "aliases": {}
+}

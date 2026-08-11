@@ -2,7 +2,7 @@
 
 本仓库维护道渊的图片集。
 
-日常只需要修改 `data/` 目录中的 TOML 文件，然后运行构建命令。脚本会生成：
+日常维护只需要修改 `v2` 分支中 `data/` 目录下的 TOML 文件并推送。CI 会自动格式化、构建和测试，通过后将同一个提交晋级到 `main`。脚本会生成：
 
 - `images.json`：人物和宗门的图片数据；
 - `images.schema.json`：用于校验 `images.json`；
@@ -24,7 +24,7 @@ uv run python scripts/build_images.py
 
 `pre-commit` 只需安装一次。之后提交 `data/` 下的 TOML 时，Tombi 会先自动格式化；如果文件被修改，请重新 `git add` 后再次提交。
 
-修改 TOML 后，请同时提交重新生成的 JSON 文件。
+本地构建便于提交前预览结果，但不要求人工提交重新生成的 JSON；推送 `v2` 后，CI 会自动补齐格式化和生成产物提交。
 
 ## 图片写法
 
@@ -201,14 +201,17 @@ uv run python -m unittest discover -s tests -v
 
 `scripts/images/models.py` 中的 Pydantic 类型是数据契约的唯一来源。构建命令会把类型转换为 Draft 2020-12 schema：`schema/` 下三份文件供 TOML 编辑器使用，根目录的 `images.schema.json` 用于校验最终产物。生成的 schema 不要直接编辑。
 
-## 自动构建
+## 自动维护与发布
 
-GitHub Actions 会在 push 或 pull request 时安装依赖并运行构建检查：
+`v2` 是唯一维护分支，`main` 是客户端读取的发布分支。日常流程如下：
 
-- TOML 未按统一格式提交时，检查会失败；
-- pull request 中的 JSON 没有及时更新时，检查会失败；
-- push 到 `v2` 或 `main` 后，脚本会把生成文件和 `notice.json` 同步到两个分支；
-- 没有文件变化时不会创建提交。
+1. 修改并 push `v2`；
+2. GitHub Actions 自动格式化 TOML、生成 JSON 并运行测试；
+3. 格式或产物有变化时，机器人把变化提交到 `v2`；
+4. CI 确认 `main` 没有分叉后，把同一个最终提交原子快进到 `v2` 和 `main`；
+5. `main` 更新即完成发布，不额外创建 tag 或 GitHub Release。
+
+任何格式化、构建或测试失败都会停止晋级。`main` 不向 `v2` 反向同步，也不接受日常人工提交；`notice.json` 等手工文件随 `v2` 的普通提交一起晋级，不属于生成产物。
 
 ## 编辑器支持
 
@@ -237,6 +240,7 @@ GitHub Actions 会在 push 或 pull request 时安装依赖并运行构建检查
 ├── .pre-commit-config.yaml # 提交前自动格式化
 ├── images.json             # 图片数据
 ├── images.schema.json      # images.json 校验规则
+├── portrait-drawers.json   # 旧客户端立绘抽屉配置
 ├── portraits.json          # 人物兼容文件
 ├── sect-maps.json          # 宗门兼容文件
 └── notice.json             # 游戏公告

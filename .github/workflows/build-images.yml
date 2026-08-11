@@ -1,49 +1,30 @@
-name: build-images
+name: promote-images
 
 on:
   push:
-    branches: [main, v2]
-    paths:
-      - 'data/character/**'
-      - 'data/sect/**'
-      - 'data/themes/**'
-      - 'scripts/**'
-      - 'tests/**'
-      - 'pyproject.toml'
-      - '.python-version'
-      - 'uv.lock'
-      - 'notice.json'
-      - 'tombi.toml'
-      - '.pre-commit-config.yaml'
-      - '.github/workflows/build-images.yml'
-  pull_request:
-    paths:
-      - 'data/character/**'
-      - 'data/sect/**'
-      - 'data/themes/**'
-      - 'scripts/**'
-      - 'tests/**'
-      - 'pyproject.toml'
-      - '.python-version'
-      - 'uv.lock'
-      - 'notice.json'
-      - 'tombi.toml'
-      - '.pre-commit-config.yaml'
-      - '.github/workflows/build-images.yml'
+    branches: [v2]
   workflow_dispatch:
 
 concurrency:
-  group: build-images-${{ github.ref }}
+  group: promote-v2-to-main
   cancel-in-progress: true
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  promote:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - name: Check out v2
+        uses: actions/checkout@v7
+        with:
+          ref: v2
+          fetch-depth: 0
+
+      - name: Record source revision
+        id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v9.0.0
@@ -53,48 +34,50 @@ jobs:
       - name: Install dependencies
         run: uv sync --frozen
 
-      - name: Check TOML formatting
-        run: uv run tombi format --check --offline
-
-      - name: Check generated artifacts
-        if: github.event_name == 'pull_request'
-        run: uv run python scripts/build_images.py --check
+      - name: Format TOML
+        run: uv run tombi format --offline
 
       - name: Build generated artifacts
-        if: github.event_name != 'pull_request'
         run: uv run python scripts/build_images.py
 
       - name: Test
         run: uv run python -m unittest discover -s tests -v
 
-      - name: Sync generated artifacts and notice.json to v2 and main (push / workflow_dispatch)
-        if: github.event_name != 'pull_request'
+      - name: Check whitespace
+        run: git diff --check
+
+      - name: Commit automated maintenance
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          ARTIFACTS=(images.json images.schema.json portraits.json sect-maps.json notice.json schema/character.schema.json schema/sect.schema.json schema/theme.schema.json)
-          ARTIFACT_ARCHIVE="$(mktemp)"
-          tar -cf "$ARTIFACT_ARCHIVE" "${ARTIFACTS[@]}"
-          # 若触发分支在构建期间已前进（并发 push），本次产物来自旧提交：
-          # 跳过整轮同步，避免把过期产物推到新 tip，由新触发的 run 接手
-          git fetch origin "${{ github.ref_name }}"
-          if [ "$(git rev-parse FETCH_HEAD)" != "${{ github.sha }}" ]; then
-            echo "::warning::${{ github.ref_name }} 在构建期间已更新，跳过本次同步，由新触发的 run 负责"
+          git add -- \
+            data \
+            images.json \
+            images.schema.json \
+            portraits.json \
+            sect-maps.json \
+            schema/character.schema.json \
+            schema/sect.schema.json \
+            schema/theme.schema.json
+          if git diff --cached --quiet; then
+            echo "TOML 和生成产物无需更新"
+          else
+            git commit -m "chore(data): format and sync artifacts [skip ci]"
+          fi
+
+      - name: Promote v2 to main
+        env:
+          SOURCE_SHA: ${{ steps.source.outputs.sha }}
+        run: |
+          git fetch origin v2 main
+          if [ "$(git rev-parse origin/v2)" != "$SOURCE_SHA" ]; then
+            echo "::warning::v2 已在构建期间更新，由较新的任务接手晋级"
             exit 0
           fi
-          for BRANCH in v2 main; do
-            git fetch origin "$BRANCH"
-            SYNC_DIR="$(mktemp -d)"
-            git worktree add --detach "$SYNC_DIR" "origin/$BRANCH"
-            tar -xf "$ARTIFACT_ARCHIVE" -C "$SYNC_DIR"
-            git -C "$SYNC_DIR" add "${ARTIFACTS[@]}"
-            if git -C "$SYNC_DIR" diff --cached --quiet; then
-              echo "[$BRANCH] 构建产物与 notice.json 与 v2 一致，无需提交"
-            elif git -C "$SYNC_DIR" commit -m "chore: sync generated artifacts and notice.json" && \
-                 git -C "$SYNC_DIR" push origin "HEAD:$BRANCH"; then
-              echo "[$BRANCH] 已提交并推送 ${ARTIFACTS[*]}"
-            else
-              echo "::warning::[$BRANCH] 推送失败（远端可能被并发修改），将在下次触发时重试"
-            fi
-            git worktree remove "$SYNC_DIR"
-          done
+          if ! git merge-base --is-ancestor origin/main HEAD; then
+            echo "::error::main 已与 v2 分叉，拒绝自动合并或强推"
+            exit 1
+          fi
+          git push --atomic origin \
+            HEAD:refs/heads/v2 \
+            HEAD:refs/heads/main
