@@ -1,0 +1,3481 @@
+{
+  "schemaVersion": 2,
+  "data": {
+    "entities": {
+      "万法宗": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://i.postimg.cc/yN82M58L/Chat-GPT-Image-202684-08-30-01.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "万璇玑": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/01/6a1cf19bbae5e.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%B8%87%E7%92%87%E7%8E%91.image.6eb5a0adc2.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "万金柝": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249687d9f15.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%B8%87%E9%87%91%E6%9F%9D.image.569579988f.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "万魂殿": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a788b31a5992.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "上官玥": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bd943bc5e2.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%B8%8A%E5%AE%98%E7%8E%A5.image.f104bf8200.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "乔梦玉": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249a7335036.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%B9%94%E6%A2%A6%E7%8E%89.image.d3fd9ba143.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "九尾天狐族": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a7886e4e5fd6.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "九歌": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c22ed5fa30.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a2fabd411f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a2fab5d5e4.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "云初未来": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%BA%91%E5%88%9D%E6%9C%AA%E6%9D%A5.image.2e53d2acff.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%BA%91%E5%88%9D%E6%9C%AA%E6%9D%A5.image.b7f561dbc2.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%BA%91%E5%88%9D%E6%9C%AA%E6%9D%A5.image.220fd83af6.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "云糯糯": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249c4671c78.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%BA%91%E7%B3%AF%E7%B3%AF.image.df0ec40445.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "云舒窈": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec2056498fc.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "五色孔雀族": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://i.postimg.cc/Jzksb6Lf/Chat-GPT-Image-202684-08-30-30.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "代安池": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%BB%A3%E5%AE%89%E6%B1%A0.image.fab4a301e3.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%BB%A3%E5%AE%89%E6%B1%A0.image.7cbb060fda.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%BB%A3%E5%AE%89%E6%B1%A0.image.97d6f89769.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "侯小妹": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041c4d36194.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "侯景": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c239da5acf.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E4%BE%AF%E6%99%AF.image.77ff3e8a0c.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "元容": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249c050921f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%85%83%E5%AE%B9.image.363bbae695.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "公孙清": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a2500200a15f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%85%AC%E5%AD%99%E6%B8%85.image.63830dcf9a.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%85%AC%E5%AD%99%E6%B8%85.image.646b4afca1.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a79539d1f1da.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·节制"
+          }
+        ]
+      },
+      "冥霜儿": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a24a010b9e66.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "冰凤": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041803c7b88.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%86%B0%E5%87%A4.image.1068b254e0.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%86%B0%E5%87%A4.image.d1bd1f5b6b.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "凌天辰": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c1431ab96d.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%87%8C%E5%A4%A9%E8%BE%B0.image.d67fa954da.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "凌月": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%87%8C%E6%9C%88.image.cfb4b7fbc4.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%87%8C%E6%9C%88.image.2f512a1dca.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%87%8C%E6%9C%88.image.9e9574f65f.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "凌紫嫣": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c1fb9923cd.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%87%8C%E7%B4%AB%E5%AB%A3.image.5130e66666.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%87%8C%E7%B4%AB%E5%AB%A3.image.742599c038.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "凌阮阮": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d372502ecc.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%87%8C%E9%98%AE%E9%98%AE.image.19d31fdca5.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%87%8C%E9%98%AE%E9%98%AE.image.89874a1eb4.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "凤灵儿": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a04202dbc59f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%87%A4%E7%81%B5%E5%84%BF.image.fbb763b117.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "南可熙": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a04204c9a7b3.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8D%97%E5%8F%AF%E7%86%99.image.433a6186b2.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8D%97%E5%8F%AF%E7%86%99.image.6a52ee3679.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8D%97%E5%8F%AF%E7%86%99.image.bcf703c2c6.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "南宫婉": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041db20d918.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8D%97%E5%AE%AB%E5%A9%89.image.2a27b39eb2.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8D%97%E5%AE%AB%E5%A9%89.image.71168181fd.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "南梁古国": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a7887bc45c32.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "卡斯蒂利亚": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8D%A1%E6%96%AF%E8%92%82%E5%88%A9%E4%BA%9A%C2%B7%E5%93%88%E5%B8%83%E6%96%AF%E5%A0%A1.image.0963aed53f.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "卡斯蒂利亚·哈布斯堡": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8D%A1%E6%96%AF%E8%92%82%E5%88%A9%E4%BA%9A%C2%B7%E5%93%88%E5%B8%83%E6%96%AF%E5%A0%A1.image.0963aed53f.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "古月方源": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041b399091c.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%A4%E6%9C%88%E6%96%B9%E6%BA%90.image.51b0fc2bea.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "叶倾心": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d32498cf66.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%B6%E5%80%BE%E5%BF%83.image.fd8a3120cb.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%B6%E5%80%BE%E5%BF%83.image.1a706d9055.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "叶冰": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec2002f175a.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%B6%E5%86%B0.image.fcb4d55b7e.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "叶婷": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c1fdb3b5d1.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%B6%E5%A9%B7.image.3778a578d4.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%B6%E5%A9%B7.image.b5c53e7f38.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "叶清": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041e9f065ad.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "叶焚渊": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a736ded8f7e8.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a736decadd7e.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a736e253d3aa.png",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a795387e01ee.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·魔术师"
+          }
+        ]
+      },
+      "合欢宗": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://i.postimg.cc/NGmCzYxg/Chat-GPT-Image-202681-12-00-05.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "君姝": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%90%9B%E5%A7%9D.image.cb377d5b6d.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%90%9B%E5%A7%9D.image.0ba905417b.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%90%9B%E5%A7%9D.image.262dd7d6e3.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "唐弎": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec21d896bf6.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%94%90%E5%BC%8E.image.eb8b3b2df1.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "商心慈": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041fa9eb250.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%95%86%E5%BF%83%E6%85%88.image.fad652ece4.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%95%86%E5%BF%83%E6%85%88.image.80bc3f77eb.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "噬魂": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0414e30c529.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%99%AC%E9%AD%82.image.b017dcd1aa.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "大周仙朝": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/09/6a7884cc22e11.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "大衍": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec2109303d4.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A4%A7%E8%A1%8D.image.d1ee815adf.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://i.imgs.ovh/2026/08/05/3f1e3fec64a61efeddab920c72e245b9.jpg",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "大雷音寺": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/09/6a7883303a104.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "天妤": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041c2621ad0.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A4%A9%E5%A6%A4.image.23c0749905.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A4%A9%E5%A6%A4.image.61e623fa46.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "天机阁": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a788ac5117a6.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "太阳神宫": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a788a6cc5974.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "姜梦": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%9C%E6%A2%A6.image.935bd41b29.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%9C%E6%A2%A6.image.a1bed25342.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a79537acb2db.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·正义"
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a735f27e9f0f.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/07/6a759aa6ce5e4.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "姬昊天": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0417e105034.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%AC%E6%98%8A%E5%A4%A9.image.1ffad33bbd.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "姬紫月": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a04183dd9a71.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%AC%E7%B4%AB%E6%9C%88.image.615f86a05f.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://i.imgs.ovh/2026/08/05/e4c0efef1e55b4f8ddb7f86c4a7dd614.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "姬觅弥": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/07/6a7599543f265.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%AC%E8%A7%85%E5%BC%A5.image.187624eadc.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%AC%E8%A7%85%E5%BC%A5.image.40e56cde8e.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "嫣雨烟": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec219feb2e8.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%AB%A3%E9%9B%A8%E7%83%9F.image.9b56215803.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%AB%A3%E9%9B%A8%E7%83%9F.image.e0bfc3dcd0.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a7953a518b36.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·恋人"
+          }
+        ]
+      },
+      "孔灵月": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0419cb62c7c.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%AD%94%E7%81%B5%E6%9C%88.image.abd212eff7.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%AD%94%E7%81%B5%E6%9C%88.image.61952afd94.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%AD%94%E7%81%B5%E6%9C%88.image.e028eae894.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "宋文": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041a625e783.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%AE%8B%E6%96%87.image.cffcf84460.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "宫银叶": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a2497102d445.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%AE%AB%E9%93%B6%E5%8F%B6.image.476f7e1e95.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "小D": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d32271c875.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B0%8FD.image.07586944d5.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B0%8FD.image.b1bbdc4bf6.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "小显示": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a24973ddee21.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B0%8F%E6%98%BE%E7%A4%BA.image.3bc04fcdca.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "小翠": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/01/6a1c5de8a2615.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "尸魔宗": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a78887b0c980.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "希夷": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c066a7ba7a.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B8%8C%E5%A4%B7.image.b3f13eca99.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B8%8C%E5%A4%B7.image.1106a376d9.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "幽姬": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E5%A7%AC.image.1ce8d75c72.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6ea57f3a225.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "幽悦": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a797ddf836d7.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a797ddf7c83c.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E6%82%A6.image.e032714e4b.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a797ddf81664.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "幽梦": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E6%A2%A6.image.181b6ee669.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BD%E6%A2%A6.image.3d3f7cf154.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "广寒宫": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a788590d1714.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "广慧": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec20c0e5e4f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B9%BF%E6%85%A7.image.508d2ee202.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "慕容初袖": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249d4d6d571.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%95%E5%AE%B9%E5%88%9D%E8%A2%96.image.4be0fab6b4.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%95%E5%AE%B9%E5%88%9D%E8%A2%96.image.38fc860b64.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%95%E5%AE%B9%E5%88%9D%E8%A2%96.image.fee304090e.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "慕容无尘": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d3a8ca682c.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%95%E5%AE%B9%E6%97%A0%E5%B0%98.image.23a9fda0ea.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "慕容落羽": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bd5da36eac.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%95%E5%AE%B9%E8%90%BD%E7%BE%BD.image.5cd273050f.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%95%E5%AE%B9%E8%90%BD%E7%BE%BD.image.ed43749b1a.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "慕欣心": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bd4d517e95.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%95%E6%AC%A3%E5%BF%83.image.3febf48653.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "慕清弦": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/05/69f9fb318af62.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%95%E6%B8%85%E5%BC%A6.image.81ac52a92c.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%95%E6%B8%85%E5%BC%A6.image.1fd75cafbd.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "慧空": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec207590e70.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%85%A7%E7%A9%BA.image.228393c637.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "敖凌霜": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041a09944ab.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%95%96%E5%87%8C%E9%9C%9C.image.6140c578a0.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "昆仑道门": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a78875e8b1fb.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "星宿": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/04/6a210f67bc6da.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%98%9F%E5%AE%BF.image.a05b74c162.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "星道宗": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a788b72a0936.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "显宝": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a24973ddee21.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%B0%8F%E6%98%BE%E7%A4%BA.image.3bc04fcdca.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "晏青": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d37e2a17e2.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%99%8F%E9%9D%92.image.221efdcb28.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "晚絮": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0417c0228a3.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%99%9A%E7%B5%AE.image.072e93e530.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%99%9A%E7%B5%AE.image.d34e0a7006.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "曦和": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec213d38411.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9B%A6%E5%92%8C.image.e960a366ff.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9B%A6%E5%92%8C.image.bbd12b0a3a.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9B%A6%E5%92%8C.image.9ee1377fd4.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a736190316d8.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "月珑": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9C%88%E7%8F%91.image.a2b37245f1.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6ea58acf6e4.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "朱离": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c23c8e522d.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9C%B1%E7%A6%BB.image.1bbef34cc9.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a795398befc8.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·太阳"
+          }
+        ]
+      },
+      "李未晞": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c22bcd892b.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E6%9C%AA%E6%99%9E.image.60ccbbc8e7.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "李溯": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E6%BA%AF.image.1f5157ea14.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E6%BA%AF.image.1d196f2eb8.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a79539370914.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·倒吊人"
+          }
+        ]
+      },
+      "李牧": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0418688ab5e.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E7%89%A7.image.40092e166f.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "李铭": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E9%93%AD.image.d6ab896b73.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/07/6a75c98de2563.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E9%93%AD.image.296ef3b720.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E9%93%AD.image.00cbd051f1.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a31716cb10.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a317185342.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a317692720.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/07/6a75c98e3918f.png",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a795392d1d99.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·塔"
+          }
+        ]
+      },
+      "杜月菲": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d383aed23b.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%9C%E6%9C%88%E8%8F%B2.image.f388a1d33e.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%9C%E6%9C%88%E8%8F%B2.image.b329ae2a6c.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "构军": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec22549a190.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%84%E5%86%9B.image.e7715c1aee.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "林妙音": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041e637a440.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E5%A6%99%E9%9F%B3.image.e9d1c35785.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "林寒绾": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249b8b4c166.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E5%AF%92%E7%BB%BE.image.a59212bbf5.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "林欣": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0416f8adcb1.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E6%AC%A3.image.8103f0ef0b.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E6%AC%A3.image.e0f7b709d3.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "林素铃": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/07/6a7599544000a.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E7%B4%A0%E9%93%83.image.0c3d725bda.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E7%B4%A0%E9%93%83.image.1c2a9ca455.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E7%B4%A0%E9%93%83.image.e75baf6a29.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E7%B4%A0%E9%93%83.image.8db6fb8bb8.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "林若悠": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249fca25c0a.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E8%8B%A5%E6%82%A0.image.6fc60d07ef.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "林雪": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ebbf6728614.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E9%9B%AA.image.40194143ae.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9E%97%E9%9B%AA.image.4777d7c473.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "柳依依": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bd50bdf761.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9F%B3%E4%BE%9D%E4%BE%9D.image.1aab2c8351.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "柳舞蝶": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a2497ffe2232.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9F%B3%E8%88%9E%E8%9D%B6.image.feab677570.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9F%B3%E8%88%9E%E8%9D%B6.image.9985957a3b.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "柳青螭": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249785b7cbe.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9F%B3%E9%9D%92%E8%9E%AD.image.53c7ed9aec.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "桃夭夭": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d3758b8f24.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "桃夭诺": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A1%83%E5%A4%AD%E8%AF%BA.image.20471faa53.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A1%83%E5%A4%AD%E8%AF%BA.image.5a8f5cc3dc.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A1%83%E5%A4%AD%E8%AF%BA.image.7f48ea9cb8.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a79538f9ec2d.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·教皇"
+          }
+        ]
+      },
+      "桃幽": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A1%83%E5%B9%BD.image.c2060f974e.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A1%83%E5%B9%BD.image.7f730df076.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A1%83%E5%B9%BD.image.ea37b0ce39.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "桃花宗": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a788a92b4933.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "楚星绾": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bd70442357.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A5%9A%E6%98%9F%E7%BB%BE.image.7c5e1a7581.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "楚玉璃": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d38a34b4ee.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A5%9A%E7%8E%89%E7%92%83.image.db1ed96348.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "樊月汐": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A8%8A%E6%9C%88%E6%B1%90.image.f9e8d6460d.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A8%8A%E6%9C%88%E6%B1%90.image.e89c17acf4.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/07/6a759aada6671.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6e2fd59514e.png",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a7953a5332a2.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·月亮"
+          }
+        ]
+      },
+      "欧阳灵": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d34eed1224.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%AC%A7%E9%98%B3%E7%81%B5.image.f1734081b5.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "汐怡": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bdfa916b95.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%B1%90%E6%80%A1.image.fd70200598.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%B1%90%E6%80%A1.image.01757fd673.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "江楚楚": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041eb69bd6e.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "海伊": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a24fcfd43387.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%B5%B7%E4%BC%8A.image.ecdaab41b9.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a7953602ac86.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·星星"
+          }
+        ]
+      },
+      "温小暖": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ebbc209c0f5.jpg",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a31722ba06.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "温月清": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041d1bda8a7.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%B8%A9%E6%9C%88%E6%B8%85.image.7223512d37.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a2db321d08.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a2db2b7768.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "湮丹宗": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://i.postimg.cc/QdtbhrcK/Chat-GPT-Image-202689-11-38-02.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "灵墟宗": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://i.postimg.cc/7LzSZPhh/Chat-GPT-Image-202685-10-02-18.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "灵玥": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ebba752d5d1.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%81%B5%E7%8E%A5.image.c3f4ed49e2.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%81%B5%E7%8E%A5.image.c698e4fe48.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a795387d00e5.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·命运"
+          }
+        ]
+      },
+      "炎帝": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec2122ae66d.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%82%8E%E5%B8%9D.image.93f9891180.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "烈阳": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec2158f146d.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%83%88%E9%98%B3.image.4c8fdb106f.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "烬璃": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%83%AC%E7%92%83.image.1e384cf3be.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a7363a6d69e8.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "燕重微": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/07/6a7599586658c.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%87%95%E9%87%8D%E5%BE%AE.image.562c7b5247.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a2fac7121b.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://i.imgs.ovh/2026/08/05/d0d2b59d47ea045b230dcdeae5413cb9.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "玄曦": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%8E%84%E6%9B%A6.image.9c0982b81e.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6e3188438ac.png",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a79539cf3e6c.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·审判"
+          }
+        ]
+      },
+      "玄清": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec21f19bd37.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%8E%84%E6%B8%85.image.78a5cce0c4.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "玄璃": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249ba3e3222.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "玄虚": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec203083844.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%8E%84%E8%99%9A.image.3be5438706.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "王林": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041d60bb106.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%8E%8B%E6%9E%97.image.22809a28f3.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "玖柒": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041fca5427f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%8E%96%E6%9F%92.image.9739248887.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a79537abe17c.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·世界"
+          },
+          {
+            "url": "https://i.imgs.ovh/2026/08/05/94a815c2cc067feb574105a5f2cc0bb5.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "瑶汐": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ebbf6726ea3.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%91%B6%E6%B1%90.image.88773e1925.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%91%B6%E6%B1%90.image.2cd76409d6.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "璃宫花火": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/25/6a1457853b3c2.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%92%83%E5%AE%AB%E8%8A%B1%E7%81%AB.image.9a0f227074.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%92%83%E5%AE%AB%E8%8A%B1%E7%81%AB.image.b6f7c19882.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "璃杏": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249ea3ddeda.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%92%83%E6%9D%8F.image.7c273978fb.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "白倾颜": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E5%80%BE%E9%A2%9C.image.59e86667a6.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E5%80%BE%E9%A2%9C.image.e3a1206a31.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "白小纯": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041c8a97bd4.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E5%B0%8F%E7%BA%AF.image.4dbcf246f4.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "白玖璃": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d320411d0f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E7%8E%96%E7%92%83.image.8bf143b600.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E7%8E%96%E7%92%83.image.c91245097c.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "白疏影": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E7%96%8F%E5%BD%B1.image.3c7404c218.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E7%96%8F%E5%BD%B1.image.180a15b964.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E7%96%8F%E5%BD%B1.image.67fc40c4bb.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a795379b2672.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·女祭司"
+          }
+        ]
+      },
+      "白祈昼": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d3e1729a28.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "白薇": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E8%96%87.image.a48ff0219e.webp",
+            "theme": "default",
+            "tags": [
+              "v52"
+            ]
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E8%96%87.image.739e03b72e.webp",
+            "theme": "default",
+            "tags": [
+              "legacy",
+              "v51",
+              "v50",
+              "v49"
+            ]
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E8%96%87.image.5c248fb303.webp",
+            "theme": "default",
+            "tags": [
+              "v53"
+            ]
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E8%96%87.image.adc3cdb71b.webp",
+            "theme": "special",
+            "tags": [],
+            "comment": "心动立绘"
+          },
+          {
+            "url": "https://i.imgs.ovh/2026/08/05/02209110a2f0623a2b352f42183dbd46.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "百铃": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BE%E9%93%83.image.6dbad202a6.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BE%E9%93%83.image.5f19305375.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6e2ff16c90d.png",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a7953562a568.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·死神"
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a795aa2c2134.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "石昊": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041947ae6db.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%9F%B3%E6%98%8A.image.6b14375fd5.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "神猿族": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a788856b9667.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "秦心": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec22365e9b3.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%A7%A6%E5%BF%83.image.bd84c361e8.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%A7%A6%E5%BF%83.image.fc7db01898.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "秦无夜": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041f0be4844.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%A7%A6%E6%97%A0%E5%A4%9C.image.3d84b6dae9.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "秦汐雅": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bd6228b29a.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%A7%A6%E6%B1%90%E9%9B%85.image.71a770bc05.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "秦浅月": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%A7%A6%E6%B5%85%E6%9C%88.image.a4920bf57d.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a04143e92cce.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a7363a6df3f7.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "符韵门": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/09/6a7885277cf0c.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "紫澪": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a24983c2cfae.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%B4%AB%E6%BE%AA.image.dae6cbb366.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a79539fdc317.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·力量"
+          }
+        ]
+      },
+      "紫薇": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec20dbb6bcc.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%B4%AB%E8%96%87.image.e6279ce842.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%B4%AB%E8%96%87.image.51d9c4344e.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "红绡": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a2496e980506.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%BA%A2%E7%BB%A1.image.62f1545adc.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%BA%A2%E7%BB%A1.image.917954b7cf.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "红莲": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/30/69f3047ced213.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%BA%A2%E8%8E%B2.image.cbae577fa4.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a7953565eac0.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·女皇"
+          }
+        ]
+      },
+      "红蝶": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041d3d29124.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "绛鳞王": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d9079a270b.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "绯月": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec221297e22.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a795aa2b69a7.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "绯萝": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%BB%AF%E8%90%9D.image.8acdf8d7d8.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6ea57f76f5c.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6ea57f6fa4b.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "舞弦琴": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d344824fe3.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "般若": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec209e775a1.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%88%AC%E8%8B%A5.image.385edd2ce2.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "苏千媚": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041f643ef4e.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E5%8D%83%E5%AA%9A.image.4560b134f6.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E5%8D%83%E5%AA%9A.image.ad7eac15e0.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a79538666d7f.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·皇帝"
+          }
+        ]
+      },
+      "苏媚": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041f8d009c1.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E5%AA%9A.image.1cb0aa4036.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E5%AA%9A.image.441b164fa0.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "苏慕渊": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E6%85%95%E6%B8%8A.image.b659b957c1.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E6%85%95%E6%B8%8A.image.43f7f7bcc6.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "苏沐雪": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ebbf6ae4ed0.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a735f277a26f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E6%B2%90%E9%9B%AA.image.9b32a0572a.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "苏清漪": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E6%B8%85%E6%BC%AA.image.0a31b7533e.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/07/30/6a6a3175d6985.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "苏清禾": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bd752758ba.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "苏清雪": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ec1fc67ce4e.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E6%B8%85%E9%9B%AA.image.702cd90de1.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E6%B8%85%E9%9B%AA.image.4780e03435.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E6%B8%85%E9%9B%AA.image.ac16302513.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "苏灿灿": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/04/25/69ebbcb198c9f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/08/6a76c6961c5be.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%81%BF%E7%81%BF.image.ca4a4acee9.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%81%BF%E7%81%BF.image.adc09cb31d.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a735f2a1c5af.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/08/6a76c696116fa.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "苏珞刹": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a24a036e015a.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%8F%9E%E5%88%B9.image.0c3de746a0.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "苏琉璃": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a04197b477e8.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%90%89%E7%92%83.image.c25167e9a2.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%90%89%E7%92%83.image.9a2912ba62.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%90%89%E7%92%83.image.29e38f2b5e.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "苏绾影": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bdc8167192.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%BB%BE%E5%BD%B1.image.b28b42ff3b.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%BB%BE%E5%BD%B1.image.e5c55df706.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "苏辰": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041d91e96dd.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E8%BE%B0.image.88301c2353.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "萌梦": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d7aa83d0ed.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%90%8C%E6%A2%A6.image.36e9bb0ec9.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%90%8C%E6%A2%A6.image.9d29cd23a9.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%90%8C%E6%A2%A6.image.ebc4ab976c.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "萧婉儿": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0418c3c73ec.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%90%A7%E5%A9%89%E5%84%BF.image.82ba7096fc.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%90%A7%E5%A9%89%E5%84%BF.image.5fcbec97b2.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "萧玉寒": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bda27c720f.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "萧衍": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041892ce17f.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%90%A7%E8%A1%8D.image.332dc6350f.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "虚渊": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%99%9A%E6%B8%8A.image.b8b91bfb1f.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "蛛心儿": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0419ecd93d2.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "蛟龙一族": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a7886bc5b41f.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "蜀山剑门": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a7888cb94c8d.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "蜃娆": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%9C%83%E5%A8%86.image.d618849b81.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "血神宫": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a788b8ba227f.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "袁战天": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://i.postimg.cc/qB3BJSZ8/Chat-GPT-Image-2026727-07-21-54.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6e31886548b.png",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "袁琪": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0419a1613fb.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%A2%81%E7%90%AA.image.e07624aab2.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "许千寻": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/10/6a28ceb9ac6ff.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%AE%B8%E5%8D%83%E5%AF%BB.image.e09ccda19e.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/07/6a759aa573511.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "辛绫": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%BE%9B%E7%BB%AB.image.c3634a8779.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6e31883954b.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "辟易川": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%BE%9F%E6%98%93%E5%B7%9D.image.9d3539f53b.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%BE%9F%E6%98%93%E5%B7%9D.image.de28e1b333.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "金玉满": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/04/6a21118a598c8.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%87%91%E7%8E%89%E6%BB%A1.image.3c1c16a460.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%87%91%E7%8E%89%E6%BB%A1.image.082a3c1639.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "钰仙儿": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0be2cf0602e.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%92%B0%E4%BB%99%E5%84%BF.image.ae75131211.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "银月": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041de4d467b.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "银黎": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041a258d8b3.png",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "长孙镜华": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d392aafe65.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%95%BF%E5%AD%99%E9%95%9C%E5%8D%8E.image.70e55cfdcd.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a7953546df71.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·恶魔"
+          }
+        ]
+      },
+      "阳宇": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249a8b59da6.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%98%B3%E5%AE%87.image.4825258fbf.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "阴丽华": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c229554114.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a735f2767475.png",
+            "theme": "wedding",
+            "tags": [],
+            "comment": "婚纱"
+          }
+        ]
+      },
+      "阴罗": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a0417967825c.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%98%B4%E7%BD%97.image.b1dd52b1d3.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "阵天宗": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/09/6a788bfac0633.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "陆雪琪": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041f395a25d.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%99%86%E9%9B%AA%E7%90%AA.image.6d4e793fcd.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/02/6a6e30262fae9.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "霖仙怡": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0be066d7ff0.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9C%96%E4%BB%99%E6%80%A1.image.412ecdec35.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "霜甄": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9C%9C%E7%94%84.image.9c60ea8e78.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://img.myfollo.xyz/i/2026/08/06/6a7363a6e77f2.png",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "青木璇": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249efcee3e9.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9D%92%E6%9C%A8%E7%92%87.image.e36238e0fc.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9D%92%E6%9C%A8%E7%92%87.image.a75bc8f7d5.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "青渝": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c06419fa4b.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9D%92%E6%B8%9D.image.ba407f1014.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9D%92%E6%B8%9D.image.3e9200bd64.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "青玉宗": {
+        "type": "sect",
+        "images": [
+          {
+            "url": "https://i.postimg.cc/L43BPsT4/Chat-GPT-Image-202689-10-15-31.png",
+            "theme": "map",
+            "tags": []
+          }
+        ]
+      },
+      "青练": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d906620b53.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9D%92%E7%BB%83.image.bc09f4e617.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9D%92%E7%BB%83.image.33cfd29864.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "青衣": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d9079a270b.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9D%92%E8%A1%A3.image.4f107f6197.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "韩月灵": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041e8981a37.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9F%A9%E6%9C%88%E7%81%B5.image.dd1dbe545b.webp",
+            "theme": "default",
+            "tags": []
+          }
+        ]
+      },
+      "韩立": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041e25dbd91.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%9F%A9%E7%AB%8B.image.7566ade8a6.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "顾幽梵": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bd5a27d8a2.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A1%BE%E5%B9%BD%E6%A2%B5.image.746666b350.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "顾清清": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A1%BE%E6%B8%85%E6%B8%85.image.8a4c824fee.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A1%BE%E6%B8%85%E6%B8%85.image.2d2e9aa8ee.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A1%BE%E6%B8%85%E6%B8%85.image.d22a7e0199.webp",
+            "theme": "special",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.myfollo.xyz/2026/08/10/6a79535ee6c0b.png",
+            "theme": "tarot",
+            "tags": [],
+            "comment": "塔罗牌·战车"
+          }
+        ]
+      },
+      "顾长枫": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/06/07/6a249db19cfbb.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A1%BE%E9%95%BF%E6%9E%AB.image.1a2b08e59e.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "颜小落": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A2%9C%E5%B0%8F%E8%90%BD.image.e2d54de17c.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A2%9C%E5%B0%8F%E8%90%BD.image.afaaa1731a.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A2%9C%E5%B0%8F%E8%90%BD.image.518b9c5afc.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "风梧音": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0bd6468bf2e.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A3%8E%E6%A2%A7%E9%9F%B3.image.1734bb5a7f.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "魏喑": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%AD%8F%E5%96%91.image.88fc04bdc7.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%AD%8F%E5%96%91.image.39bbf11e0a.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "黑姬结灯": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/20/6a0d3ac968bf1.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.9e0a4e7375.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.2e31ef35a4.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.80576041c5.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.6388a524fa.webp",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BB%91%E5%A7%AC%E7%BB%93%E7%81%AF.image.b42aed438a.webp",
+            "theme": "special",
+            "tags": []
+          }
+        ]
+      },
+      "齐天麟": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/19/6a0c0ec43c08d.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BD%90%E5%A4%A9%E9%BA%9F.image.8d945238ef.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      },
+      "龙傲飞": {
+        "type": "character",
+        "images": [
+          {
+            "url": "https://free-img.400040.xyz/4/2026/05/13/6a041cb836926.png",
+            "theme": "default",
+            "tags": []
+          },
+          {
+            "url": "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%BE%99%E5%82%B2%E9%A3%9E.image.d1ef5049a8.webp",
+            "theme": "female",
+            "tags": []
+          }
+        ]
+      }
+    }
+  }
+}

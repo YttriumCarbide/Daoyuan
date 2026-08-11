@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:daoyuan:schema:images:v2",
+  "$defs": {
+    "Entity": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "character",
+            "sect"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "$ref": "#/$defs/Image"
+          },
+          "minItems": 1,
+          "title": "Images",
+          "type": "array"
+        }
+      },
+      "required": [
+        "type",
+        "images"
+      ],
+      "title": "Entity",
+      "type": "object"
+    },
+    "Image": {
+      "additionalProperties": false,
+      "description": "`images.json` 中的一张图片。",
+      "properties": {
+        "url": {
+          "pattern": "^https://[^\\s|]+$",
+          "title": "Url",
+          "type": "string"
+        },
+        "theme": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+          "title": "Theme",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array",
+          "uniqueItems": true
+        },
+        "comment": {
+          "default": null,
+          "description": "不能为空或以空白开头、结尾。",
+          "maxLength": 500,
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+          "title": "Comment",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "theme",
+        "tags"
+      ],
+      "title": "Image",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "`images.json` 的根类型。",
+  "properties": {
+    "schemaVersion": {
+      "const": 2,
+      "default": 2,
+      "title": "Schemaversion",
+      "type": "integer"
+    },
+    "data": {
+      "additionalProperties": {
+        "minProperties": 1,
+        "patternProperties": {
+          "^\\S(?:[\\s\\S]*\\S)?$": {
+            "$ref": "#/$defs/Entity"
+          }
+        },
+        "propertyNames": {
+          "maxLength": 100,
+          "minLength": 1
+        },
+        "type": "object"
+      },
+      "minProperties": 1,
+      "propertyNames": {
+        "const": "entities"
+      },
+      "title": "Data",
+      "type": "object"
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "title": "Daoyuan Images",
+  "type": "object"
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:daoyuan:schema:images:character:v2",
+  "$defs": {
+    "CharacterImagePools": {
+      "additionalProperties": false,
+      "properties": {
+        "default": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceImage"
+          },
+          "minItems": 1,
+          "title": "Default"
+        },
+        "female": {
+          "items": {
+            "$ref": "#/$defs/SourceImage"
+          },
+          "minItems": 1,
+          "title": "Female",
+          "type": "array"
+        },
+        "special": {
+          "items": {
+            "$ref": "#/$defs/SourceImage"
+          },
+          "minItems": 1,
+          "title": "Special",
+          "type": "array"
+        }
+      },
+      "title": "CharacterImagePools",
+      "type": "object"
+    },
+    "SourceImage": {
+      "additionalProperties": false,
+      "description": "TOML 中的一张图片。",
+      "properties": {
+        "url": {
+          "description": "必须以 https:// 开头，且不能包含空白或 |。",
+          "pattern": "^https://[^\\s|]+$",
+          "title": "Url",
+          "type": "string"
+        },
+        "comment": {
+          "default": null,
+          "description": "不能为空或以空白开头、结尾。",
+          "maxLength": 500,
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+          "title": "Comment",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "title": "SourceImage",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "`data/character/<name>.toml` 的根类型。",
+  "properties": {
+    "images": {
+      "$ref": "#/$defs/CharacterImagePools",
+      "minProperties": 1
+    }
+  },
+  "required": [
+    "images"
+  ],
+  "title": "Daoyuan Character Image Sources",
+  "type": "object"
+}

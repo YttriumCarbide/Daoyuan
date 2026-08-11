@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:daoyuan:schema:images:sect:v2",
+  "$defs": {
+    "SourceImage": {
+      "additionalProperties": false,
+      "description": "TOML 中的一张图片。",
+      "properties": {
+        "url": {
+          "description": "必须以 https:// 开头，且不能包含空白或 |。",
+          "pattern": "^https://[^\\s|]+$",
+          "title": "Url",
+          "type": "string"
+        },
+        "comment": {
+          "default": null,
+          "description": "不能为空或以空白开头、结尾。",
+          "maxLength": 500,
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+          "title": "Comment",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "title": "SourceImage",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "`data/sect/<name>.toml` 的根类型。",
+  "properties": {
+    "images": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/SourceImage"
+        },
+        "minItems": 1,
+        "type": "array"
+      },
+      "minProperties": 1,
+      "propertyNames": {
+        "const": "map"
+      },
+      "title": "Images",
+      "type": "object"
+    }
+  },
+  "required": [
+    "images"
+  ],
+  "title": "Daoyuan Sect Image Sources",
+  "type": "object"
+}
