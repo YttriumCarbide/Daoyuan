@@ -151,11 +151,15 @@ def load_catalog(root: Path) -> Catalog:
         if not source.characters:
             continue
         for name, character in source.characters.items():
+            images = [
+                image.resolve(comment=source.comment, tags=source.tags)
+                for image in character["images"]
+            ]
             catalog.add(
                 name=name,
                 kind="character",
                 pool=theme,
-                images=character["images"],
+                images=images,
                 source=path,
             )
 

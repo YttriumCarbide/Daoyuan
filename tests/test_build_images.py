@@ -19,7 +19,7 @@ from scripts.images.artifacts import (
     write_artifacts,
 )
 from scripts.images.catalog import BuildError, load_catalog
-from scripts.images.models import CharacterSource, ImageIndex
+from scripts.images.models import CharacterSource, ImageIndex, ThemeSource
 
 
 class ProjectFixture:
@@ -118,6 +118,55 @@ class ImagePipelineTests(unittest.TestCase):
             )
             self.assertEqual(entity["images"][1].tags, ["event"])
             self.assertEqual(entity["images"][2].comment, "魔术师")
+
+    def test_theme_global_fields_merge_into_theme_images(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            fixture = ProjectFixture(root)
+            fixture.populate()
+            fixture.write(
+                "data/themes/wedding.toml",
+                """
+                description = "婚纱立绘"
+                comment = "婚纱"
+                tags = ["WIKI-2026-W32"]
+
+                [characters."测试角色"]
+                images = [
+                  { url = "https://example.com/wedding-1.png" },
+                  { url = "https://example.com/wedding-2.png", comment = "特写", tags = ["WIKI-2026-W32", "event"] },
+                ]
+                """,
+            )
+
+            index = build_index(load_catalog(root))
+            wedding = [
+                image
+                for image in index.data["entities"]["测试角色"]["images"]
+                if image.theme == "wedding"
+            ]
+
+            self.assertEqual(wedding[0].comment, "婚纱")
+            self.assertEqual(wedding[0].tags, ["WIKI-2026-W32"])
+            self.assertEqual(wedding[1].comment, "特写")
+            self.assertEqual(wedding[1].tags, ["WIKI-2026-W32", "event"])
+
+    def test_theme_root_tags_are_validated(self) -> None:
+        with self.assertRaises(ValidationError) as ctx:
+            ThemeSource.model_validate(
+                {
+                    "characters": {
+                        "测试角色": {
+                            "images": [{"url": "https://example.com/a.png"}]
+                        }
+                    },
+                    "tags": ["a", "a"],
+                }
+            )
+        self.assertIn("不能包含重复值", str(ctx.exception))
+
+        with self.assertRaises(ValidationError):
+            ThemeSource.model_validate({"tags": ["a"]})
 
     def test_build_writes_and_checks_every_artifact(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

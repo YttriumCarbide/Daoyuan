@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterator
+from collections.abc import Iterator, Sequence
 from typing import Annotated, Literal, NotRequired
 
 from pydantic import (
@@ -71,6 +71,20 @@ class SourceImage(Model):
     )
     _validate_tags = field_validator("tags")(validate_unique_tags)
 
+    def resolve(
+        self,
+        *,
+        comment: str | None = None,
+        tags: Sequence[Tag] = (),
+    ) -> SourceImage:
+        """应用主题根级默认值：comment 缺省回退，tags 取并集去重（根级在前）。"""
+        merged_tags = list(dict.fromkeys((*tags, *self.tags)))
+        return SourceImage(
+            url=self.url,
+            comment=self.comment if self.comment is not None else comment,
+            tags=merged_tags,
+        )
+
 
 SourceImages = Annotated[list[SourceImage], Field(min_length=1)]
 
@@ -120,6 +134,11 @@ class ThemeSource(Model):
 
     description: OptionalText = None
     comment: OptionalText = None
+    tags: list[Tag] = Field(
+        default_factory=list,
+        json_schema_extra={"uniqueItems": True},
+    )
+    _validate_tags = field_validator("tags")(validate_unique_tags)
     characters: (
         Annotated[
             dict[

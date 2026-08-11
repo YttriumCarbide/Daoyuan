@@ -62,6 +62,17 @@
       "title": "Comment",
       "type": "string"
     },
+    "tags": {
+      "items": {
+        "maxLength": 100,
+        "minLength": 1,
+        "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+        "type": "string"
+      },
+      "title": "Tags",
+      "type": "array",
+      "uniqueItems": true
+    },
     "characters": {
       "default": null,
       "minProperties": 1,
