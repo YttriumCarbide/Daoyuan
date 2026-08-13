@@ -51,7 +51,7 @@ export const ImageSchema = z
 
 export const EntitySchema = z.strictObject({
   type: EntityKindSchema,
-  images: z.array(ImageSchema).min(1),
+  images: z.tuple([ImageSchema], ImageSchema).readonly(),
 });
 
 const RuntimeEntitiesSchema = z

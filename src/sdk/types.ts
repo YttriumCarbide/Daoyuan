@@ -9,7 +9,8 @@ export interface Image {
 
 export interface Entity {
   type: EntityKind;
-  images: Image[];
+  /** schema 保证至少一张图片，因此可以安全地直接取第一张。 */
+  images: readonly [Image, ...Image[]];
 }
 
 /** 从远程 `images.json` 动态加载的开放实体索引。 */

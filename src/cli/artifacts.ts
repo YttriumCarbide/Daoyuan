@@ -151,6 +151,13 @@ function toOutputImage(source: SourceImage, theme: string): RuntimeImage {
   };
 }
 
+/** 实体至少一张图片由最终 schema 保证；空实体会在构建时提前报错。 */
+function toImages(images: RuntimeImage[], name: string): [RuntimeImage, ...RuntimeImage[]] {
+  const [first, ...rest] = images;
+  if (first === undefined) throw new Error(`实体 [${name}] 没有任何图片`);
+  return [first, ...rest];
+}
+
 export function buildIndex(catalog: Catalog): RuntimeImageIndex {
   const entities: Record<string, RuntimeEntity> = {};
   const names = [...catalog.entities.keys()].sort(compareCodePoints);
@@ -164,7 +171,7 @@ export function buildIndex(catalog: Catalog): RuntimeImageIndex {
         images.push(toOutputImage(image, pool));
       }
     }
-    entities[name] = { type: source.kind, images };
+    entities[name] = { type: source.kind, images: toImages(images, name) };
   }
   return { schemaVersion: 2, data: { entities } };
 }

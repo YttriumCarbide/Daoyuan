@@ -29,8 +29,50 @@
                 ]
               },
               "images": {
-                "minItems": 1,
+                "readOnly": true,
                 "type": "array",
+                "prefixItems": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "pattern": "^https:\\/\\/[^\\s|]+$",
+                        "description": "必须以 https:// 开头，且不能包含空白或 |。"
+                      },
+                      "theme": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100,
+                        "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 100,
+                          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                        },
+                        "uniqueItems": true
+                      },
+                      "comment": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 500,
+                        "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+                        "description": "不能为空或以空白开头、结尾。"
+                      }
+                    },
+                    "required": [
+                      "url",
+                      "theme",
+                      "tags"
+                    ],
+                    "additionalProperties": false,
+                    "description": "`images.json` 中的一张图片。"
+                  }
+                ],
                 "items": {
                   "type": "object",
                   "properties": {
