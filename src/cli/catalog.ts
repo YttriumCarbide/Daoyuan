@@ -1,18 +1,18 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { parse as parseToml } from "smol-toml";
-import type { z } from "zod";
+import * as z from "zod";
 
 import {
-  CHARACTER_POOLS,
-  SECT_POOL,
   CharacterSourceSchema,
-  NameSchema,
   SectSourceSchema,
   ThemeSourceSchema,
-  type EntityKind,
   type SourceImage,
-} from "./schema.js";
+  CHARACTER_POOLS,
+  SECT_POOL,
+} from "./source-schema.js";
+import { NameSchema } from "../sdk/schema.js";
+import type { EntityKind } from "../sdk/types.js";
 
 /** 包含源文件上下文的构建错误。 */
 export class BuildError extends Error {
@@ -46,12 +46,8 @@ export function compareCodePoints(a: string, b: string): number {
   return left.length - right.length;
 }
 
-function zodLocation(parts: (string | number)[]): string {
-  return "$" + parts.map((part) => (typeof part === "number" ? `[${part}]` : `.${part}`)).join("");
-}
-
 function zodDetails(error: z.ZodError): string {
-  return error.issues.map((issue) => `${zodLocation(issue.path)}: ${issue.message}`).join("; ");
+  return z.prettifyError(error);
 }
 
 function sourceFiles(root: string, directory: string): string[] {
@@ -66,10 +62,10 @@ function sourceFiles(root: string, directory: string): string[] {
     .map((name) => path.join(sourceDir, name));
 }
 
-function loadSource<Schema extends z.ZodTypeAny>(
+function loadSource<Schema extends z.ZodType>(
   filePath: string,
   schema: Schema,
-): z.infer<Schema> {
+): z.output<Schema> {
   let data: unknown;
   try {
     data = parseToml(fs.readFileSync(filePath, "utf8"));

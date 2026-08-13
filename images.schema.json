@@ -12,6 +12,12 @@
       "properties": {
         "entities": {
           "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
           "additionalProperties": {
             "type": "object",
             "properties": {
@@ -23,13 +29,15 @@
                 ]
               },
               "images": {
+                "minItems": 1,
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
                     "url": {
                       "type": "string",
-                      "pattern": "^https:\\/\\/[^\\s|]+$"
+                      "pattern": "^https:\\/\\/[^\\s|]+$",
+                      "description": "必须以 https:// 开头，且不能包含空白或 |。"
                     },
                     "theme": {
                       "type": "string",
@@ -62,8 +70,7 @@
                   ],
                   "additionalProperties": false,
                   "description": "`images.json` 中的一张图片。"
-                },
-                "minItems": 1
+                }
               }
             },
             "required": [
@@ -71,11 +78,6 @@
               "images"
             ],
             "additionalProperties": false
-          },
-          "propertyNames": {
-            "minLength": 1,
-            "maxLength": 100,
-            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
           },
           "minProperties": 1
         }

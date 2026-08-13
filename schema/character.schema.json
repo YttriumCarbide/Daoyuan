@@ -7,6 +7,7 @@
       "type": "object",
       "properties": {
         "default": {
+          "minItems": 1,
           "type": "array",
           "items": {
             "type": "object",
@@ -39,14 +40,79 @@
             ],
             "additionalProperties": false,
             "description": "TOML 中的一张图片。"
-          },
-          "minItems": 1
+          }
         },
         "female": {
-          "$ref": "#/properties/images/properties/default"
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "pattern": "^https:\\/\\/[^\\s|]+$",
+                "description": "必须以 https:// 开头，且不能包含空白或 |。"
+              },
+              "comment": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500,
+                "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+                "description": "不能为空或以空白开头、结尾。"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                },
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "url"
+            ],
+            "additionalProperties": false,
+            "description": "TOML 中的一张图片。"
+          }
         },
         "special": {
-          "$ref": "#/properties/images/properties/default"
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "pattern": "^https:\\/\\/[^\\s|]+$",
+                "description": "必须以 https:// 开头，且不能包含空白或 |。"
+              },
+              "comment": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500,
+                "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+                "description": "不能为空或以空白开头、结尾。"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                },
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "url"
+            ],
+            "additionalProperties": false,
+            "description": "TOML 中的一张图片。"
+          }
         }
       },
       "additionalProperties": false,

@@ -8,8 +8,10 @@ import {
   buildArtifacts,
   jsonSchema,
   staleArtifacts,
-} from "../src/artifacts.js";
-import { loadCatalog } from "../src/catalog.js";
+} from "../src/cli/artifacts.js";
+import { loadCatalog } from "../src/cli/catalog.js";
+import { CharacterSourceSchema, ThemeSourceSchema } from "../src/cli/source-schema.js";
+import { ImageIndexSchema } from "../src/sdk/schema.js";
 import { ROOT } from "./helpers.js";
 
 describe("json schema", () => {
@@ -40,6 +42,69 @@ describe("json schema", () => {
 
     const validateTheme = ajv.compile(jsonSchema("theme"));
     expect(validateTheme({})).toBe(false);
+  });
+
+  it("theme runtime and JSON schemas agree on root-field requirements", () => {
+    const ajv = new Ajv2020({ strict: false });
+    const validate = ajv.compile(jsonSchema("theme"));
+    const cases: Array<[input: unknown, valid: boolean]> = [
+      [{}, false],
+      [{ tags: ["event"] }, false],
+      [{ description: "维护说明" }, true],
+      [{ comment: "默认说明", tags: ["event"] }, true],
+      [{ description: "维护说明", tags: ["event", "event"] }, false],
+      [{ description: "维护说明", characters: {} }, false],
+      [
+        {
+          characters: {
+            测试角色: { images: [{ url: "https://example.com/a.png" }] },
+          },
+        },
+        true,
+      ],
+    ];
+
+    for (const [input, valid] of cases) {
+      expect(ThemeSourceSchema.safeParse(input).success).toBe(valid);
+      expect(validate(input)).toBe(valid);
+    }
+  });
+
+  it("runtime and JSON schemas agree on generated refinement metadata", () => {
+    const ajv = new Ajv2020({ strict: false });
+    const validateCharacter = ajv.compile(jsonSchema("character"));
+    const validateOutput = ajv.compile(jsonSchema("output"));
+    const cases = [
+      {
+        runtime: CharacterSourceSchema,
+        validate: validateCharacter,
+        input: { images: {} },
+      },
+      {
+        runtime: CharacterSourceSchema,
+        validate: validateCharacter,
+        input: {
+          images: {
+            default: [
+              {
+                url: "https://example.com/a.png",
+                tags: ["event", "event"],
+              },
+            ],
+          },
+        },
+      },
+      {
+        runtime: ImageIndexSchema,
+        validate: validateOutput,
+        input: { schemaVersion: 2, data: { entities: {} } },
+      },
+    ];
+
+    for (const { runtime, validate, input } of cases) {
+      expect(runtime.safeParse(input).success).toBe(false);
+      expect(validate(input)).toBe(false);
+    }
   });
 
   it("committed artifacts match the build byte-for-byte", () => {

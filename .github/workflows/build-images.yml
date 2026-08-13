@@ -67,7 +67,8 @@ jobs:
             sect-maps.json \
             schema/character.schema.json \
             schema/sect.schema.json \
-            schema/theme.schema.json
+            schema/theme.schema.json \
+            src/sdk/generated.ts
           if git diff --cached --quiet; then
             echo "TOML 和生成产物无需更新"
           else

@@ -11,7 +11,10 @@
       "description": "不能为空或以空白开头、结尾。"
     },
     "comment": {
-      "$ref": "#/properties/description",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
       "description": "不能为空或以空白开头、结尾。"
     },
     "tags": {
@@ -26,10 +29,17 @@
     },
     "characters": {
       "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100,
+        "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+      },
       "additionalProperties": {
         "type": "object",
         "properties": {
           "images": {
+            "minItems": 1,
             "type": "array",
             "items": {
               "type": "object",
@@ -40,13 +50,19 @@
                   "description": "必须以 https:// 开头，且不能包含空白或 |。"
                 },
                 "comment": {
-                  "$ref": "#/properties/description",
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500,
+                  "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
                   "description": "不能为空或以空白开头、结尾。"
                 },
                 "tags": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/properties/tags/items"
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 100,
+                    "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
                   },
                   "uniqueItems": true
                 }
@@ -56,8 +72,7 @@
               ],
               "additionalProperties": false,
               "description": "TOML 中的一张图片。"
-            },
-            "minItems": 1
+            }
           }
         },
         "required": [
@@ -65,15 +80,17 @@
         ],
         "additionalProperties": false
       },
-      "propertyNames": {
-        "minLength": 1,
-        "maxLength": 100,
-        "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
-      }
+      "minProperties": 1
     }
   },
   "additionalProperties": false,
   "description": "`data/themes/<theme>.toml` 的根类型。",
-  "minProperties": 1,
+  "not": {
+    "properties": {
+      "description": false,
+      "comment": false,
+      "characters": false
+    }
+  },
   "title": "Daoyuan Theme Image Sources"
 }

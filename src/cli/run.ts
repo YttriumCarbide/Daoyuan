@@ -6,7 +6,7 @@ import {
   writeArtifacts,
 } from "./artifacts.js";
 
-/** 构建全部产物；`check` 为 true 时不写文件，任一产物过期或缺失返回 1。 */
+/** 构建全部仓库产物；`check` 模式只检查漂移，不写文件。 */
 export function run(root: string, check = false): number {
   const paths = new ProjectPaths(root);
   const build = buildArtifacts(paths, loadCatalog(root));

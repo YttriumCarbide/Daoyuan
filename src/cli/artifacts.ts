@@ -1,21 +1,23 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { zodToJsonSchema } from "zod-to-json-schema";
+import * as z from "zod";
 
 import { BuildError, compareCodePoints, type Catalog, type CatalogEntity } from "./catalog.js";
 import {
-  SCHEMA_DIALECT,
   CHARACTER_POOLS,
   SECT_POOL,
   CharacterSourceSchema,
-  ImageIndexSchema,
   SectSourceSchema,
   ThemeSourceSchema,
-  type Entity,
-  type Image,
-  type ImageIndex,
   type SourceImage,
-} from "./schema.js";
+} from "./source-schema.js";
+import {
+  SCHEMA_DIALECT,
+  RuntimeImageIndexSchema,
+  type RuntimeEntity,
+  type RuntimeImage,
+  type RuntimeImageIndex,
+} from "../sdk/schema.js";
 
 const LEGACY_SECTIONS: Record<string, string> = {
   default: "charPortraits",
@@ -81,7 +83,7 @@ const LEGACY_SECT_GROUPS: Record<string, string[]> = {
 };
 
 interface SchemaSpec {
-  schema: Parameters<typeof zodToJsonSchema>[0];
+  schema: z.ZodType;
   id: string;
   title: string;
 }
@@ -103,7 +105,7 @@ const SCHEMAS: Record<"character" | "sect" | "theme" | "output", SchemaSpec> = {
     title: "Daoyuan Theme Image Sources",
   },
   output: {
-    schema: ImageIndexSchema,
+    schema: RuntimeImageIndexSchema,
     id: "urn:daoyuan:schema:images:v2",
     title: "Daoyuan Images",
   },
@@ -132,6 +134,10 @@ export class ProjectPaths {
   get sectMaps(): string {
     return path.join(this.root, "sect-maps.json");
   }
+
+  get sdkTypes(): string {
+    return path.join(this.root, "src", "sdk", "generated.ts");
+  }
 }
 
 export interface Build {
@@ -140,7 +146,7 @@ export interface Build {
   warnings: string[];
 }
 
-function toOutputImage(source: SourceImage, theme: string): Image {
+function toOutputImage(source: SourceImage, theme: string): RuntimeImage {
   return {
     url: source.url,
     theme,
@@ -149,14 +155,14 @@ function toOutputImage(source: SourceImage, theme: string): Image {
   };
 }
 
-export function buildIndex(catalog: Catalog): ImageIndex {
-  const entities: Record<string, Entity> = {};
+export function buildIndex(catalog: Catalog): RuntimeImageIndex {
+  const entities: Record<string, RuntimeEntity> = {};
   const names = [...catalog.entities.keys()].sort(compareCodePoints);
   for (const name of names) {
     const source = catalog.entities.get(name)!;
     const poolOrder =
       source.kind === "character" ? [...CHARACTER_POOLS, ...catalog.themes] : [SECT_POOL];
-    const images: Image[] = [];
+    const images: RuntimeImage[] = [];
     for (const pool of poolOrder) {
       for (const image of source.pools[pool] ?? []) {
         images.push(toOutputImage(image, pool));
@@ -239,75 +245,45 @@ export function serialize(value: unknown): string {
   return JSON.stringify(value, null, 2) + "\n";
 }
 
-function serializeIndex(index: ImageIndex): string {
-  const plain = {
-    schemaVersion: index.schemaVersion,
-    data: {
-      entities: Object.fromEntries(
-        Object.entries(index.data.entities).map(([name, entity]) => [
-          name,
-          {
-            type: entity.type,
-            images: entity.images.map((image) => ({
-              url: image.url,
-              theme: image.theme,
-              tags: image.tags,
-              ...(image.comment === undefined ? {} : { comment: image.comment }),
-            })),
-          },
-        ]),
+function literalUnion(name: string, values: string[]): string {
+  const members = values.map((value) => `  | ${JSON.stringify(value)}`).join("\n");
+  return `export type ${name} =\n${members};`;
+}
+
+/** 由当前发布 index 生成不携带 runtime 数据的 SDK 字面量联合。 */
+export function serializeSdkTypes(index: RuntimeImageIndex): string {
+  const entityNames = Object.keys(index.data.entities).sort(compareCodePoints);
+  const themes = [
+    ...new Set(
+      Object.values(index.data.entities).flatMap((entity) =>
+        entity.images.map((image) => image.theme),
       ),
-    },
-  };
-  return serialize(plain);
-}
+    ),
+  ].sort(compareCodePoints);
 
-/** 给所有名为 `tags` 的数组补上 `uniqueItems: true`（zod-to-json-schema 不输出该约束）。 */
-function addUniqueTags(node: unknown, key?: string): unknown {
-  if (Array.isArray(node)) {
-    return node.map((item) => addUniqueTags(item, key));
-  }
-  if (node && typeof node === "object") {
-    const object = node as Record<string, unknown>;
-    if (key === "tags" && object.type === "array") {
-      object.uniqueItems = true;
-    }
-    for (const [childKey, childValue] of Object.entries(object)) {
-      addUniqueTags(childValue, childKey);
-    }
-    return object;
-  }
-  return node;
-}
-
-/** 补上 `.refine` 无法映射到 JSON Schema 的「至少一个键」约束（minProperties: 1）。 */
-function injectMinProperties(
-  kind: "character" | "sect" | "theme" | "output",
-  schema: Record<string, unknown>,
-): void {
-  const properties = schema.properties as Record<string, any> | undefined;
-  if (kind === "character") {
-    if (properties?.images?.type === "object") properties.images.minProperties = 1;
-  } else if (kind === "theme") {
-    schema.minProperties = 1;
-  } else if (kind === "output") {
-    const entities = properties?.data?.properties?.entities;
-    if (entities?.type === "object") entities.minProperties = 1;
-  }
+  return [
+    "/**",
+    " * 由 `pnpm run build` 根据当前 images 数据生成。",
+    " * 请勿手工编辑。",
+    " */",
+    "",
+    literalUnion("EntityName", entityNames),
+    "",
+    literalUnion("ImageTheme", themes),
+    "",
+  ].join("\n");
 }
 
 export function jsonSchema(kind: "character" | "sect" | "theme" | "output"): Record<string, unknown> {
   const spec = SCHEMAS[kind];
-  const generated = zodToJsonSchema(spec.schema, {
-    target: "jsonSchema2019-09",
+  const generated = z.toJSONSchema(spec.schema, {
+    target: "draft-2020-12",
   }) as Record<string, unknown>;
   delete generated.$schema;
-  const decorated = addUniqueTags(generated) as Record<string, unknown>;
-  injectMinProperties(kind, decorated);
   return {
     $schema: SCHEMA_DIALECT,
     $id: spec.id,
-    ...decorated,
+    ...generated,
     title: spec.title,
   };
 }
@@ -316,9 +292,10 @@ export function buildArtifacts(paths: ProjectPaths, catalog: Catalog): Build {
   const index = buildIndex(catalog);
   const { portraits, warnings } = buildLegacyPortraits(catalog);
   const artifacts: Record<string, string> = {
-    [paths.images]: serializeIndex(index),
+    [paths.images]: serialize(index),
     [paths.portraits]: serialize(portraits),
     [paths.sectMaps]: serialize(buildLegacySectMaps(catalog)),
+    [paths.sdkTypes]: serializeSdkTypes(index),
   };
   for (const [kind, schemaPath] of Object.entries(paths.schemas)) {
     artifacts[schemaPath] = serialize(jsonSchema(kind as keyof typeof SCHEMAS));

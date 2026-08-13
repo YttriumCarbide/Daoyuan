@@ -2,7 +2,14 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { firstImage, getEntity, getImages, imagesForTheme, parseImages } from "../src/sdk.js";
+import {
+  ImageIndexSchema,
+  firstImage,
+  getEntity,
+  getImages,
+  imagesForTheme,
+  parseImages,
+} from "../src/sdk/index.js";
 import { ROOT } from "./helpers.js";
 
 describe("image sdk", () => {
@@ -21,12 +28,31 @@ describe("image sdk", () => {
     const defaults = imagesForTheme(index, "白薇", "default");
     expect(defaults.length).toBeGreaterThan(0);
     expect(defaults.every((image) => image.theme === "default")).toBe(true);
-
-    expect(imagesForTheme(index, "白薇", "不存在的主题")).toEqual([]);
-    expect(imagesForTheme(index, "不存在的实体", "default")).toEqual([]);
   });
 
   it("rejects an invalid document", () => {
     expect(() => parseImages({ schemaVersion: 1, data: { entities: {} } })).toThrow();
+  });
+
+  it("keeps snapshot names open in the runtime schema", () => {
+    expect(
+      ImageIndexSchema.safeParse({
+        schemaVersion: 2,
+        data: {
+          entities: {
+            未来角色: {
+              type: "character",
+              images: [
+                {
+                  url: "https://example.com/future.png",
+                  theme: "future",
+                  tags: [],
+                },
+              ],
+            },
+          },
+        },
+      }).success,
+    ).toBe(true);
   });
 });

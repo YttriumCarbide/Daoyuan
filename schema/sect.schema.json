@@ -7,6 +7,7 @@
       "type": "object",
       "properties": {
         "map": {
+          "minItems": 1,
           "type": "array",
           "items": {
             "type": "object",
@@ -39,8 +40,7 @@
             ],
             "additionalProperties": false,
             "description": "TOML 中的一张图片。"
-          },
-          "minItems": 1
+          }
         }
       },
       "required": [
