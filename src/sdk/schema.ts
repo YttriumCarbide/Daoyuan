@@ -1,7 +1,5 @@
 import * as z from "zod";
 
-import type { ImageIndex } from "./types.js";
-
 /** JSON Schema 方言与最终数据版本。 */
 export const SCHEMA_DIALECT = "https://json-schema.org/draft/2020-12/schema";
 export const SCHEMA_VERSION = 2 as const;
@@ -61,7 +59,7 @@ const RuntimeEntitiesSchema = z
   .refine((entities) => Object.keys(entities).length > 0, "entities 不能为空")
   .meta({ minProperties: 1 });
 
-/** `images.json` 的开放 runtime schema；发布快照成员只在 TypeScript 类型中收紧。 */
+/** `images.json` 的开放 runtime schema。 */
 export const RuntimeImageIndexSchema = z
   .strictObject({
     schemaVersion: z.literal(SCHEMA_VERSION),
@@ -71,8 +69,8 @@ export const RuntimeImageIndexSchema = z
   })
   .describe("`images.json` 的根类型。");
 
-/** 同一开放 runtime 校验器叠加当前发布快照的静态返回类型。 */
-export const ImageIndexSchema = RuntimeImageIndexSchema as z.ZodType<ImageIndex>;
+/** SDK 公共的 `images.json` 校验器。 */
+export const ImageIndexSchema = RuntimeImageIndexSchema;
 
 export type RuntimeImage = z.output<typeof ImageSchema>;
 export type RuntimeEntity = z.output<typeof EntitySchema>;

@@ -7,7 +7,6 @@
 - `images.json`：人物和宗门的图片数据；
 - `images.schema.json`：用于校验 `images.json`；
 - `portraits.json`、`sect-maps.json`：供现有客户端使用的兼容文件。
-- `src/sdk/generated.ts`：由当前数据生成的实体名与主题 TypeScript 字面量联合。
 
 `notice.json` 是手工维护的游戏公告，不由构建脚本修改。
 
@@ -198,24 +197,37 @@ pnpm run typecheck
 
 `src/cli/source-schema.ts` 描述 TOML 源，`src/sdk/schema.ts` 描述最终 `images.json`；二者共同复用 SDK 的基础字符串与标签约束。构建命令使用 Zod v4 原生转换生成 Draft 2020-12 schema：`schema/` 下三份文件供 TOML 编辑器使用，根目录的 `images.schema.json` 用于校验最终产物。生成的 schema 不要直接编辑。
 
-构建器还会从本次 `images.json` 生成 `src/sdk/generated.ts`。它只包含 `EntityName` 与 `ImageTheme` 字符串字面量联合，不携带运行时数据；新增实体或主题后无需手工维护类型。
-
 ## npm 包
 
 本仓库同时发布一个 npm 包 `daoyuan-images`，可直接经 GitHub 链接安装，无需发布到 npm registry：
 
 ```bash
-npm install github:<owner>/Daoyuan#v2-ts
+npm install github:YttriumCarbide/Daoyuan#main
 ```
 
 > 用 pnpm 11 安装 git 依赖时，默认禁止运行其 `prepare` 构建脚本，需要先在消费方批准该依赖的构建（`pnpm approve-builds` 或在 `allowBuilds` 中允许对应 git 依赖），否则会因未产出 `dist/` 而安装失败。
 
 包导出：
 
-- 类型：`Image`、`Entity`、`EntityKind`、`ImageIndex`，以及当前发布快照生成的 `EntityName`、`ImageTheme`；
+- 类型：`Image`、`Entity`、`EntityKind`、`ImageIndex`；
 - 一个简单 image SDK：`parseImages`、`getEntity`、`getImages`、`imagesForTheme`、`firstImage`。
 
-`ImageIndex` 的实体键、`Image.theme` 以及查询函数参数都会在 TypeScript 编译期限制为当前快照的有限联合。Zod 运行时 schema 仍按稳定的数据结构校验，不会因为某个实体名或主题尚未进入当前快照而拒绝文档。
+SDK 面向从 URL 动态加载的 `images.json`，因此实体名和主题保持开放字符串，与远程数据独立更新的语义一致：
+
+```ts
+import { getEntity, imagesForTheme, parseImages } from "daoyuan-images";
+
+const response = await fetch(
+  "https://raw.githubusercontent.com/YttriumCarbide/Daoyuan/main/images.json",
+);
+if (!response.ok) throw new Error(`加载 images.json 失败：${response.status}`);
+
+const index = parseImages(await response.json());
+const entity = getEntity(index, "白薇");
+const wedding = imagesForTheme(index, "白薇", "wedding");
+```
+
+`parseImages` 会严格校验文档结构和字段格式，但不会把实体名或主题限制为安装 SDK 时的数据快照。
 
 发布包只包含 `dist/sdk`，生产依赖只有 Zod。TOML 解析、JSON/JSON Schema 生成与 legacy 适配位于内部 `src/cli`，只供本仓库的开发和 CI 使用，不会进入安装包。
 
@@ -252,14 +264,13 @@ npm install github:<owner>/Daoyuan#v2-ts
 │   │   ├── index.ts        # 显式公共出口
 │   │   ├── client.ts       # image SDK
 │   │   ├── schema.ts       # images.json 的 Zod v4 runtime schema
-│   │   ├── types.ts        # 公共数据类型
-│   │   └── generated.ts    # 自动生成的实体名与主题联合
+│   │   └── types.ts        # 公共数据类型
 │   └── cli/                # 仅供 dev / CI 使用的构建工具
 │       ├── index.ts        # 命令行入口
 │       ├── options.ts      # 严格参数解析
 │       ├── source-schema.ts # TOML 源 schema
 │       ├── catalog.ts      # TOML 读取与跨文件聚合
-│       ├── artifacts.ts    # JSON、JSON Schema 与类型生成
+│       ├── artifacts.ts    # JSON 与 JSON Schema 生成
 │       └── run.ts          # 构建/漂移检查
 ├── tests/                  # 构建脚本测试（vitest）
 ├── tombi.toml              # TOML 格式化范围与规则

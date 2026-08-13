@@ -134,10 +134,6 @@ export class ProjectPaths {
   get sectMaps(): string {
     return path.join(this.root, "sect-maps.json");
   }
-
-  get sdkTypes(): string {
-    return path.join(this.root, "src", "sdk", "generated.ts");
-  }
 }
 
 export interface Build {
@@ -245,35 +241,6 @@ export function serialize(value: unknown): string {
   return JSON.stringify(value, null, 2) + "\n";
 }
 
-function literalUnion(name: string, values: string[]): string {
-  const members = values.map((value) => `  | ${JSON.stringify(value)}`).join("\n");
-  return `export type ${name} =\n${members};`;
-}
-
-/** 由当前发布 index 生成不携带 runtime 数据的 SDK 字面量联合。 */
-export function serializeSdkTypes(index: RuntimeImageIndex): string {
-  const entityNames = Object.keys(index.data.entities).sort(compareCodePoints);
-  const themes = [
-    ...new Set(
-      Object.values(index.data.entities).flatMap((entity) =>
-        entity.images.map((image) => image.theme),
-      ),
-    ),
-  ].sort(compareCodePoints);
-
-  return [
-    "/**",
-    " * 由 `pnpm run build` 根据当前 images 数据生成。",
-    " * 请勿手工编辑。",
-    " */",
-    "",
-    literalUnion("EntityName", entityNames),
-    "",
-    literalUnion("ImageTheme", themes),
-    "",
-  ].join("\n");
-}
-
 export function jsonSchema(kind: "character" | "sect" | "theme" | "output"): Record<string, unknown> {
   const spec = SCHEMAS[kind];
   const generated = z.toJSONSchema(spec.schema, {
@@ -295,7 +262,6 @@ export function buildArtifacts(paths: ProjectPaths, catalog: Catalog): Build {
     [paths.images]: serialize(index),
     [paths.portraits]: serialize(portraits),
     [paths.sectMaps]: serialize(buildLegacySectMaps(catalog)),
-    [paths.sdkTypes]: serializeSdkTypes(index),
   };
   for (const [kind, schemaPath] of Object.entries(paths.schemas)) {
     artifacts[schemaPath] = serialize(jsonSchema(kind as keyof typeof SCHEMAS));

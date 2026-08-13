@@ -1,14 +1,14 @@
 import { ImageIndexSchema } from "./schema.js";
-import type { Entity, EntityName, Image, ImageIndex, ImageTheme } from "./types.js";
+import type { Entity, Image, ImageIndex } from "./types.js";
 
-/** 解析并校验 `images.json` 的结构，返回当前发布快照的静态类型。 */
+/** 解析并校验从 URL 动态加载的 `images.json`。 */
 export function parseImages(input: unknown): ImageIndex {
   const data: unknown = typeof input === "string" ? JSON.parse(input) : input;
   return ImageIndexSchema.parse(data);
 }
 
-/** 按已发布实体名查询实体。 */
-export function getEntity(index: ImageIndex, name: EntityName): Entity | undefined {
+/** 按实体名查询实体。 */
+export function getEntity(index: ImageIndex, name: string): Entity | undefined {
   return index.data.entities[name];
 }
 
@@ -17,11 +17,11 @@ export function getImages(entity: Entity): Image[] {
   return entity.images;
 }
 
-/** 返回某实体在已发布主题分类下的图片。 */
+/** 返回某实体在指定主题分类下的图片。 */
 export function imagesForTheme(
   index: ImageIndex,
-  name: EntityName,
-  theme: ImageTheme,
+  name: string,
+  theme: string,
 ): Image[] {
   return getEntity(index, name)?.images.filter((image) => image.theme === theme) ?? [];
 }

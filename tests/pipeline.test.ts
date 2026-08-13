@@ -119,7 +119,7 @@ describe("image pipeline", () => {
     const paths = new ProjectPaths(created.root);
     const build = buildArtifacts(paths, loadCatalog(created.root));
 
-    expect(Object.keys(build.artifacts)).toHaveLength(8);
+    expect(Object.keys(build.artifacts)).toHaveLength(7);
     expect(staleArtifacts(build).sort()).toEqual(Object.keys(build.artifacts).sort());
     writeArtifacts(build);
     expect(staleArtifacts(build)).toEqual([]);
@@ -135,10 +135,6 @@ describe("image pipeline", () => {
     expect(sectMaps["玄天界"]["万法宗"]).toBe("https://example.com/map.png");
     expect(sectMaps["玄天界"]["黑金阁"]).toBe("");
     expect(sectMaps).toHaveProperty("九天仙界");
-    const sdkTypes = fs.readFileSync(paths.sdkTypes, "utf8");
-    expect(sdkTypes).toContain('export type EntityName =\n  | "万法宗"\n  | "测试角色";');
-    expect(sdkTypes).toContain('export type ImageTheme =\n  | "default"');
-    expect(sdkTypes).not.toContain("export const");
   });
 
   it("legacy sect maps rejects unmapped sects", () => {
