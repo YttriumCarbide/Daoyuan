@@ -3,20 +3,20 @@ feature: sdk-cli-boundary
 status: delivered
 updated: 2026-08-13
 branch: v2-ts
-commits: dff6e72fe4fb45c0d2e092c53fe6b96d6929eaeb..4932daed4e982ebcb82ba99f2249bda29f037ecf
+commits: dff6e72fe4fb45c0d2e092c53fe6b96d6929eaeb..05289415c23563ecd837340f03653fa91bfd9193
 ---
 
 # SDK / CLI Boundary
 
 ## Report
 
-**What was built** — TypeScript 源码与编译产物已按 `sdk/`、`cli/` 分层。npm 公共入口显式指向 `dist/sdk`，Git `prepare` 只独立编译 SDK，安装包不再包含 CLI、TOML 解析器或产物生成器；生产依赖收紧为 Zod。内部 CLI 保留完整构建能力，并通过独立 source root 与回归测试维持 CLI → SDK 的单向依赖。
+**What was built** — TypeScript 源码与编译产物已按 `sdk/`、`cli/` 分层。SDK 内部进一步拆为稳定类型、无运行时依赖的纯查询、Zod schema、输入解析和根门面；`query.ts` 编译后不含 import，`parse.ts` 单向依赖 `schema.ts`。npm 根入口保留完整体验，并提供 `./query`、`./schema`、`./types` 子入口。Git `prepare` 只独立编译 SDK，安装包不再包含 CLI、TOML 解析器或产物生成器；生产依赖收紧为 Zod。
 
 Schema 已迁移到 Zod v4 原生 Draft 2020-12 生成，删除 `zod-to-json-schema` 及两个遍历补丁。`uniqueItems`、`minProperties` 与 Theme 根字段规则现在声明在对应 schema 附近；原先会被 JSON Schema 错误接受的 tags-only Theme 已修复。SDK 面向从 URL 动态加载且可独立更新的 `images.json`，因此公开 index key、图片 theme 和查询参数均保持开放字符串，Zod 推导结果与 TypeScript 类型一致。
 
-**Verification** — `pnpm exec tombi format --check --offline` PASS（205 files）；`pnpm run build` PASS（7 artifacts / 203 entities）；`pnpm run build:check` PASS；`pnpm test` PASS（6 files / 25 tests）；`pnpm run typecheck` PASS；干净 `pnpm run dist:sdk` PASS（只生成 `dist/sdk`，无 `generated.*`）；`pnpm run dist` PASS（只含 `dist/sdk`、`dist/cli` 两层）；`npm pack --dry-run --json` PASS（11 entries，无 CLI 和生成快照类型）；三份数据 JSON 与变更前逐字节一致；`git diff --check`、actionlint PASS。
+**Verification** — `pnpm exec tombi format --check --offline` PASS（205 files）；`pnpm run build` PASS（7 artifacts / 203 entities）；`pnpm run build:check` PASS；`pnpm test` PASS（6 files / 27 tests）；`pnpm run typecheck` PASS；干净 `pnpm run dist:sdk` PASS（`query.js` 无 runtime import，SDK 仅生成分层模块）；`pnpm run dist` PASS（只含 `dist/sdk`、`dist/cli` 两层）；`npm pack --json` PASS（13 entries，无 CLI）；临时 production consumer 安装 PASS，移除 Zod 后 `daoyuan-images/query` 导入 PASS，恢复 Zod 后根入口及 `./schema`、`./types` 导入 PASS；三份数据 JSON 与变更前逐字节一致；`git diff --check`、actionlint PASS。
 
-**Journey log** — 1. Theme 的 `minProperties: 1` 只表示“任意字段至少一个”，不能表达“description/comment/characters 至少一个”；改用邻近的 `not + properties:false` 才与 Zod refinement 等价且无需 union dispatch。2. 开放 runtime schema 不能安全断言为某次发布的封闭快照类型；远程数据与 SDK 版本可独立变化时，静态联合反而会把不存在的键和未知 theme 伪装成已知值。3. SDK tsconfig 的 `include` 本身不能阻止跨目录 import；把 `rootDir` 收紧到 `src/sdk` 才能结构性阻止反向依赖。4. Ajv 会拒绝在同一实例重复注册相同 `$id`；边界测试应复用已编译 validator。5. `JSON.stringify` 会自动省略对象中的 `undefined`，因此最终 index 可直接走统一序列化器而无需重建对象树。
+**Journey log** — 1. Theme 的 `minProperties: 1` 只表示“任意字段至少一个”，不能表达“description/comment/characters 至少一个”；改用邻近的 `not + properties:false` 才与 Zod refinement 等价且无需 union dispatch。2. 开放 runtime schema 不能安全断言为某次发布的封闭快照类型；远程数据与 SDK 版本可独立变化时，静态联合反而会把不存在的键和未知 theme 伪装成已知值。3. SDK tsconfig 的 `include` 本身不能阻止跨目录 import；把 `rootDir` 收紧到 `src/sdk` 才能结构性阻止反向依赖。4. 增加 package export 不会自动隔离依赖；必须先把查询与解析拆成单向层，并以编译产物及“无 Zod 导入 query”验证真实边界。5. `JSON.stringify` 会自动省略对象中的 `undefined`，因此最终 index 可直接走统一序列化器而无需重建对象树。
 
 ## [S1] Problem
 
@@ -37,9 +37,9 @@ src/sdk/*  -> dist/sdk/*  -> npm 公共入口
 src/cli/*  -> dist/cli/*  -> 仓库内 dev / CI 工具
 ```
 
-`src/sdk` 只包含公开查询 API、最终 `images.json` 的运行时 schema 和公共类型；不得 import `src/cli`。独立的 SDK TypeScript 配置必须能只编译 `src/sdk`，以结构性地验证该方向。`src/cli` 包含 TOML 源 schema、catalog、产物生成、运行器和 CLI 入口，可以 import `src/sdk`。
+`src/sdk` 只包含公开查询 API、最终 `images.json` 的运行时 schema 和公共类型；不得 import `src/cli`。SDK 内部依赖方向固定为：`query.ts` 仅 type-import `types.ts`；`schema.ts` 仅依赖 Zod；`parse.ts` 依赖 `schema.ts` 并 type-import `types.ts`；`index.ts` 组合 `query.ts` 与 `parse.ts`。CLI 可以依赖 SDK schema，SDK 不得反向依赖 CLI。独立的 SDK TypeScript 配置必须能只编译 `src/sdk`，以结构性地验证该方向。
 
-包根入口显式导出 SDK API 和公共类型，不使用跨边界通配导出。npm `files` 仅包含 `dist/sdk`；根导出指向 `dist/sdk/index.js` / `index.d.ts`。完整仓库的 `pnpm run dist` 仍生成分层的 `dist/sdk` 与 `dist/cli`，但安装包不得包含 `dist/cli`。Git 安装的 `prepare` 只构建 SDK。外部运行时依赖仅保留 Zod；`smol-toml`、Tombi、Ajv、tsx、TypeScript 等均为仓库内开发依赖。
+包根入口显式导出完整 SDK API 和公共类型，不使用跨边界通配导出。`./query` 映射无 Zod 的纯查询层，`./schema` 映射解析函数和公共 schema，`./types` 映射稳定类型；动态 URL 模型不提供 `./data` 快照入口。npm `files` 仅包含 `dist/sdk`。完整仓库的 `pnpm run dist` 仍生成分层的 `dist/sdk` 与 `dist/cli`，但安装包不得包含 `dist/cli`。Git 安装的 `prepare` 只构建 SDK。外部运行时依赖仅保留 Zod；`smol-toml`、Tombi、Ajv、tsx、TypeScript 等均为仓库内开发依赖。
 
 ### Zod v4 与 JSON Schema
 
@@ -63,6 +63,7 @@ CLI 使用 Node `parseArgs` 严格解析 `--check`，未知参数返回可读错
 
 - 不迁移到 TypeBox，也不引入第二套运行时 schema 系统。
 - 不提供实体名或主题的发布快照联合，也不生成逐实体主题泛型映射。
+- 不提供 `./data` 子入口；数据继续从 URL 动态加载。
 - 不在运行时限制实体名或主题必须属于当前快照。
 - 不改变 URL 为公网域名或可达性校验；继续保留现有 HTTPS、无空白、无 `|` 契约。
 - 不改变数据内容、图片排序、legacy 分区或 `v2 -> main` 晋级语义。
@@ -76,3 +77,4 @@ CLI 使用 Node `parseArgs` 严格解析 `--check`，未知参数返回可读错
 - [x] T4: 保持 SDK 的动态远程数据类型 — acceptance: 构建器不生成快照联合；公共 index、Image、schema 推导结果与查询函数均接受开放字符串 (covers: S2 动态远程数据类型; depends: T2, T3)
 - [x] T5: 收紧包内容、依赖和构建脚本 — acceptance: Git prepare 只构建 SDK；`npm pack --dry-run` 仅含 `dist/sdk` 公共产物且生产依赖只有 Zod；`pnpm run dist` 同时生成 `dist/sdk` 与 `dist/cli` (covers: S2 模块与依赖边界; depends: T2, T3, T4)
 - [x] T6: 同步生成产物、CI 与 README 并完成全量验证 — acceptance: 三份数据 JSON 与基线逐字节一致；测试、类型检查、SDK/完整构建、build:check、pack 检查和 whitespace 检查全部通过；README 展示动态 URL 加载方式 (covers: S2 兼容与验证边界; depends: T3, T4, T5)
+- [x] T7: 拆分 SDK 查询与校验层并公开子入口 — acceptance: `query.js` 不含 runtime import；`./query`、`./schema`、`./types` 精确映射对应层；根入口保持兼容且包不提供 `./data` (covers: S2 模块与依赖边界; depends: T2, T5)

@@ -1,7 +1,8 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
 
-import { ImageIndexSchema, getEntity, imagesForTheme } from "../src/sdk/index.js";
-import type { Image, ImageIndex } from "../src/sdk/index.js";
+import { ImageIndexSchema } from "../src/sdk/parse.js";
+import { getEntity, imagesForTheme } from "../src/sdk/query.js";
+import type { Image, ImageIndex } from "../src/sdk/types.js";
 
 function compileTimeContract(index: ImageIndex): void {
   const name: string = "动态角色";

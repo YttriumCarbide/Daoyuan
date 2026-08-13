@@ -1,11 +1,4 @@
-import { ImageIndexSchema } from "./schema.js";
 import type { Entity, Image, ImageIndex } from "./types.js";
-
-/** 解析并校验从 URL 动态加载的 `images.json`。 */
-export function parseImages(input: unknown): ImageIndex {
-  const data: unknown = typeof input === "string" ? JSON.parse(input) : input;
-  return ImageIndexSchema.parse(data);
-}
 
 /** 按实体名查询实体。 */
 export function getEntity(index: ImageIndex, name: string): Entity | undefined {

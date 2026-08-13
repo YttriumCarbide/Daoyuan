@@ -13,6 +13,14 @@
       "types": "./dist/sdk/index.d.ts",
       "import": "./dist/sdk/index.js"
     },
+    "./query": {
+      "types": "./dist/sdk/query.d.ts",
+      "import": "./dist/sdk/query.js"
+    },
+    "./schema": {
+      "types": "./dist/sdk/parse.d.ts",
+      "import": "./dist/sdk/parse.js"
+    },
     "./types": {
       "types": "./dist/sdk/types.d.ts",
       "import": "./dist/sdk/types.js"

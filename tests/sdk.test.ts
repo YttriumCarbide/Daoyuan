@@ -2,17 +2,19 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import {
-  ImageIndexSchema,
-  firstImage,
-  getEntity,
-  getImages,
-  imagesForTheme,
-  parseImages,
-} from "../src/sdk/index.js";
+import * as sdk from "../src/sdk/index.js";
+import { ImageIndexSchema, parseImages } from "../src/sdk/parse.js";
+import { firstImage, getEntity, getImages, imagesForTheme } from "../src/sdk/query.js";
 import { ROOT } from "./helpers.js";
 
 describe("image sdk", () => {
+  it("keeps the root entry as the complete public facade", () => {
+    expect(sdk.parseImages).toBe(parseImages);
+    expect(sdk.ImageIndexSchema).toBe(ImageIndexSchema);
+    expect(sdk.getEntity).toBe(getEntity);
+    expect(sdk.imagesForTheme).toBe(imagesForTheme);
+  });
+
   it("parses and queries images.json", () => {
     const index = parseImages(fs.readFileSync(path.join(ROOT, "images.json"), "utf8"));
 
@@ -34,7 +36,7 @@ describe("image sdk", () => {
     expect(() => parseImages({ schemaVersion: 1, data: { entities: {} } })).toThrow();
   });
 
-  it("keeps snapshot names open in the runtime schema", () => {
+  it("keeps dynamic names open in the runtime schema", () => {
     expect(
       ImageIndexSchema.safeParse({
         schemaVersion: 2,

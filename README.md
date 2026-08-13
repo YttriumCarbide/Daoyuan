@@ -2,7 +2,7 @@
 
 本仓库维护道渊的图片集。
 
-日常维护只需要修改 `v2` 分支中 `data/` 目录下的 TOML 文件并推送。CI 会自动格式化、构建和测试，通过后将同一个提交晋级到 `main`。脚本会生成：
+日常维护只需要修改 `v2` 分支中 `data/` 目录下的 TOML 文件并推送，不需要在本地安装 Node、pnpm 等任何工具链。CI 会自动格式化、构建和测试，通过后将同一个提交晋级到 `main`。脚本会生成：
 
 - `images.json`：人物和宗门的图片数据；
 - `images.schema.json`：用于校验 `images.json`；
@@ -10,18 +10,18 @@
 
 `notice.json` 是手工维护的游戏公告，不由构建脚本修改。
 
-## 快速开始
+## 本地环境（可选）
 
-项目使用 [pnpm](https://pnpm.io/) 管理 TypeScript 环境，要求 Node `>=20.19`（CI 固定使用 Node 24 与 pnpm 11.6.0）。
+只编辑 `data/` 下的 TOML 不需要本地环境。想提交前预览构建产物、修改构建脚本或 schema、或开发 SDK 时，才需要 TypeScript 环境：
 
 ```bash
 pnpm install --frozen-lockfile
 pnpm run build
 ```
 
-依赖安装时会自动装好 husky 提交钩子。之后提交 `data/` 下的 TOML 时，husky 会用 Tombi 自动格式化暂存文件（格式化结果会自动重新暂存）。
-
-本地构建便于提交前预览结果，但不要求人工提交重新生成的 JSON；推送 `v2` 后，CI 会自动补齐格式化和生成产物提交。
+- 项目使用 [pnpm](https://pnpm.io/) 管理 TypeScript 环境，要求 Node `>=20.19`（CI 固定使用 Node 24 与 pnpm 11.6.0）；
+- 依赖安装时会自动装好 husky 提交钩子：提交 `data/` 下的 TOML 时，husky 会用 Tombi 自动格式化暂存文件（格式化结果会自动重新暂存）。不装本地环境也不影响维护，CI 会补齐格式化和生成产物提交；
+- 本地构建便于提交前预览，但不要求人工提交重新生成的 JSON。
 
 ## 图片写法
 
@@ -173,7 +173,7 @@ const LEGACY_THEME_ORDER = ["wedding", "tarot", "mytheme"];
 
 人物图片按 `default`、`female`、`special`、主题文件名的顺序生成；同一 theme 内保持 TOML 中的书写顺序。
 
-## 构建与检查
+## 本地构建与检查
 
 ```bash
 # 格式化所有 TOML 数据源
@@ -207,29 +207,7 @@ npm install github:YttriumCarbide/Daoyuan#main
 
 > 用 pnpm 11 安装 git 依赖时，默认禁止运行其 `prepare` 构建脚本，需要先在消费方批准该依赖的构建（`pnpm approve-builds` 或在 `allowBuilds` 中允许对应 git 依赖），否则会因未产出 `dist/` 而安装失败。
 
-包导出：
-
-- 类型：`Image`、`Entity`、`EntityKind`、`ImageIndex`；
-- 一个简单 image SDK：`parseImages`、`getEntity`、`getImages`、`imagesForTheme`、`firstImage`。
-
-SDK 面向从 URL 动态加载的 `images.json`，因此实体名和主题保持开放字符串，与远程数据独立更新的语义一致：
-
-```ts
-import { getEntity, imagesForTheme, parseImages } from "daoyuan-images";
-
-const response = await fetch(
-  "https://raw.githubusercontent.com/YttriumCarbide/Daoyuan/main/images.json",
-);
-if (!response.ok) throw new Error(`加载 images.json 失败：${response.status}`);
-
-const index = parseImages(await response.json());
-const entity = getEntity(index, "白薇");
-const wedding = imagesForTheme(index, "白薇", "wedding");
-```
-
-`parseImages` 会严格校验文档结构和字段格式，但不会把实体名或主题限制为安装 SDK 时的数据快照。
-
-发布包只包含 `dist/sdk`，生产依赖只有 Zod。TOML 解析、JSON/JSON Schema 生成与 legacy 适配位于内部 `src/cli`，只供本仓库的开发和 CI 使用，不会进入安装包。
+SDK 的公共入口、动态 URL 加载示例与依赖边界详见 [docs/sdk.md](docs/sdk.md)。
 
 ## 自动维护与发布
 
@@ -255,6 +233,8 @@ const wedding = imagesForTheme(index, "白薇", "wedding");
 │   ├── character/          # 人物图片
 │   ├── sect/               # 宗门地图
 │   └── themes/             # 跨人物主题
+├── docs/
+│   └── sdk.md              # npm 包 SDK 使用文档
 ├── schema/
 │   ├── character.schema.json # 人物 TOML 校验规则
 │   ├── sect.schema.json      # 宗门 TOML 校验规则
@@ -262,7 +242,8 @@ const wedding = imagesForTheme(index, "白薇", "wedding");
 ├── src/
 │   ├── sdk/                # npm 公共 SDK（查询、最终 schema、类型）
 │   │   ├── index.ts        # 显式公共出口
-│   │   ├── client.ts       # image SDK
+│   │   ├── query.ts        # 无运行时依赖的纯查询
+│   │   ├── parse.ts        # 输入解析与公共校验入口
 │   │   ├── schema.ts       # images.json 的 Zod v4 runtime schema
 │   │   └── types.ts        # 公共数据类型
 │   └── cli/                # 仅供 dev / CI 使用的构建工具
