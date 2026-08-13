@@ -26,22 +26,26 @@ jobs:
         id: source
         run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Set up uv
-        uses: astral-sh/setup-uv@v9.0.0
+      - name: Set up Node
+        uses: actions/setup-node@v5
         with:
-          version: "0.12.3"
+          node-version: 24
+          cache: npm
 
       - name: Install dependencies
-        run: uv sync --frozen
+        run: npm ci
 
       - name: Format TOML
-        run: uv run tombi format --offline
+        run: npx tombi format --offline
 
       - name: Build generated artifacts
-        run: uv run python scripts/build_images.py
+        run: npm run build
 
       - name: Test
-        run: uv run python -m unittest discover -s tests -v
+        run: npm test
+
+      - name: Typecheck
+        run: npm run typecheck
 
       - name: Check whitespace
         run: git diff --check

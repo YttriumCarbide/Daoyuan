@@ -5,7 +5,7 @@ repos:
     hooks:
       - id: format-toml
         name: Format TOML
-        entry: uv run tombi format --offline --quiet
+        entry: npx tombi format --offline --quiet
         language: system
         files: ^data/(character|sect|themes)/.*\.toml$
         types: [toml]

@@ -1,88 +1,62 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:daoyuan:schema:images:character:v2",
-  "$defs": {
-    "CharacterImagePools": {
-      "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "images": {
+      "type": "object",
       "properties": {
         "default": {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/SourceImage"
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "pattern": "^https:\\/\\/[^\\s|]+$",
+                "description": "必须以 https:// 开头，且不能包含空白或 |。"
+              },
+              "comment": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500,
+                "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
+                "description": "不能为空或以空白开头、结尾。"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100,
+                  "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                },
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "url"
+            ],
+            "additionalProperties": false,
+            "description": "TOML 中的一张图片。"
           },
-          "minItems": 1,
-          "title": "Default"
+          "minItems": 1
         },
         "female": {
-          "items": {
-            "$ref": "#/$defs/SourceImage"
-          },
-          "minItems": 1,
-          "title": "Female",
-          "type": "array"
+          "$ref": "#/properties/images/properties/default"
         },
         "special": {
-          "items": {
-            "$ref": "#/$defs/SourceImage"
-          },
-          "minItems": 1,
-          "title": "Special",
-          "type": "array"
+          "$ref": "#/properties/images/properties/default"
         }
       },
-      "title": "CharacterImagePools",
-      "type": "object"
-    },
-    "SourceImage": {
       "additionalProperties": false,
-      "description": "TOML 中的一张图片。",
-      "properties": {
-        "url": {
-          "description": "必须以 https:// 开头，且不能包含空白或 |。",
-          "pattern": "^https://[^\\s|]+$",
-          "title": "Url",
-          "type": "string"
-        },
-        "comment": {
-          "default": null,
-          "description": "不能为空或以空白开头、结尾。",
-          "maxLength": 500,
-          "minLength": 1,
-          "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
-          "title": "Comment",
-          "type": "string"
-        },
-        "tags": {
-          "default": null,
-          "items": {
-            "maxLength": 100,
-            "minLength": 1,
-            "pattern": "^\\S(?:[\\s\\S]*\\S)?$",
-            "type": "string"
-          },
-          "title": "Tags",
-          "type": "array",
-          "uniqueItems": true
-        }
-      },
-      "required": [
-        "url"
-      ],
-      "title": "SourceImage",
-      "type": "object"
-    }
-  },
-  "additionalProperties": false,
-  "description": "`data/character/<name>.toml` 的根类型。",
-  "properties": {
-    "images": {
-      "$ref": "#/$defs/CharacterImagePools",
       "minProperties": 1
     }
   },
   "required": [
     "images"
   ],
-  "title": "Daoyuan Character Image Sources",
-  "type": "object"
+  "additionalProperties": false,
+  "description": "`data/character/<name>.toml` 的根类型。",
+  "title": "Daoyuan Character Image Sources"
 }

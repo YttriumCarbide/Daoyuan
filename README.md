@@ -12,14 +12,12 @@
 
 ## 快速开始
 
-项目使用 [uv](https://docs.astral.sh/uv/) 管理 Python 环境。
-
-开发环境要求 uv `>=0.11.21`，CI 固定使用 uv `0.12.3`；Python 固定为 `3.13.14`。
+项目使用 [npm](https://www.npmjs.com/) 管理 TypeScript 环境，要求 Node `>=20`（CI 固定使用 Node 24）。
 
 ```bash
-uv sync --frozen
-uv run pre-commit install
-uv run python scripts/build_images.py
+npm ci
+npx pre-commit install   # 可选；pre-commit 需单独安装（pipx / Homebrew）
+npm run build
 ```
 
 `pre-commit` 只需安装一次。之后提交 `data/` 下的 TOML 时，Tombi 会先自动格式化；如果文件被修改，请重新 `git add` 后再次提交。
@@ -129,19 +127,15 @@ images = [
 - 根级 `comment` 和 `tags` 是全局默认：主题内每张图片缺省使用该 `comment`；图片未声明 `tags` 时使用根级 `tags`，显式声明 `tags = []` 则不使用根级 `tags`，声明非空 `tags` 时与根级取并集（根级在前）。上例中 `tarot-1.png` 输出 `comment = "塔罗牌"`、`tags = ["tarot"]`，`tarot-2.png` 输出 `comment = "魔术师"`、`tags = ["tarot", "card"]`；
 - 一个主题文件可以包含多个人物，一个人物也可以出现在多个主题中。
 
-主题会自动写入 `images.json`。如果 `portraits.json` 也需要这个主题，请在 `scripts/build_images.py` 中补充对应分区：
+主题会自动写入 `images.json`。如果 `portraits.json` 也需要这个主题，请在 `src/artifacts.ts` 中补充对应分区：
 
-```python
-LEGACY_THEME_SECTIONS = {
-    "wedding": "weddingPortraits",
-    "tarot": "TarotPortraits",
-    "mytheme": "MyThemePortraits",
-}
+```ts
+const LEGACY_SECTIONS: Record<string, string> = {
+  // ...
+  mytheme: "MyThemePortraits",
+};
 
-LEGACY_PORTRAIT_SECTIONS = (
-    ...,
-    "MyThemePortraits",
-)
+const LEGACY_THEME_ORDER = ["wedding", "tarot", "mytheme"];
 ```
 
 ## images.json
@@ -184,22 +178,38 @@ LEGACY_PORTRAIT_SECTIONS = (
 
 ```bash
 # 格式化所有 TOML 数据源
-uv run tombi format --offline
+npx tombi format --offline
 
 # 只检查 TOML 格式，不修改文件
-uv run tombi format --check --offline
+npx tombi format --check --offline
 
 # 校验 TOML 并生成所有 JSON 文件
-uv run python scripts/build_images.py
+npm run build
 
 # 只检查已提交的 JSON 是否需要更新
-uv run python scripts/build_images.py --check
+npm run build:check
 
 # 运行测试
-uv run python -m unittest discover -s tests -v
+npm test
+
+# 类型检查
+npm run typecheck
 ```
 
-`scripts/images/models.py` 中的 Pydantic 类型是数据契约的唯一来源。构建命令会把类型转换为 Draft 2020-12 schema：`schema/` 下三份文件供 TOML 编辑器使用，根目录的 `images.schema.json` 用于校验最终产物。生成的 schema 不要直接编辑。
+`src/schema.ts` 中的 Zod 类型是数据契约的唯一来源。构建命令先把 Zod schema 推导为 TypeScript 类型，再由这些类型（经 `zod-to-json-schema`）转换为 Draft 2020-12 schema：`schema/` 下三份文件供 TOML 编辑器使用，根目录的 `images.schema.json` 用于校验最终产物。生成的 schema 不要直接编辑。
+
+## npm 包
+
+本仓库同时发布一个 npm 包 `daoyuan-images`，可直接经 GitHub 链接安装，无需发布到 npm registry：
+
+```bash
+npm install github:<owner>/Daoyuan#v2-ts
+```
+
+包导出：
+
+- 类型：`Image`、`Entity`、`EntityKind`、`ImageIndex`、`SourceImage`、`CharacterSource`、`SectSource`、`ThemeSource`、`Tag`、`Name` 等（`z.infer` 推导）；
+- 一个简单 image SDK：`parseImages`、`getEntity`、`getImages`、`imagesForTheme`、`firstImage`。
 
 ## 自动维护与发布
 
@@ -229,15 +239,19 @@ uv run python -m unittest discover -s tests -v
 │   ├── character.schema.json # 人物 TOML 校验规则
 │   ├── sect.schema.json      # 宗门 TOML 校验规则
 │   └── theme.schema.json     # 主题 TOML 校验规则
-├── scripts/
-│   ├── build_images.py     # 命令行入口
-│   └── images/
-│       ├── models.py       # 权威 Pydantic 契约
-│       ├── catalog.py      # TOML 读取与跨文件聚合
-│       └── artifacts.py    # 产物与 schema 生成
-├── tests/                  # 构建脚本测试
+├── src/
+│   ├── schema.ts           # 权威 Zod 契约 + z.infer 类型
+│   ├── catalog.ts          # TOML 读取与跨文件聚合
+│   ├── artifacts.ts        # 产物与 schema 生成
+│   ├── run.ts              # 构建/漂移检查入口
+│   ├── cli.ts              # 命令行入口
+│   ├── sdk.ts              # image SDK
+│   └── index.ts            # npm 包公共出口
+├── tests/                  # 构建脚本测试（vitest）
 ├── tombi.toml              # TOML 格式化范围与规则
 ├── .pre-commit-config.yaml # 提交前自动格式化
+├── package.json            # npm 包与脚本
+├── tsconfig.json           # TypeScript 配置
 ├── images.json             # 图片数据
 ├── images.schema.json      # images.json 校验规则
 ├── portrait-drawers.json   # 旧客户端立绘抽屉配置
