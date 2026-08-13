@@ -1,0 +1,5 @@
+# 本仓库嵌套在上级 daoyuan monorepo 的目录树内，但独立于其 workspace：
+# 声明空 workspace 使其成为独立的 pnpm 项目（拥有自己的 lockfile 与 node_modules）。
+packages: []
+allowBuilds:
+  esbuild: true

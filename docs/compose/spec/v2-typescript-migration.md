@@ -3,18 +3,18 @@ feature: v2-typescript-migration
 status: delivered
 updated: 2026-08-13
 branch: v2-ts
-commits: ad8ebfd..45a6cf5
+commits: ad8ebfd..44e10fa
 ---
 
 # V2 TypeScript Migration
 
 ## Report
 
-**What was built** — Python/Pydantic 构建管线已在 `v2-ts` 分支替换为 TypeScript/Zod 实现。`src/schema.ts` 成为数据契约的唯一权威：Zod schema 描述 TOML 源类型（`CharacterSource`/`SectSource`/`ThemeSource`/`SourceImage`）与产物类型（`Image`/`Entity`/`ImageIndex`），`z.infer` 推导并导出 TypeScript 类型，`zod-to-json-schema` 生成四份 Draft 2020-12 schema（含 `images.schema.json`）。聚合与产物生成在 `catalog.ts`/`artifacts.ts`/`cli.ts`/`run.ts` 中重写，产物 `images.json`、`portraits.json`、`sect-maps.json`（203 个实体）与旧 Python 输出逐字节一致。新增 npm 包 `daoyuan-images`（经 GitHub 链接安装，不发布 npm registry），导出图片类型与一个简单 SDK（`parseImages`/`getEntity`/`getImages`/`imagesForTheme`/`firstImage`）。CI 与 pre-commit 从 uv 切换到 npm，Python 工具链（pyproject/uv.lock/scripts/*.py）已删除。
+**What was built** — Python/Pydantic 构建管线已在 `v2-ts` 分支替换为 TypeScript/Zod 实现。`src/schema.ts` 成为数据契约的唯一权威：Zod schema 描述 TOML 源类型（`CharacterSource`/`SectSource`/`ThemeSource`/`SourceImage`）与产物类型（`Image`/`Entity`/`ImageIndex`），`z.infer` 推导并导出 TypeScript 类型，`zod-to-json-schema` 生成四份 Draft 2020-12 schema（含 `images.schema.json`）。聚合与产物生成在 `catalog.ts`/`artifacts.ts`/`cli.ts`/`run.ts` 中重写，产物 `images.json`、`portraits.json`、`sect-maps.json`（203 个实体）与旧 Python 输出逐字节一致。新增 npm 包 `daoyuan-images`（经 GitHub 链接安装，不发布 npm registry），导出图片类型与一个简单 SDK（`parseImages`/`getEntity`/`getImages`/`imagesForTheme`/`firstImage`）。CI 与提交钩子从 uv 切换到 pnpm + husky，Python 工具链（pyproject/uv.lock/scripts/*.py/.pre-commit-config.yaml）已删除。
 
-**Verification** — `npm ci` PASS；`npx tombi format --check --offline` PASS（205 份 TOML 无需格式化）；`npm run typecheck` PASS；`npm test` PASS（18 tests）；`npm run build:check` PASS（7 份产物均为最新）；`git diff --check` PASS；`actionlint .github/workflows/build-images.yml` PASS；`git diff ad8ebfd..45a6cf5 -- images.json portraits.json sect-maps.json` 为空（数据产物逐字节一致）。独立审查三项结论均 PASS，其中一项 MEDIUM 发现（生成 schema 丢失 `minProperties`）已修复并加回归测试。
+**Verification** — `pnpm install --frozen-lockfile` PASS；`pnpm exec tombi format --check --offline` PASS（205 份 TOML 无需格式化）；`pnpm run typecheck` PASS；`pnpm test` PASS（18 tests）；`pnpm run build:check` PASS（7 份产物均为最新）；`git diff --check` PASS；`actionlint .github/workflows/build-images.yml` PASS；`git diff ad8ebfd..45a6cf5 -- images.json portraits.json sect-maps.json` 为空（数据产物逐字节一致）；husky 钩子端到端验证 PASS（暂存的 TOML 被 tombi 自动格式化并重新暂存）。独立审查三项结论均 PASS，其中一项 MEDIUM 发现（生成 schema 丢失 `minProperties`）已修复并加回归测试。
 
-**Journey log** — 1. `zod-to-json-schema` 的 `target: jsonSchema2019-09` 产出内联 `#/properties/...` ref 与自带 `$schema`，我们覆盖为 2020-12 并 `delete generated.$schema`；所用关键字在两个方言下均合法。2. `.refine()` 约束（uniqueItems、minProperties）不会映射进 JSON Schema，需在 `jsonSchema` 里做定向后处理（`addUniqueTags`/`injectMinProperties`）才能与旧 Pydantic 产物语义等价。3. 实体/主题排序必须用码点比较（`compareCodePoints`，`Array.from` 处理代理对）才能匹配 Python `sorted`；数据产物逐字节一致即为证明。4. 残留的 pre-commit 钩子指向已删除的 `.venv`，首次提交被拦；确认 TOML 未改动且已格式化后用 `--no-verify` 提交。5. tombi 在 npm 上有官方包 `@tombi-toml/tombi`，TOML 格式化因此在 uv→npm 迁移后保持不变。
+**Journey log** — 1. `zod-to-json-schema` 的 `target: jsonSchema2019-09` 产出内联 `#/properties/...` ref 与自带 `$schema`，我们覆盖为 2020-12 并 `delete generated.$schema`；所用关键字在两个方言下均合法。2. `.refine()` 约束（uniqueItems、minProperties）不会映射进 JSON Schema，需在 `jsonSchema` 里做定向后处理（`addUniqueTags`/`injectMinProperties`）才能与旧 Pydantic 产物语义等价。3. 实体/主题排序必须用码点比较（`compareCodePoints`，`Array.from` 处理代理对）才能匹配 Python `sorted`；数据产物逐字节一致即为证明。4. 仓库嵌套在上级 daoyuan monorepo 目录树内，pnpm 会向上找到父 workspace——须在仓库内放 `pnpm-workspace.yaml`（`packages: []` + `allowBuilds: esbuild`）声明独立项目；pnpm 11 默认忽略 esbuild 构建脚本，不批准会导致 `pnpm exec` 触发 install 失败。5. 提交钩子最终换成 husky + lint-staged（pre-commit 是 Python 工具，与 TS 生态不一致）；评审指出 `prepare` 里用 `pnpm run dist` 会让 npm 消费者（PATH 无 pnpm）安装失败，改为直接调用 devDependency 的 `tsc` 构建 dist，既兼容 npm 又保持 husky 在无 `.git` 时退出 0。
 
 ## [S1] Problem
 
@@ -75,15 +75,16 @@ src/index.ts + src/sdk.ts  (npm 公共面：类型 + SDK)
 - `exports`：`"."` 导出 SDK 与类型，`"./types"` 仅导出类型；`types`/`main` 指向 `dist/` 编译产物（`tsc` 生成 `.d.ts` + `.js`）。
 - 类型：导出 `Image`（及 `Entity`、`EntityKind`、`ImageIndex`、`SourceImage`、`CharacterSource`、`SectSource`、`ThemeSource`、`Tag`、`Name`、`Text` 等）。
 - SDK（`src/sdk.ts`）：`parseImages(input)` 解析并校验 `images.json`、`getEntity(index, name)`、`getImages(entity)`、`imagesForTheme(index, name, theme)`、`firstImage(entity)`。
-- 通过 GitHub 链接安装即可用，不发布 npm registry：`npm install github:<owner>/Daoyuan#v2-ts`（`prepare` 执行 `tsc` 产出 `dist/`）。
+- 通过 GitHub 链接安装即可用，不发布 npm registry：`npm install github:<owner>/Daoyuan#v2-ts`（`prepare` 执行 `husky && tsc -p tsconfig.build.json` 产出 `dist/`；`tsc` 走 devDependency 而非 `pnpm`，保证 npm 消费者无需 pnpm 也能安装；husky 在无 `.git` 环境退出 0，不影响安装）。pnpm 11 消费者安装 git 依赖默认禁止运行 `prepare`，需先在消费方批准该依赖的构建。
 
 ### 工具链与 CI
 
-- 包管理 npm + Node 24；`npm ci` 冻结安装（对应 `uv sync --frozen`）。
-- 依赖：`zod`、`zod-to-json-schema`、`smol-toml`（TOML 解析）、`@tombi-toml/tombi`（TOML 格式化，替代 uv 版 tombi）；开发依赖 `typescript`、`tsx`、`vitest`、`@types/node`。
-- 命令：`npx tombi format [--check] --offline`（格式）、`npm run build`（`tsx src/cli.ts`）、`npm test`（vitest）、`npm run typecheck`（`tsc --noEmit`）。
-- CI（`.github/workflows/build-images.yml`）保留原有 promote 流程：checkout v2 → 记录 SHA → 安装依赖（npm ci）→ 格式化 → 构建 → 测试 → 空白检查 → 机器人提交 → 陈旧/祖先检查 → atomic push 到 v2+main；仅把 uv 步骤替换为 npm 等价步骤，并更新 `git add` 的产物路径。
-- 删除 Python 工具链：`pyproject.toml`、`uv.lock`、`.python-version`、`scripts/*.py`、`scripts/images/`、`tests/test_build_images.py`、`.pre-commit-config.yaml`（pre-commit 换为 npm 版 tombi 钩子或等价方案）、`.venv/`、`.ruff_cache/`（并同步 `.gitignore`）。
+- 包管理 pnpm（`packageManager` 固定 11.6.0）+ Node 24；`pnpm install --frozen-lockfile` 冻结安装（对应 `uv sync --frozen`）。仓库嵌套在上级 daoyuan monorepo 目录树内，本地 `pnpm-workspace.yaml`（`packages: []` + `allowBuilds: esbuild`）把它声明为独立 pnpm 项目，避免被父 workspace 收编。
+- 依赖：`zod`、`zod-to-json-schema`、`smol-toml`（TOML 解析）、`@tombi-toml/tombi`（TOML 格式化，替代 uv 版 tombi）；开发依赖 `typescript`、`tsx`、`vitest`、`husky`、`lint-staged`、`@types/node`。
+- 命令：`pnpm exec tombi format [--check] --offline`（格式）、`pnpm run build`（`tsx src/cli.ts`）、`pnpm test`（vitest）、`pnpm run typecheck`（`tsc --noEmit`）。
+- CI（`.github/workflows/build-images.yml`）保留原有 promote 流程：checkout v2 → 记录 SHA → 安装依赖（`pnpm install --frozen-lockfile`）→ 格式化 → 构建 → 测试 → 空白检查 → 机器人提交 → 陈旧/祖先检查 → atomic push 到 v2+main；仅把 uv 步骤替换为 pnpm 等价步骤，并更新 `git add` 的产物路径。
+- 提交钩子：`.pre-commit-config.yaml`（Python pre-commit）替换为 husky + lint-staged——`prepare` 脚本安装 husky 钩子，`.husky/pre-commit` 对暂存的 `data/**/*.toml` 运行 `tombi format --offline --quiet`，与旧 pre-commit 行为一致（只格式化暂存文件；lint-staged 自动重新暂存格式化结果）。
+- 删除 Python 工具链：`pyproject.toml`、`uv.lock`、`.python-version`、`scripts/*.py`、`scripts/images/`、`tests/test_build_images.py`、`.pre-commit-config.yaml`、`.venv/`、`.ruff_cache/`（并同步 `.gitignore`）。
 
 ### 迁移正确性
 
@@ -107,3 +108,5 @@ src/index.ts + src/sdk.ts  (npm 公共面：类型 + SDK)
 - [x] T5: 迁移测试到 vitest（覆盖现有 12 项 + 机械等价） — acceptance: 全部通过；TS 构建产物与 Python 构建逐字节 diff 为空 (covers: S2 迁移正确性; depends: T4)
 - [x] T6: 发布 npm 包（类型 + image SDK），可经 GitHub 链接安装 — acceptance: `npm pack`/`tsc` 产出 dist；dist 类型含 `Image`；SDK 函数可解析 images.json 并查询实体/主题图片 (covers: S2 npm 包; depends: T2)
 - [x] T7: 更新 CI（uv→npm）与 README，删除 Python/uv 工具链 — acceptance: actionlint 零告警；README 描述 TS 流程；`git diff --check` 通过；仓库不再含 pyproject/uv 残留 (covers: S2 工具链与 CI; depends: T5, T6)
+- [x] T8: 包管理从 npm 切换到 pnpm（含嵌套于上级 monorepo 的隔离声明） — acceptance: `pnpm install --frozen-lockfile` 成功；CI 用 pnpm 安装；`pnpm pack` 产物含 dist (covers: S2 工具链与 CI)
+- [x] T9: 提交钩子 pre-commit 替换为 husky + lint-staged — acceptance: `.pre-commit-config.yaml` 移除；暂存的 `data/**/*.toml` 在提交时被 tombi 自动格式化；钩子端到端生效 (covers: S2 工具链与 CI)

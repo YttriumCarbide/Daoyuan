@@ -12,15 +12,14 @@
 
 ## 快速开始
 
-项目使用 [npm](https://www.npmjs.com/) 管理 TypeScript 环境，要求 Node `>=20`（CI 固定使用 Node 24）。
+项目使用 [pnpm](https://pnpm.io/) 管理 TypeScript 环境，要求 Node `>=20.19`（CI 固定使用 Node 24 与 pnpm 11.6.0）。
 
 ```bash
-npm ci
-npx pre-commit install   # 可选；pre-commit 需单独安装（pipx / Homebrew）
-npm run build
+pnpm install --frozen-lockfile
+pnpm run build
 ```
 
-`pre-commit` 只需安装一次。之后提交 `data/` 下的 TOML 时，Tombi 会先自动格式化；如果文件被修改，请重新 `git add` 后再次提交。
+依赖安装时会自动装好 husky 提交钩子。之后提交 `data/` 下的 TOML 时，husky 会用 Tombi 自动格式化暂存文件（格式化结果会自动重新暂存）。
 
 本地构建便于提交前预览结果，但不要求人工提交重新生成的 JSON；推送 `v2` 后，CI 会自动补齐格式化和生成产物提交。
 
@@ -178,22 +177,22 @@ const LEGACY_THEME_ORDER = ["wedding", "tarot", "mytheme"];
 
 ```bash
 # 格式化所有 TOML 数据源
-npx tombi format --offline
+pnpm exec tombi format --offline
 
 # 只检查 TOML 格式，不修改文件
-npx tombi format --check --offline
+pnpm exec tombi format --check --offline
 
 # 校验 TOML 并生成所有 JSON 文件
-npm run build
+pnpm run build
 
 # 只检查已提交的 JSON 是否需要更新
-npm run build:check
+pnpm run build:check
 
 # 运行测试
-npm test
+pnpm test
 
 # 类型检查
-npm run typecheck
+pnpm run typecheck
 ```
 
 `src/schema.ts` 中的 Zod 类型是数据契约的唯一来源。构建命令先把 Zod schema 推导为 TypeScript 类型，再由这些类型（经 `zod-to-json-schema`）转换为 Draft 2020-12 schema：`schema/` 下三份文件供 TOML 编辑器使用，根目录的 `images.schema.json` 用于校验最终产物。生成的 schema 不要直接编辑。
@@ -205,6 +204,8 @@ npm run typecheck
 ```bash
 npm install github:<owner>/Daoyuan#v2-ts
 ```
+
+> 用 pnpm 11 安装 git 依赖时，默认禁止运行其 `prepare` 构建脚本，需要先在消费方批准该依赖的构建（`pnpm approve-builds` 或在 `allowBuilds` 中允许对应 git 依赖），否则会因未产出 `dist/` 而安装失败。
 
 包导出：
 
@@ -249,8 +250,10 @@ npm install github:<owner>/Daoyuan#v2-ts
 │   └── index.ts            # npm 包公共出口
 ├── tests/                  # 构建脚本测试（vitest）
 ├── tombi.toml              # TOML 格式化范围与规则
-├── .pre-commit-config.yaml # 提交前自动格式化
+├── .husky/pre-commit       # 提交前自动格式化（husky + lint-staged）
 ├── package.json            # npm 包与脚本
+├── pnpm-lock.yaml          # pnpm 依赖锁定
+├── pnpm-workspace.yaml     # 独立 pnpm 项目声明
 ├── tsconfig.json           # TypeScript 配置
 ├── images.json             # 图片数据
 ├── images.schema.json      # images.json 校验规则
