@@ -56,6 +56,7 @@ query(index).entity("白薇").theme("default").legacy(); // "url1|url2" legacy �
 - `.entity()` 选择实体、`.theme()` 过滤主题，两者都是开放字符串；每一步都返回新构建器，可以复用；
 - 持有 `Entity` 时 `firstImage(entity)` 稳定返回 `Image`：schema 保证每个实体的 `images` 至少一张（类型为 `readonly [Image, ...Image[]]`）；
 - 链式查询基于开放实体名，实体不存在时 `.all()` 返回 `[]`、`.first()` 返回 `undefined`、`.legacy()` 返回 `""`；
+- 实体名只按自有属性查找，`constructor`、`toString`、`__proto__` 等原型链名称不会被误认为实体；
 - `.legacy()` 与 `portraits.json`、`sect-maps.json` 中的 `url1|url2` 格式一致：按展示顺序拼接，`|` 不会出现在单条 url 中。
 
 发布包只包含 `dist/sdk`，生产依赖只有 Zod。TOML 解析、JSON/JSON Schema 生成与 legacy 适配位于内部 `src/cli`，只供本仓库的开发和 CI 使用，不会进入安装包。

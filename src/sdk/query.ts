@@ -1,8 +1,9 @@
 import type { Entity, Image, ImageIndex } from "./types.js";
 
-/** 按实体名查询实体。 */
+/** 按实体名查询实体；只认自有属性，`constructor`、`__proto__` 等原型链名称不会命中。 */
 export function getEntity(index: ImageIndex, name: string): Entity | undefined {
-  return index.data.entities[name];
+  const { entities } = index.data;
+  return Object.hasOwn(entities, name) ? entities[name] : undefined;
 }
 
 /** 返回实体的全部图片（schema 保证至少一张，保持构建时的展示顺序）。 */

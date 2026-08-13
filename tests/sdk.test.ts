@@ -55,6 +55,37 @@ describe("image sdk", () => {
     expect(query(index).entity("不存在的角色").legacy()).toBe("");
   });
 
+  it("treats prototype-chain names as missing entities", () => {
+    const index = parseImages(fs.readFileSync(path.join(ROOT, "images.json"), "utf8"));
+
+    for (const name of ["constructor", "toString", "__proto__", "hasOwnProperty"]) {
+      expect(getEntity(index, name)).toBeUndefined();
+      expect(imagesForTheme(index, name, "default")).toEqual([]);
+      expect(query(index).entity(name).all()).toEqual([]);
+      expect(query(index).entity(name).first()).toBeUndefined();
+      expect(query(index).entity(name).legacy()).toBe("");
+    }
+  });
+
+  it("resolves entities whose real name collides with a prototype name", () => {
+    const index = parseImages({
+      schemaVersion: 2,
+      data: {
+        entities: {
+          constructor: {
+            type: "character",
+            images: [{ url: "https://example.com/constructor.png", theme: "default", tags: [] }],
+          },
+        },
+      },
+    });
+
+    expect(getEntity(index, "constructor")?.images[0].url).toBe(
+      "https://example.com/constructor.png",
+    );
+    expect(query(index).entity("constructor").all()).toHaveLength(1);
+  });
+
   it("keeps chain builders immutable", () => {
     const index = parseImages(fs.readFileSync(path.join(ROOT, "images.json"), "utf8"));
     const entity = getEntity(index, "白薇")!;
