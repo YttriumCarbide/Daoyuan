@@ -17,10 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out v2
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
         with:
           ref: v2
           fetch-depth: 0
+          # 使用具有绕过分支保护权限的 PAT (Personal Access Token)
+          # 需要在 Settings -> Secrets and variables -> Actions 中添加名为 GH_PAT 的 Secret
+          token: ${{ secrets.GH_PAT || github.token }}
 
       - name: Record source revision
         id: source
