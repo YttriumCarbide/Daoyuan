@@ -3,6 +3,7 @@
 
 description = "泳装立绘"
 comment = "泳装"
+tags = ["WIKI-2026-W33"]
 
 [[characters."玖柒".images]]
 url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d8a2be5.png"
