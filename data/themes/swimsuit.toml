@@ -5,15 +5,6 @@ description = "泳装立绘"
 comment = "泳装"
 tags = ["WIKI-2026-W33"]
 
-[[characters."玖柒".images]]
-url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d8a2be5.png"
-
-[[characters."姜梦".images]]
-url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d7ddc24.png"
-
-[[characters."阴丽华".images]]
-url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d7e22c8.png"
-
 [[characters."樊月汐".images]]
 url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d6c766d.png"
 
@@ -29,17 +20,32 @@ url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d4e9a88.png"
 [[characters."苏清漪".images]]
 url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d3e43e4.png"
 
-[[characters."幽梦".images]]
-url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d3e2d81.png"
-
 [[characters."李铭".images]]
 url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d2e0956.png"
-
-[[characters."公孙清".images]]
-url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3cfe237b.png"
 
 [[characters."嫣雨烟".images]]
 url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3cfa196d.png"
 
+[[characters."幽梦".images]]
+url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d3e2d81.png"
+tags = []
+
+[[characters."公孙清".images]]
+url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3cfe237b.png"
+tags = []
+
 [[characters."舞弦琴".images]]
 url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3cf9773c.png"
+tags = []
+
+[[characters."玖柒".images]]
+url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d8a2be5.png"
+tags = []
+
+[[characters."姜梦".images]]
+url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d7ddc24.png"
+tags = []
+
+[[characters."阴丽华".images]]
+url = "https://cdn.myfollo.xyz/2026/08/17/6a82e3d7e22c8.png"
+tags = []
