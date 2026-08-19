@@ -208,7 +208,7 @@ export function buildLegacyPortraits(
       }
       const urls = images.map((image) => image.url).join("|");
       portraits[section]![name] = urls;
-      if (pool === "wedding" || pool === "tarot" || pool === "swimsuit" || pool === "nai") {
+      if (pool === "wedding" || pool === "tarot") {
         const current = portraits.charPortraits![name];
         portraits.charPortraits![name] = current ? `${current}|${urls}` : urls;
       }
