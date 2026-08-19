@@ -166,7 +166,7 @@ export function buildIndex(catalog: Catalog): RuntimeImageIndex {
   for (const name of names) {
     const source = catalog.entities.get(name)!;
     const poolOrder =
-      source.kind === "character" ? [...CHARACTER_POOLS, ...catalog.themes] : [SECT_POOL];
+      source.kind === "character" ? [...CHARACTER_POOLS, ...LEGACY_THEME_ORDER, ...catalog.themes.filter(t => !LEGACY_THEME_ORDER.includes(t))] : [SECT_POOL];
     const images: RuntimeImage[] = [];
     for (const pool of poolOrder) {
       for (const image of source.pools[pool] ?? []) {
@@ -208,7 +208,7 @@ export function buildLegacyPortraits(
       }
       const urls = images.map((image) => image.url).join("|");
       portraits[section]![name] = urls;
-      if (pool === "wedding" || pool === "tarot") {
+      if (pool === "wedding" || pool === "tarot" || pool === "swimsuit" || pool === "nai") {
         const current = portraits.charPortraits![name];
         portraits.charPortraits![name] = current ? `${current}|${urls}` : urls;
       }
