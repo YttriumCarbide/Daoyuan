@@ -36,6 +36,12 @@
       "icon": "👙",
       "order": 60,
       "sourceKey": "swimsuitPortraits"
+    },
+    "nai": {
+      "name": "Nai",
+      "icon": "🥛",
+      "order": 70,
+      "sourceKey": "naiPortraits"
     }
   },
   "aliases": {}

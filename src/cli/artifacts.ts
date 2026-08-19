@@ -26,8 +26,9 @@ const LEGACY_SECTIONS: Record<string, string> = {
   wedding: "weddingPortraits",
   tarot: "TarotPortraits",
   swimsuit: "swimsuitPortraits",
+  nai: "naiPortraits",
 };
-const LEGACY_THEME_ORDER = ["wedding", "tarot", "swimsuit"];
+const LEGACY_THEME_ORDER = ["wedding", "tarot", "swimsuit", "nai"];
 const LEGACY_SECT_GROUPS: Record<string, string[]> = {
   玄天界: [
     "大周仙朝",
@@ -207,7 +208,7 @@ export function buildLegacyPortraits(
       }
       const urls = images.map((image) => image.url).join("|");
       portraits[section]![name] = urls;
-      if (LEGACY_THEME_ORDER.includes(pool)) {
+      if (pool === "wedding" || pool === "tarot" || pool === "swimsuit" || pool === "nai") {
         const current = portraits.charPortraits![name];
         portraits.charPortraits![name] = current ? `${current}|${urls}` : urls;
       }

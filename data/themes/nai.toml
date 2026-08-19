@@ -1,0 +1,420 @@
+#:schema ../../schema/theme.schema.json
+# Nai立绘
+
+description = "Nai"
+comment = "Nai"
+tags = ["WIKI-2026-W34"]
+
+[[characters."宫银叶".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848258ed314.jpg"
+
+[[characters."青衣".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8482bcb3ecc.jpg"
+
+[[characters."幽悦".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84834a6919f.jpg"
+
+[[characters."凌月".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8483b451faa.jpg"
+
+[[characters."阴罗".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8483d92b6f3.jpg"
+
+[[characters."晚絮".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84840847f21.jpg"
+
+[[characters."白薇".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8484278a825.jpg"
+
+[[characters."苏清雪".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8484478eb60.jpg"
+
+[[characters."玄虚".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84846a0cd91.jpg"
+
+[[characters."陆雪琪".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84849191c7b.jpg"
+
+[[characters."紫薇".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8484b56b6a7.jpg"
+
+[[characters."曦和".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8484df66792.jpg"
+
+[[characters."绯月".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84850a802e4.jpg"
+
+[[characters."林素铃".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84852b325bf.jpg"
+
+[[characters."红莲".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84854b955bc.jpg"
+
+[[characters."叶清".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84857749f0c.jpg"
+
+[[characters."龙傲飞".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8485ce4ab4b.jpg"
+
+[[characters."苏沐雪".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848642a7876.jpg"
+
+[[characters."叶冰".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848658b323c.jpg"
+
+[[characters."炎帝".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84866a9752e.jpg"
+
+[[characters."红绡".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84869074618.jpg"
+
+[[characters."苏琉璃".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848a2b0f3df.jpg"
+
+[[characters."秦无夜".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848a4f9bed7.jpg"
+
+[[characters."云舒窈".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848a69025b9.jpg"
+
+[[characters."烈阳".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848a8662525.jpg"
+
+[[characters."构军".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848a99e03dd.jpg"
+
+[[characters."慧空".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848aafde716.jpg"
+
+[[characters."般若".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848ac4cadb1.jpg"
+
+[[characters."韩月灵".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848adb734d3.jpg"
+
+[[characters."林妙音".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848af110df7.jpg"
+
+[[characters."幽梦".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848b053b12a.jpg"
+
+[[characters."广慧".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848d84aff95.jpg"
+
+[[characters."噬魂".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848f391dd18.jpg"
+
+[[characters."冰凤".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848f5b7b22f.jpg"
+
+[[characters."姬紫月".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848f78c6a26.jpg"
+
+[[characters."苏媚".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848f921f095.jpg"
+
+[[characters."萧婉儿".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848fab2e6db.jpg"
+
+[[characters."姬昊天".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848fbfc8927.jpg"
+
+[[characters."李牧".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848fdf36062.jpg"
+
+[[characters."萧衍".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a848ff3e7afd.jpg"
+
+[[characters."青练".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8490064e98a.jpg"
+
+[[characters."敖凌霜".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849019bff31.jpg"
+
+[[characters."袁琪".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84902d374ad.jpg"
+
+[[characters."孔灵月".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8490502b38b.jpg"
+
+[[characters."蛛心儿".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84906f04ef7.jpg"
+
+[[characters."江楚楚".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84909223d0e.jpg"
+
+[[characters."苏辰".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8490a75eeff.jpg"
+
+[[characters."温月清".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8490c668f51.jpg"
+
+[[characters."温小暖".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8490dbbc19c.jpg"
+
+[[characters."苏灿灿".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8490efe900d.jpg"
+
+[[characters."玖柒".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849102068a9.jpg"
+
+[[characters."南宫婉".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8491365994d.jpg"
+
+[[characters."韩立".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8491474166b.jpg"
+
+[[characters."银月".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84915a0fc4a.jpg"
+
+[[characters."石昊".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84916a84573.jpg"
+
+[[characters."白小纯".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84917c84b6a.jpg"
+
+[[characters."侯小妹".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84918c00f6f.jpg"
+
+[[characters."古月方源".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84919d1677e.jpg"
+
+[[characters."宋文".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8491ae0b358.jpg"
+
+[[characters."商心慈".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8491bfa6e97.jpg"
+
+[[characters."嫣雨烟".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8491dd9d02d.jpg"
+
+[[characters."唐弎".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8491ff8e93e.jpg"
+
+[[characters."银黎".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84921b91fed.jpg"
+
+[[characters."王林".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84922d22a0d.jpg"
+
+[[characters."秦浅月".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8492442ef53.jpg"
+
+[[characters."灵玥".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8492610207c.jpg"
+
+[[characters."许千寻".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84927d0a38e.jpg"
+
+[[characters."玄清".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84928d68e32.jpg"
+
+[[characters."星宿".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84929e9a8e2.jpg"
+
+[[characters."凤灵儿".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8492af2584a.jpg"
+
+[[characters."魏喑".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8492c734b8f.jpg"
+
+[[characters."乔梦玉".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8492dd14095.jpg"
+
+[[characters."元容".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8492f19f4b6.jpg"
+
+[[characters."玄璃".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84930d1acaf.jpg"
+
+[[characters."阳宇".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84932592d6b.jpg"
+
+[[characters."林寒绾".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849337cffd0.jpg"
+
+[[characters."朱离".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84934f209cf.jpg"
+
+[[characters."侯景".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84936263d34.jpg"
+
+[[characters."长孙镜华".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849373ca989.jpg"
+
+[[characters."柳青螭".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84939056188.jpg"
+
+[[characters."希夷".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8493ace44ad.jpg"
+
+[[characters."辟易川".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8493c116fa1.jpg"
+
+[[characters."欧阳灵".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8493d41b55b.jpg"
+
+[[characters."黑姬结灯".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8493fed72b2.jpg"
+
+[[characters."李未晞".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849412ec96e.jpg"
+
+[[characters."阴丽华".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84942cc8612.jpg"
+
+[[characters."九歌".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849450de7d0.jpg"
+
+[[characters."晏青".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84946756804.jpg"
+
+[[characters."小D".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84947b14ef4.jpg"
+
+[[characters."白祈昼".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8494931c393.jpg"
+
+[[characters."璃宫花火".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8494a657ae5.jpg"
+
+[[characters."紫澪".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8494b98fde3.jpg"
+
+[[characters."金玉满".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8494d7cba0b.jpg"
+
+[[characters."小翠".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8494e5bf8f0.jpg"
+
+[[characters."万金柝".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849512401e1.jpg"
+
+[[characters."万璇玑".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8495206445f.jpg"
+
+[[characters."叶焚渊".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8495360fa38.jpg"
+
+[[characters."小显示".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849547481d0.jpg"
+
+[[characters."海伊".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84955654fca.jpg"
+
+[[characters."柳舞蝶".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84956631e32.jpg"
+
+[[characters."白疏影".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8495926d53c.jpg"
+
+[[characters."樊月汐".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8495ac3210e.jpg"
+
+[[characters."卡斯蒂利亚".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8495bdcabbf.jpg"
+
+[[characters."君姝".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8495cf2b8ee.jpg"
+
+[[characters."代安池".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84963814172.jpg"
+
+[[characters."桃幽".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8495edea494.jpg"
+
+[[characters."颜小落".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8495fe602e6.jpg"
+
+[[characters."桃夭诺".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849612753f0.jpg"
+
+[[characters."苏慕渊".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849621b0260.jpg"
+
+[[characters."姬觅弥".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8495de33e10.jpg"
+
+[[characters."苏清漪".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84965f8399d.jpg"
+
+[[characters."姜梦".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84966e2dbc6.jpg"
+
+[[characters."云初未来".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84967b67385.jpg"
+
+[[characters."白倾颜".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8496891e907.jpg"
+
+[[characters."顾清清".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8496998e5ef.jpg"
+
+[[characters."绯萝".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8496a882050.jpg"
+
+[[characters."月珑".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8496ba45fb0.jpg"
+
+[[characters."辛绫".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8496c8c7192.jpg"
+
+[[characters."幽姬".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8496dcec83c.jpg"
+
+[[characters."玄曦".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8496f81fc47.jpg"
+
+[[characters."霜甄".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84970c37594.jpg"
+
+[[characters."蜃娆".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84971eedabd.jpg"
+
+[[characters."袁战天".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84972b9398d.jpg"
+
+[[characters."虚渊".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84973ae08e6.jpg"
+
+[[characters."李铭".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849748c3567.jpg"
+
+[[characters."公孙清".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8497629844e.jpg"
+
+[[characters."瑶汐".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84976e94766.jpg"
+
+[[characters."林雪".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84978a23a0e.jpg"
+
+[[characters."天妤".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84979d07d3d.jpg"
+
+[[characters."秦心".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8497a98d056.jpg"
+
+[[characters."大衍".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8497ec6d6dc.jpg"
+
+[[characters."苏千媚".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8497fb91189.jpg"
+
+[[characters."慕清弦".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8498098763f.jpg"
+
+[[characters."红蝶".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84981af2157.jpg"
+
+[[characters."李溯".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84984239425.jpg"
+
+[[characters."燕重微".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a8498526b792.jpg"
+
+[[characters."林欣".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a849869152db.jpg"
+
+[[characters."百铃".images]]
+url = "https://cdn.myfollo.xyz/2026/08/19/6a84987c6ecaa.jpg"

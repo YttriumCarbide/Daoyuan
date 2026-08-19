@@ -3,6 +3,7 @@
 [images]
 default = [
   { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%9C%E6%A2%A6.image.935bd41b29.webp" },
+  { url = "https://cdn.myfollo.xyz/2026/08/19/6a857ddcc33d5.png" },
 ]
 special = [
   { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%9C%E6%A2%A6.image.a1bed25342.webp" },
