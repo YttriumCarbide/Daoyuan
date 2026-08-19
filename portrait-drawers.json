@@ -30,6 +30,12 @@
       "icon": "🔮",
       "order": 50,
       "sourceKey": "TarotPortraits"
+    },
+    "swimsuit": {
+      "name": "泳装",
+      "icon": "👙",
+      "order": 60,
+      "sourceKey": "swimsuitPortraits"
     }
   },
   "aliases": {}
