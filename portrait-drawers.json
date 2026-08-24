@@ -42,6 +42,12 @@
       "icon": "🥛",
       "order": 70,
       "sourceKey": "naiPortraits"
+    },
+    "real": {
+      "name": "真人",
+      "icon": "🌏",
+      "order": 80,
+      "sourceKey": "realPortraits"
     }
   },
   "aliases": {}
