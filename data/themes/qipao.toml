@@ -1,0 +1,48 @@
+#:schema ../../schema/theme.schema.json
+# 旗袍立绘
+
+description = "旗袍立绘"
+comment = "旗袍"
+tags = ["WIKI-2026-W35"]
+
+[[characters."樊月汐".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958aa94b413.png"
+
+[[characters."苏琉璃".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958aa89a3b1.png"
+
+[[characters."嫣雨烟".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a929edfa.png"
+
+[[characters."凌紫嫣".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a91df9b5.png"
+
+[[characters."钰仙儿".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a908da54.png"
+
+[[characters."万璇玑".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a8fefb39.png"
+
+[[characters."慕清弦".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a8eba03e.png"
+
+[[characters."叶冰".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a8db434f.png"
+
+[[characters."百铃".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a8d336eb.png"
+
+[[characters."代安池".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a8be0adb.png"
+
+[[characters."晚絮".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a8a73388.png"
+
+[[characters."天妤".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a89cef42.png"
+
+[[characters."绯月".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a87f30f3.png"
+
+[[characters."蛛心儿".images]]
+url = "https://cdn.myfollo.xyz/2026/08/31/6a958a874ed24.png"
