@@ -48,6 +48,12 @@
       "icon": "🌏",
       "order": 80,
       "sourceKey": "realPortraits"
+    },
+    "qipao": {
+      "name": "旗袍",
+      "icon": "🏮",
+      "order": 90,
+      "sourceKey": "qipaoPortraits"
     }
   },
   "aliases": {}
