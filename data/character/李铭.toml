@@ -13,4 +13,5 @@ default = [
 ]
 special = [
   { url = "https://cdn.myfollo.xyz/2026/08/07/6a75c98e3918f.png" },
+  { url = "https://cdn.myfollo.xyz/2026/09/07/6a9d97c8be088.png" },
 ]
