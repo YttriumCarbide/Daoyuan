@@ -54,6 +54,12 @@
       "icon": "🏮",
       "order": 90,
       "sourceKey": "qipaoPortraits"
+    },
+    "jk": {
+      "name": "JK",
+      "icon": "🎀",
+      "order": 100,
+      "sourceKey": "jkPortraits"
     }
   },
   "aliases": {}
