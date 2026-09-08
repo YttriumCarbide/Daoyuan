@@ -1,0 +1,48 @@
+#:schema ../../schema/theme.schema.json
+# 幼年立绘
+
+description = "幼年立绘"
+comment = "幼年"
+tags = ["v5.4"]
+
+[[characters."李未晞".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa014ae7aa0f.png"
+
+[[characters."瑶汐".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa014ae53269.png"
+
+[[characters."南可熙".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa014ae406d2.png"
+
+[[characters."叶焚渊".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa0158939f4e.png"
+
+[[characters."海伊".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa015895ad44.png"
+
+[[characters."百铃".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa015896171e.png"
+
+[[characters."檀虹羽".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa015d597118.png"
+
+[[characters."樊月汐".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa015d4dfddd.png"
+
+[[characters."姜梦".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa015d4e015b.png"
+
+[[characters."顾清清".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa0161befb87.png"
+
+[[characters."万璇玑".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa0161b3b49a.png"
+
+[[characters."云初未来".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa0161bdd573.png"
+
+[[characters."欧阳灵".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa0165a6be8a.png"
+
+[[characters."阴丽华".images]]
+url = "https://cdn.myfollo.xyz/2026/09/08/6aa0165a67278.png"

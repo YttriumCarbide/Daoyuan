@@ -60,6 +60,12 @@
       "icon": "🎀",
       "order": 100,
       "sourceKey": "jkPortraits"
+    },
+    "child": {
+      "name": "幼年",
+      "icon": "🧒",
+      "order": 110,
+      "sourceKey": "childPortraits"
     }
   },
   "aliases": {}

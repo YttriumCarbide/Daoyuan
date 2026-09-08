@@ -1,0 +1,6 @@
+#:schema ../../schema/character.schema.json
+
+[images]
+default = [
+  { url = "https://i.postimg.cc/Vs7xrfpV/9.png" },
+]

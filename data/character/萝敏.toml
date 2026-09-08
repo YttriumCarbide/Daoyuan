@@ -1,0 +1,6 @@
+#:schema ../../schema/character.schema.json
+
+[images]
+default = [
+  { url = "https://i.postimg.cc/CxKprZDx/Chat-GPT-Image-202697-02-22-03.png" },
+]
