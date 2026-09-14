@@ -4,3 +4,6 @@
 default = [
   { url = "https://i.postimg.cc/brb1hN2B/file-00000000039c8211a4b393c37dbb8754.png" },
 ]
+special = [
+  { url = "https://cdn.myfollo.xyz/2026/09/14/6aa8094c35c05.png" },
+]

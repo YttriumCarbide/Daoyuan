@@ -66,6 +66,12 @@
       "icon": "🧒",
       "order": 110,
       "sourceKey": "childPortraits"
+    },
+    "magic": {
+      "name": "魔法学院",
+      "icon": "🪄",
+      "order": 120,
+      "sourceKey": "magicPortraits"
     }
   },
   "aliases": {}

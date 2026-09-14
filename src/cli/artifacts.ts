@@ -31,8 +31,9 @@ const LEGACY_SECTIONS: Record<string, string> = {
   qipao: "qipaoPortraits",
   jk: "jkPortraits",
   child: "childPortraits",
+  magic: "magicPortraits",
 };
-const LEGACY_THEME_ORDER = ["wedding", "tarot", "swimsuit", "nai", "real", "qipao", "jk", "child"];
+const LEGACY_THEME_ORDER = ["wedding", "tarot", "swimsuit", "nai", "real", "qipao", "jk", "child", "magic"];
 const LEGACY_SECT_GROUPS: Record<string, string[]> = {
   玄天界: [
     "大周仙朝",
@@ -220,7 +221,8 @@ export function buildLegacyPortraits(
         pool === "real" ||
         pool === "qipao" ||
         pool === "jk" ||
-        pool === "child"
+        pool === "child" ||
+        pool === "magic"
       ) {
         const current = portraits.charPortraits![name];
         portraits.charPortraits![name] = current ? `${current}|${urls}` : urls;
