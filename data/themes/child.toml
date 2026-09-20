@@ -3,7 +3,6 @@
 
 description = "幼年立绘"
 comment = "幼年"
-tags = ["v5.4"]
 
 [[characters."李未晞".images]]
 url = "https://cdn.myfollo.xyz/2026/09/08/6aa014ae7aa0f.png"
