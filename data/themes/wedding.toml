@@ -55,10 +55,14 @@ tags = ["WIKI-2026-W32", "VOTE"]
 
 [characters."绯月"]
 images = [
-  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%BB%AF%E6%9C%88.image.3789dd807e.webp", tags = [] },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%BB%AF%E6%9C%88.image.3789dd807e.webp", tags = [
+
+  ] },
 ]
 
 [characters."百铃"]
 images = [
-  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BE%E9%93%83.image.79b80de504.webp", tags = [] },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BE%E9%93%83.image.79b80de504.webp", tags = [
+
+  ] },
 ]
