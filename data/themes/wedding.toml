@@ -6,31 +6,31 @@ comment = "婚纱"
 tags = ["WIKI-2026-W32"]
 
 [[characters."许千寻".images]]
-url = "https://cdn.myfollo.xyz/2026/08/07/6a759aa573511.png"
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%AE%B8%E5%8D%83%E5%AF%BB.image.fac1dc80da.webp"
 tags = ["WIKI-2026-W32", "VOTE"]
 
 [[characters."阴丽华".images]]
-url = "https://img.myfollo.xyz/i/2026/08/06/6a735f2767475.png"
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%98%B4%E4%B8%BD%E5%8D%8E.image.bdcdf14404.webp"
 tags = ["WIKI-2026-W32", "VOTE"]
 
 [[characters."苏灿灿".images]]
-url = "https://img.myfollo.xyz/i/2026/08/06/6a735f2a1c5af.png"
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%81%BF%E7%81%BF.image.8d57aaeab0.webp"
 tags = ["WIKI-2026-W32", "VOTE"]
 
 [[characters."苏灿灿".images]]
-url = "https://img.myfollo.xyz/i/2026/08/08/6a76c696116fa.png"
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E7%81%BF%E7%81%BF.image.b33f71e8d5.webp"
 tags = ["WIKI-2026-W32", "VOTE"]
 
 [[characters."姜梦".images]]
-url = "https://img.myfollo.xyz/i/2026/08/06/6a735f27e9f0f.png"
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%9C%E6%A2%A6.image.502f4197ba.webp"
 tags = ["WIKI-2026-W32", "VOTE"]
 
 [[characters."姜梦".images]]
-url = "https://cdn.myfollo.xyz/2026/08/07/6a759aa6ce5e4.png"
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%9C%E6%A2%A6.image.e511759c5d.webp"
 tags = ["WIKI-2026-W32", "VOTE"]
 
 [[characters."曦和".images]]
-url = "https://img.myfollo.xyz/i/2026/08/06/6a736190316d8.png"
+url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9B%A6%E5%92%8C.image.7ee95d5734.webp"
 tags = ["WIKI-2026-W32", "VOTE"]
 
 [[characters."玖柒".images]]
@@ -55,10 +55,10 @@ tags = ["WIKI-2026-W32", "VOTE"]
 
 [characters."绯月"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795aa2b69a7.png", tags = [] },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%BB%AF%E6%9C%88.image.3789dd807e.webp", tags = [] },
 ]
 
 [characters."百铃"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795aa2c2134.png", tags = [] },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BE%E9%93%83.image.79b80de504.webp", tags = [] },
 ]

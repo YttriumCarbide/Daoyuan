@@ -2,9 +2,9 @@
 
 [images]
 default = [
-  { url = "https://img.myfollo.xyz/i/2026/08/06/6a736ded8f7e8.png" },
-  { url = "https://img.myfollo.xyz/i/2026/08/06/6a736decadd7e.png" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%B6%E7%84%9A%E6%B8%8A.image.f3900871b6.webp" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%B6%E7%84%9A%E6%B8%8A.image.6ee7d22e72.webp" },
 ]
 special = [
-  { url = "https://img.myfollo.xyz/i/2026/08/06/6a736e253d3aa.png" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%B6%E7%84%9A%E6%B8%8A.image.35d843c060.webp" },
 ]

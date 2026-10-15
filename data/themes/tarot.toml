@@ -5,100 +5,100 @@ description = "塔罗主题立绘"
 
 [characters."叶焚渊"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795387e01ee.png", comment = "塔罗牌·魔术师" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%8F%B6%E7%84%9A%E6%B8%8A.image.e9c82e1cf9.webp", comment = "塔罗牌·魔术师" },
 ]
 
 [characters."白疏影"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795379b2672.png", comment = "塔罗牌·女祭司" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BD%E7%96%8F%E5%BD%B1.image.8f703f8c8f.webp", comment = "塔罗牌·女祭司" },
 ]
 
 [characters."红莲"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953565eac0.png", comment = "塔罗牌·女皇" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%BA%A2%E8%8E%B2.image.bc1aac5420.webp", comment = "塔罗牌·女皇" },
 ]
 
 [characters."苏千媚"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79538666d7f.png", comment = "塔罗牌·皇帝" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E8%8B%8F%E5%8D%83%E5%AA%9A.image.a26405a41f.webp", comment = "塔罗牌·皇帝" },
 ]
 
 [characters."桃夭诺"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79538f9ec2d.png", comment = "塔罗牌·教皇" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A1%83%E5%A4%AD%E8%AF%BA.image.8cf4673bc2.webp", comment = "塔罗牌·教皇" },
 ]
 
 [characters."嫣雨烟"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953a518b36.png", comment = "塔罗牌·恋人" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%AB%A3%E9%9B%A8%E7%83%9F.image.667dd0b0fe.webp", comment = "塔罗牌·恋人" },
 ]
 
 [characters."顾清清"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79535ee6c0b.png", comment = "塔罗牌·战车" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%A1%BE%E6%B8%85%E6%B8%85.image.9589c11ff2.webp", comment = "塔罗牌·战车" },
 ]
 
 [characters."紫澪"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79539fdc317.png", comment = "塔罗牌·力量" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%B4%AB%E6%BE%AA.image.0ccdb252b6.webp", comment = "塔罗牌·力量" },
 ]
 
 [characters."灵玥"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795387d00e5.png", comment = "塔罗牌·命运" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%81%B5%E7%8E%A5.image.f83527a898.webp", comment = "塔罗牌·命运" },
 ]
 
 [characters."姜梦"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79537acb2db.png", comment = "塔罗牌·正义" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%A7%9C%E6%A2%A6.image.bb1e5865cb.webp", comment = "塔罗牌·正义" },
 ]
 
 [characters."李溯"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79539370914.png", comment = "塔罗牌·倒吊人" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E6%BA%AF.image.56dd1a3442.webp", comment = "塔罗牌·倒吊人" },
 ]
 
 [characters."百铃"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953562a568.png", comment = "塔罗牌·死神" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%99%BE%E9%93%83.image.36786100c7.webp", comment = "塔罗牌·死神" },
 ]
 
 [characters."公孙清"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79539d1f1da.png", comment = "塔罗牌·节制" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E5%85%AC%E5%AD%99%E6%B8%85.image.72e59ebf3b.webp", comment = "塔罗牌·节制" },
 ]
 
 [characters."长孙镜华"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953546df71.png", comment = "塔罗牌·恶魔" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E9%95%BF%E5%AD%99%E9%95%9C%E5%8D%8E.image.5e72e15f98.webp", comment = "塔罗牌·恶魔" },
 ]
 
 [characters."李铭"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795392d1d99.png", comment = "塔罗牌·塔" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9D%8E%E9%93%AD.image.b7153e2ce4.webp", comment = "塔罗牌·塔" },
 ]
 
 [characters."海伊"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953602ac86.png", comment = "塔罗牌·星星" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%B5%B7%E4%BC%8A.image.ab53cff12b.webp", comment = "塔罗牌·星星" },
 ]
 
 [characters."樊月汐"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a7953a5332a2.png", comment = "塔罗牌·月亮" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%A8%8A%E6%9C%88%E6%B1%90.image.62e487f292.webp", comment = "塔罗牌·月亮" },
 ]
 
 [characters."朱离"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a795398befc8.png", comment = "塔罗牌·太阳" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E6%9C%B1%E7%A6%BB.image.0febe536bb.webp", comment = "塔罗牌·太阳" },
 ]
 
 [characters."玄曦"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79539cf3e6c.png", comment = "塔罗牌·审判" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%8E%84%E6%9B%A6.image.9b132ea5f5.webp", comment = "塔罗牌·审判" },
 ]
 
 [characters."玖柒"]
 images = [
-  { url = "https://cdn.myfollo.xyz/2026/08/10/6a79537abe17c.png", comment = "塔罗牌·世界" },
+  { url = "https://cdn.daoyuan.mayuworld.com/characters/images/v1/%E7%8E%96%E6%9F%92.image.0fd9fb93f4.webp", comment = "塔罗牌·世界" },
 ]
