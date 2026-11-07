@@ -72,6 +72,12 @@
       "icon": "🪄",
       "order": 120,
       "sourceKey": "magicPortraits"
+    },
+    "magical-girl": {
+      "name": "魔法少女",
+      "icon": "🌙",
+      "order": 130,
+      "sourceKey": "magicalGirlPortraits"
     }
   },
   "aliases": {}

@@ -1,0 +1,46 @@
+#:schema ../../schema/theme.schema.json
+# 魔法少女立绘
+
+description = "魔法少女立绘"
+comment = "魔法少女"
+tags = ["WIKI-2026-W38"]
+
+[[characters."希夷".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062733029_Codex_2026922_16_39_49.png"
+tags = ["WIKI-2026-W38", "RANDOM"]
+
+[[characters."颜小落".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062735856_Codex_2026922_18_12_17.png"
+tags = ["WIKI-2026-W38", "RANDOM"]
+
+[[characters."李溯".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062751884_Codex_2026922_17_05_19.png"
+tags = ["WIKI-2026-W38", "RANDOM"]
+
+[[characters."大衍".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062757272_Codex_2026922_16_25_54.png"
+tags = ["WIKI-2026-W38", "VOTE"]
+
+[[characters."姬紫月".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062740534_Codex_2026921_16_35_16.png"
+tags = ["WIKI-2026-W38", "VOTE"]
+
+[[characters."陆雪琪".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062733470_Codex_2026922_14_59_13-1.png"
+tags = ["WIKI-2026-W38", "VOTE"]
+
+[[characters."绯月".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062738654_Codex_2026921_18_45_54.png"
+tags = ["WIKI-2026-W38", "VOTE"]
+
+[[characters."慕清弦".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062730605_Codex_2026921_17_32_56.png"
+tags = ["WIKI-2026-W38", "VOTE"]
+
+[[characters."欧阳灵".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062736455_Codex_2026922_15_33_11.png"
+tags = ["WIKI-2026-W38", "VOTE"]
+
+[[characters."瑶汐".images]]
+url = "https://i.daoyuan.mayuworld.com/img/1794062728272_Codex_2026921_16_59_17.png"
+tags = ["WIKI-2026-W38", "VOTE"]
